@@ -145,8 +145,8 @@ There are two ways to refer to a file location:
 - **Absolute path** — starts from the root of the filesystem with `/`. Works from anywhere.
   Example: `/home/oski/projects/hello_world`
 - **Relative path** — starts from where you currently are. Shorter but depends on your location.
-  Example: `projects/hello_world` (only works if you're already in `/home/jonnyg`)
-`~` is a shortcut for your home folder (`/home/yourname`), so `~/projects` and `/home/jonnyg/projects` are the same thing.
+  Example: `projects/hello_world` (only works if you're already in `/home/oski`)
+`~` is a shortcut for your home folder (`/home/yourname`), so `~/projects` and `/home/oski/projects` are the same thing.
  
 ### Getting help
  
