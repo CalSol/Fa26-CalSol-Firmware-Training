@@ -101,3 +101,70 @@ This opens a terminal UI for browsing all options. For most projects, you won't 
 ---
 
 # Building, Flashing, and Monitoring your First Project
+
+## Sourcing the toolchain
+ 
+Before you can use `idf.py` or any ESP-IDF tools, you need to **source** the toolchain. But what does sourcing actually mean?
+ 
+When you run a normal script like `bash script.sh`, it runs in a **child process** — a temporary shell that inherits your environment, does its work, and then disappears. Any changes it makes (like adding something to your `PATH`) vanish when it exits, because they only existed in that child process.
+ 
+**Sourcing** runs a script directly in your current shell instead:
+ 
+```bash
+. /opt/esp-idf/export.sh
+# the dot is shorthand for "source" — these are identical:
+source /opt/esp-idf/export.sh
+```
+ 
+Because it runs in your current shell, any environment variables it sets — like `$IDF_PATH` and the path to `xtensa-esp32s3-elf-gcc` — stick around for the rest of your session. That's why `idf.py` works after sourcing but not before: your shell simply doesn't know where to find it until `export.sh` adds it to your `$PATH`.
+ 
+You can see what it adds by running:
+ 
+```bash
+echo $IDF_PATH         # should print /opt/esp-idf
+which idf.py           # should print the full path to the idf.py script
+```
+ 
+### Setting up your .bashrc
+ 
+Sourcing manually every session gets old quickly. The fix is to add it to your `~/.bashrc` — a script that runs automatically every time you open a shell.
+ 
+Open your `.bashrc` in vim (a text editor that lives in the terminal):
+ 
+```bash
+vim ~/.bashrc
+```
+ 
+Vim has two modes — **normal mode** (for navigating) and **insert mode** (for typing). It opens in normal mode. To get to the bottom of the file and start editing:
+
+- Before trying to edit in Vim, do not try pressing anything with your mouse!!! It won't work!
+ 
+1. Press `Shift+G` to jump to the last line
+2. Press `o` to open a new line below and enter insert mode
+3. Type the two lines:
+```bash
+alias get_idf=". /opt/esp-idf/export.sh"
+. /opt/esp-idf/export.sh
+```
+ 
+4. Press `Esc` to go back to normal mode
+5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
+If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
+ 
+Apply the changes to your current session without logging out:
+ 
+```bash
+source ~/.bashrc
+```
+ 
+What those two lines do:
+ 
+- `. /opt/esp-idf/export.sh` — sources the toolchain automatically on every login, so `idf.py` is always available
+- `alias get_idf=...` — gives you a manual shortcut to re-source it if needed (e.g. if something resets your environment)
+
+
+
+
+
+
+
