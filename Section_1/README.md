@@ -9,7 +9,7 @@ Table of Contents
 
 # ESP-IDF & CMake introduction
 
-In order to program our ESP32-S3 DEV boards we use a toolchain called ESP-IDF. Which begs the following question...
+In order to program our ESP32-S3 DEV boards, we chose to use the ESP-IDF toolchain (there are plenty of other options). Which begs the following question...
 
 ### What is ESP-IDF?
  
