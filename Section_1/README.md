@@ -19,7 +19,7 @@ When you write code for the ESP32-S3, you're writing C (or C++) that runs direct
  
 ### What is CMake?
  
-[CMake](https://cmake.org/) is a build system generator, a fancy way to call a tool that figures out how to compile your code (translating high-level programming language (human-readable) into low-level machine code (binary AKA 1's and 0's). When you have a project with many `.c` files, headers, and libraries, CMake reads a configuration file (`CMakeLists.txt`) and generates the exact compiler commands needed to turn all of it into a binary that can run on the chip. Otherwise you would need to do it yourself, and it's annoying. 
+[CMake](https://cmake.org/) is a build system generator, a fancy way to call a tool that figures out how to compile your project, but it's not actualy doing the compiling itself (translating human readable code like C to machine code 1's and 0's). When you have a project with many `.c` files, headers, and libraries, CMake reads a configuration file (`CMakeLists.txt`) and generates the exact compiler commands needed to turn all of it into a binary that can run on the chip. Otherwise you would need write these compiler commands yourself and it's annoying. 
  
 ESP-IDF uses CMake under the hood, so every ESP-IDF project has a `CMakeLists.txt` that describes what files to compile and what libraries to link.
  
