@@ -72,6 +72,21 @@ idf_component_register(SRCS "main.c"
 ```
  
 That's it. CMake and ESP-IDF handle everything else.
+
+### What compiler does ESP-IDF use?
+ 
+ESP-IDF uses **GCC** (GNU Compiler Collection, most popular C compiler), but a special cross-compiling variant called **Xtensa GCC**. This is because regular GCC compiles code that runs on the machine you're on like your Windows computer with an x86 CPU. However, ESP32-S3 have two Xtensa CPU cores which use an CPU Instruction Set Architecture called **Xtensa LX7**. Espressif maintains their own fork of XtensaGCC, and it gets run every time you compile your project on the CAN TestBench, hence the binary name you'll see referenced occasionally:
+ 
+```
+xtensa-esp32s3-elf-gcc
+```
+ 
+Breaking that down:
+- `xtensa` — target CPU architecture
+- `esp32s3` — specific chip variant
+- `elf` — the binary format it outputs (Executable and Linkable Format, standard for embedded systems)
+- `gcc` — the actual compiler
+This is called a **cross-compiler** — it runs on one architecture (ARM on the Raspberry Pi used for the CAN TestBench) and produces code for another (Xtensa on the ESP32). When you ran `./install.sh esp32s3` during setup, the main thing it was downloading was this toolchain. ESP-IDF also supports [Clang](https://clang.llvm.org/) as an alternative compiler, but Xtensa GCC is the default.
  
 ### The sdkconfig file
  
