@@ -75,7 +75,7 @@ That's it. CMake and ESP-IDF handle everything else.
 
 ### What compiler does ESP-IDF use?
  
-ESP-IDF uses **GCC** (GNU Compiler Collection, most popular C compiler), but a special cross-compiling variant called **Xtensa GCC**. This is because regular GCC compiles code that runs on the machine you're on like your Windows computer with an x86 CPU. However, ESP32-S3 have two Xtensa CPU cores which use an CPU Instruction Set Architecture called **Xtensa LX7**. Espressif maintains their own fork of XtensaGCC, and it gets run every time you compile your project on the CAN TestBench, hence the binary name you'll see referenced occasionally:
+ESP-IDF uses **GCC** (GNU Compiler Collection, most popular C compiler), but a special cross-compiling variant called **Xtensa GCC**. This is because regular GCC compiles code/programs that runs on machines like your own Windows computer with an x86 CPU. However, ESP32-S3 have two Xtensa CPU cores which use an CPU Instruction Set Architecture called **Xtensa LX7**. Espressif maintains their own fork of XtensaGCC, and it gets run every time you compile your project on the CAN TestBench, hence the binary name you'll see referenced occasionally:
  
 ```
 xtensa-esp32s3-elf-gcc
