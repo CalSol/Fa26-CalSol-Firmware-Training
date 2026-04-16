@@ -9,17 +9,19 @@ Table of Contents
 
 # ESP-IDF & CMake introduction
 
+In order to program our ESP32-S3 DEV boards we use a toolchain called ESP-IDF. Which begs the following question...
+
 ### What is ESP-IDF?
  
-[ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/) (Espressif IoT Development Framework) is the official SDK for programming ESP32 chips. It gives you everything you need to write firmware: a C standard library, drivers for the chip's hardware (WiFi, Bluetooth, GPIO, SPI, I2C, etc.), a real-time operating system ([FreeRTOS](https://www.freertos.org/)), and a build system to compile it all together.
+[ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/) (Espressif IoT Development Framework) is the official software development kit (SDK) for programming ESP32 chips. It gives you everything you need to write firmware, such as a standard c library, drivers (like an API) for the chip's hardware/engines (WiFi, Bluetooth, GPIO, SPI, I2C, etc.), a real-time operating system ([FreeRTOS](https://www.freertos.org/)), and a build system to compile it all together.
  
-When you write code for the ESP32-S3, you're writing C (or C++) that runs directly on the chip — there's no operating system underneath you like on a computer. ESP-IDF provides the layer that manages hardware access, task scheduling, and memory so you don't have to do it from scratch.
+When you write code for the ESP32-S3, you're writing C (or C++) that runs directly on the chip so ESP-IDF provides the layer that manages hardware access, task scheduling, and memory, so you don't have to do it from scratch.
  
 ### What is CMake?
  
-[CMake](https://cmake.org/) is a build system generator — a tool that figures out how to compile your code. When you have a project with many `.c` files, headers, and libraries, CMake reads a configuration file (`CMakeLists.txt`) and generates the exact compiler commands needed to turn all of it into a binary that can run on the chip.
+[CMake](https://cmake.org/) is a build system generator, a fancy way to call a tool that figures out how to compile your code (translating high-level programming language (human-readable) into low-level machine code (binary AKA 1's and 0's). When you have a project with many `.c` files, headers, and libraries, CMake reads a configuration file (`CMakeLists.txt`) and generates the exact compiler commands needed to turn all of it into a binary that can run on the chip. Otherwise you would need to do it yourself, and it's annoying. 
  
-You don't write compiler commands by hand — CMake handles that. ESP-IDF uses CMake under the hood, so every ESP-IDF project has a `CMakeLists.txt` that describes what files to compile and what libraries to link.
+ESP-IDF uses CMake under the hood, so every ESP-IDF project has a `CMakeLists.txt` that describes what files to compile and what libraries to link.
  
 ### What is Ninja?
  
@@ -79,7 +81,7 @@ Running `idf.py set-target esp32s3` generates a `sdkconfig` file that controls h
 idf.py menuconfig
 ```
  
-This opens a terminal UI for browsing all options. For most projects you won't need to touch it, but it's there when you do.
+This opens a terminal UI for browsing all options. For most projects, you won't need to touch it, but it's there when you do.
  
 ---
 
