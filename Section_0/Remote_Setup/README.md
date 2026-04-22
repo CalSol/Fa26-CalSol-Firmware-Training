@@ -345,7 +345,7 @@ What those two lines do:
 ## Step 1 — Copy the hello world example from ESP-IDF
 
 ```bash
-<First navigate into your projects directory! Let's see if you remember how to do this!>
+# <!> First, navigate into your projects directory! Let's see if you remember how to do this!
 cp -r /opt/esp-idf/examples/get-started/hello_world .
 cd hello_world
 ```
