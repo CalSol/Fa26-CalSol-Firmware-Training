@@ -1,3 +1,43 @@
+# Table of Contents
+ 
+- [Remote SSH'ing into the CAN TestBench](#remote-sshing-into-the-can-testbench)
+  - [Part 1 — SSH access via Tailscale](#part-1--ssh-access-via-tailscale)
+    - [Step 1 — Install Tailscale on your machine](#step-1--install-tailscale-on-your-machine)
+    - [Step 2 — Find the Pi's Tailscale address](#step-2--find-the-pis-tailscale-address)
+    - [Step 3 — SSH in](#step-3--ssh-in)
+    - [Step 4 — Set up SSH key login (Optional)](#step-4--set-up-ssh-key-login-optional)
+  - [Part 2 — Changing your password](#part-2--changing-your-password)
+    - [Change your password](#change-your-password)
+    - [If you forget your password](#if-you-forget-your-password)
+  - [Quick reference](#quick-reference)
+- [Basic Unix Commands](#basic-unix-commands)
+  - [The prompt](#the-prompt)
+  - [Moving around](#moving-around)
+  - [Working with files](#working-with-files)
+  - [Useful shortcuts](#useful-shortcuts)
+  - [Understanding file paths](#understanding-file-paths)
+  - [Getting help](#getting-help)
+  - [Task 0: Make a project directory](#task-0-make-a-project-directory)
+- [ESP-IDF & CMake Introduction](#esp-idf--cmake-introduction)
+  - [What is ESP-IDF?](#what-is-esp-idf)
+  - [What is CMake?](#what-is-cmake)
+  - [What is Ninja?](#what-is-ninja)
+  - [How they fit together](#how-they-fit-together)
+  - [A minimal project structure](#a-minimal-project-structure)
+  - [What compiler does ESP-IDF use?](#what-compiler-does-esp-idf-use)
+  - [The sdkconfig file](#the-sdkconfig-file)
+- [Sourcing the ESP-IDF Toolchain](#sourcing-the-esp-idf-toolchain)
+  - [Setting up your .bashrc](#setting-up-your-bashrc)
+- [Building, Flashing, and Monitoring Your First Project](#building-flashing-and-monitoring-your-first-project)
+  - [Step 1 — Copy the hello world example from ESP-IDF](#step-1--copy-the-hello-world-example-from-esp-idf)
+  - [Step 2 — Set the target chip](#step-2--set-the-target-chip-we-use-s3)
+  - [Step 3 — Build](#step-3--build)
+  - [Step 4 — Find your device](#step-4--find-your-device)
+  - [Step 5 — Flash and monitor](#step-5--flash-and-monitor)
+  - [Exiting the monitor](#exiting-the-monitor)
+---
+
+
 # Remote SSH'ing into the CAN TestBench
 If you are not a part of CalSol or do not have a version of our CAN TestBench set up, but would still like to follow along with your own ESP32-S3, feel free to jump to Section 1.
 
