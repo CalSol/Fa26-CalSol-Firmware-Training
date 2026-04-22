@@ -212,7 +212,7 @@ This is esp32s3 chip with 2 CPU core(s), WiFi/BLE...
 Restarting in 10 seconds...
 ```
 
-The countdown and restart is expected — the hello world example is designed to loop.
+The countdown and restart are expected. The Hello World example is designed to loop.
 
 ## Exiting the monitor
 
