@@ -6,3 +6,6 @@ This lab is meant to teach you firmware development on the ESP32-S3 microcontrol
 #### Why are there two setups?
 Blue sections walk you through how to set up and access our remote CAN Testbench, which allows you to upload your code to an ESP32-S3 without needing the physical hardware with you. Of course, there are limitations to what you can do. 
 The gray sections walk you through how to set up ESP-IDF locally on your computer so you can upload programs by plugging an ESP32 into your computer. 
+
+
+<img width="730" height="420" alt="Screenshot 2026-04-21 at 6 41 34 PM" src="https://github.com/user-attachments/assets/adda8929-c1ac-4fd3-9078-5264da64d269" />
