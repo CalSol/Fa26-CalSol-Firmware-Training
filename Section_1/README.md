@@ -100,9 +100,7 @@ This opens a terminal UI for browsing all options. For most projects, you won't 
  
 ---
 
-# Building, Flashing, and Monitoring your First Project
-
-## Sourcing the toolchain
+# Sourcing the ESP-IDF Toolchain
  
 Before you can use `idf.py` or any ESP-IDF tools, you need to **source** the toolchain. But what does sourcing actually mean?
  
@@ -161,6 +159,66 @@ What those two lines do:
  
 - `. /opt/esp-idf/export.sh` — sources the toolchain automatically on every login, so `idf.py` is always available
 - `alias get_idf=...` — gives you a manual shortcut to re-source it if needed (e.g. if something resets your environment)
+
+# Building, Flashing, and Monitoring Your First Project
+
+## Step 1 — Copy the hello world example from ESP-IDF
+
+```bash
+cd ~/projects
+cp -r /opt/esp-idf/examples/get-started/hello_world .
+cd hello_world
+```
+
+## Step 2 — Set the target chip (We use S3)
+
+```bash
+idf.py set-target esp32s3
+```
+
+## Step 3 — Build
+
+Build means to compile code, link libraries, and generate binary files (.bin) that can be flashed onto an ESP32 chip. 
+
+```bash
+idf.py build
+```
+
+First build takes a few minutes — it's compiling the entire ESP-IDF stack. Subsequent builds only recompile files you've changed.
+
+## Step 4 — Find your device
+
+Plug in your ESP32-S3 and run:
+
+```bash
+ls /dev/ttyACM* /dev/ttyUSB*
+```
+
+You'll see something like `/dev/ttyACM0`. If multiple devices show up, unplug and replug your board and run it again to see which one appears — that's yours.
+
+## Step 5 — Flash and monitor
+
+```bash
+idf.py -p /dev/ttyACM0 flash monitor
+```
+
+Replace `/dev/ttyACM0` with whatever port you found in Step 4. This flashes the firmware and immediately opens the serial monitor so you can see the chip's output.
+
+You should see the bootloader output followed by:
+
+```
+Hello world!
+This is esp32s3 chip with 2 CPU core(s), WiFi/BLE...
+Restarting in 10 seconds...
+```
+
+The countdown and restart is expected — the hello world example is designed to loop.
+
+## Exiting the monitor
+
+Press `Ctrl+]` to exit. If that doesn't work, try `Ctrl+T` then `Ctrl+]`.
+
+Do not use `Ctrl+C` — that sends an interrupt to the chip, not to the monitor.
 
 
 
