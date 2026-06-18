@@ -19,7 +19,9 @@ Click the appropriate ESP-IDF (GUI) installation for your computer.
 <img width="390" height="188" alt="fw2" src="https://github.com/user-attachments/assets/ab0287d6-399b-4a04-b00b-34d3ce722428" />  
 
 If you are using macOS or Linux and do not have Homebrew installed:
-Run this command in your terminal : /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+Run this command in your terminal: 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 
 
