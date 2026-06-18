@@ -6,6 +6,8 @@
 Download VS Code
 
 ## Begin Software Setup (from this [Link](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitc-1/user_guide_v1.1.html))
+
+
 Click "Installation"
 
 <img width="899" height="143" alt="fw1" src="https://github.com/user-attachments/assets/b1581fe2-fece-4522-a436-1d9f8e7441b4" />  
@@ -16,7 +18,8 @@ Click the appropriate ESP-IDF (GUI) installation for your computer.
 
 <img width="390" height="188" alt="fw2" src="https://github.com/user-attachments/assets/ab0287d6-399b-4a04-b00b-34d3ce722428" />  
 
-
+If you are using macOS or Linux and do not have Homebrew installed:
+Run this command in your terminal : /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 
 
