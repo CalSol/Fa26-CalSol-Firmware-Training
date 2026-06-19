@@ -21,7 +21,9 @@ Click the appropriate ESP-IDF (GUI) installation for your computer.
 If you are using macOS or Linux and do not have Homebrew installed:
 
 Run this command in your terminal: 
+```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 
 
