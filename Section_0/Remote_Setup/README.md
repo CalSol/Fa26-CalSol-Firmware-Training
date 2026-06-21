@@ -281,8 +281,14 @@ This opens a terminal UI for browsing all options. For most projects, you won't 
 ---
 
 # Sourcing the ESP-IDF Toolchain
+
+First install the ESP-IDF Toolchain via the following commands (you only have to do this once!)
+```bash
+cd /opt/esp-idf
+./install.sh esp32
+```
  
-Before you can use `idf.py` or any ESP-IDF tools, you need to **source** the toolchain. But what does sourcing actually mean?
+Before you can use `idf.py` or any ESP-IDF tools in any new terminal session, you need to **source** the toolchain. But what does sourcing actually mean?
  
 When you run a normal script like `bash script.sh`, it runs in a **child process** — a temporary shell that inherits your environment, does its work, and then disappears. Any changes it makes (like adding something to your `PATH`) vanish when it exits, because they only existed in that child process.
  
