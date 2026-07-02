@@ -10,7 +10,7 @@ Specifically, you'll write code in a "main.c" file of your project to this.
 ---
 
 ## Code to Send 
-Here's a break down of each important chunk of code, in order:
+Here's a break down of each important chunk of code (language is C!), in order:
 
 ### Libraries
 ```
@@ -34,7 +34,7 @@ static const char *TAG = "CAN_TX";
 #define TX_INTERVAL_MS 500
 ```
 
-TAG, TX_ID, and TX_INTERVAL_MS 500 are macros. When the code runs, they will be replaced by their assigned values, ("CAN_TX," 0x123, and 500) respectively. 
+<i>TAG</i>, <i>TX_ID</i>, and <i>TX_INTERVAL_MS</i> are macros. When the code runs, they will be replaced by their assigned values, ("CAN_TX," 0x123, and 500) respectively. 
 >Why? Easier to access these values by a name that represents what they mean (meaning explained later). 
 
 ### Initialize CAN
@@ -46,9 +46,9 @@ void app_main(void)
     ESP_LOGI(TAG, "Starting CAN transmit test...");
 ```
 
-'Void' is the return type of the app_main() function, which runs all code inside of it once. (Void = returns nothing when done running). Every variable/function defined must have a return/data type declared before it.
+<i>Void</i> is the return type of the <i>app_main()</i> function, which runs all code inside of it once. (Void = returns nothing when done running). Every variable/function defined must have a return/data type declared before it.
 <details>
-<summary>*Why?*</summary>
+<summary><i>Why?</i></summary>
 That way, C knows... 
 - how to prepare memory for it 
 - what type of data to expect from it 
@@ -56,11 +56,11 @@ Examples in this code: int64_t, esp_err_t, CAN_message_t, etc.
 </details>
 
 <br><br>
-ESP_ERROR_CHECK(CAN_init()) accomplishes two things:
+<i>ESP_ERROR_CHECK(CAN_init())</i> accomplishes two things:
 - CAN_init() initializes CAN. Necessary before any CAN actions.
 - ESP_ERROR_CHECK() takes the value returned by CAN_init() (its output) and, based on that, decides if initialization worked or if something went wrong.
 <br><br>
-ESP_LOGI(TAG...) announces: "CAN_TX: Starting CAN transmit test..."
+<i>ESP_LOGI(TAG...)</i> announces: "CAN_TX: Starting CAN transmit test..."
 
 ### The Message
 
@@ -89,7 +89,9 @@ What is <i>**payload**?</i>
 - An array with 8 elements. uint8_t means 8 bits are allocated to each element.
 - Container for all 64 bits in "now." Stored byte-by-byte through masking.
 
->(Extra:) What is masking? <details> 
+>(Extra:) What is <i>masking?</i>
+
+<details> 
 8 bits are eight 1s or 0s, (i.e. 11111111, 11011001, 00000000, etc.) These form numbers in binary! 1 byte = 8 bits.
 <br><br>
 (now >> 8) shifts all bytes in "now" to the right by 1 byte. For example, (00001111 00000000) becomes --> (00000000 00001111)
@@ -97,7 +99,7 @@ What is <i>**payload**?</i>
 "&" masks these shifted bytes with 0xFF (a hexidecimal number that equals 11111111 in binary).
 <br><br>
 Imagine each byte in "now" sits directly under the corresponding 0xFF bytes (in 64 bits). 
-
+**During Masking**
 ```
 ... 00000000 00000000 11111111 <-- This is OxFF
 ... xxxxxxxx xxxxxxxx XXXXXXXX <-- This is "now"
@@ -105,14 +107,14 @@ Imagine each byte in "now" sits directly under the corresponding 0xFF bytes (in 
 
 The output of masking these with each other is that any bits sitting under a 1 are kept, while any under a 0 are discarded.
 <br><br>
-Output
+**Output**
 ```
 ... 00000000 00000000 XXXXXXXX <-- This is the result
 ```
 
 As payload stores XXXXXXXX to one element, it then shifts "now" by another byte (8 bits) to store its next byte (xxxxxxxx).
-
 </details>
+<br><br>
 
 
 ### Send & Confirmation
@@ -138,14 +140,14 @@ CAN_message_t tx = build_packet_no_ext(TX_ID, payload, 8);
 
 <i>tx</i> is a variable that stores freshly formatted packet (AKA, the message to send). 
 
-The packet has...
+The <i>**packet**</i> has...
 - a CAN ID (TX_ID)
 - The contents (payload)
 - Data length (8 bytes)
 
 CAN_send() sends the packet, and returns ESP_OK if successful.
 
-The if/else control statements...
+The <i>**if/else**</i> control statements...
 - Announce "CAN_TX: Sent ID: [TX_ID here], Time: [now here], Data [each of payload's stored bytes]"
 - Announce "CAN_TX: Send failed [insert error name]"
 
