@@ -53,7 +53,7 @@ That way, C knows...
 - how to prepare memory for it 
 - what type of data to expect from it 
 Examples in this code: int64_t, esp_err_t, CAN_message_t, etc.
-<details>
+</details>
 
 <br><br>
 ESP_ERROR_CHECK(CAN_init()) accomplishes two things:
@@ -112,7 +112,7 @@ Output
 
 As payload stores XXXXXXXX to one element, it then shifts "now" by another byte (8 bits) to store its next byte (xxxxxxxx).
 
-<details>
+</details>
 
 
 ### Send & Confirmation
