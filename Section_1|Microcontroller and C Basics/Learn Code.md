@@ -146,7 +146,7 @@ CAN_message_t tx = build_packet_no_ext(TX_ID, payload, 8);
 The <i>**packet**</i> has...
 - a CAN ID (TX_ID)
 - The contents (payload)
-- Data length (8 bytes)
+- Data length Limit (8 bytes)
 
 CAN_send() sends the packet, and returns ESP_OK if successful.
 
