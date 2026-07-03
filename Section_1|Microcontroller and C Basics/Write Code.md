@@ -2,11 +2,10 @@
 
 ## General Idea
 
-You'll choose what to send <i>(CAN Packet)</i> through the grader esp, and also choose how the receiving board (the lights board) responds.
+You'll choose what to send <i>(CAN Packet)</i> from the grader esp, and also choose how the receiving board (the lights board) responds.
 
+First, to turn the lights on, off, and give them certain brightness, have three distinct messages (CAN packets). Then write code so the lights board will recognize the purpose and respond accordingly. 
 <br><br>
-To turn the lights on, off, and give them certain brightness, have three distinct messages (CAN packets). Then write code so the lights board will recognize the purpose and respond accordingly. 
-
 ### Create the Project
 
 Open/Create a new project using the set up instructions from Section 0.
@@ -16,7 +15,8 @@ Go to the main.c file (if it's named "main," rename and add the ".c")
 
 
 
-### Fill the blanks in the below code for the grader esp
+### Copy & Paste the below code into main.c file
+Then fill in the blanks based on the following instructions:
 
 <br><br>
 Goal: Tell the lights board to blink its lights with 1 second intervals.
