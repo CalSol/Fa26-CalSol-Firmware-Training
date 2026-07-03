@@ -19,7 +19,7 @@ Here's a break down of each important chunk of code (language is C!), in order:
 #include "CAN.h"             
 #include "freertos/task.h"
 ```
-Allows us access to 'libraries' which contain functions, data types (and more!) needed to write the rest of the code below. Explanations of how they work are in their API.
+Allows us access to 'libraries' which contain functions, data types (and more) needed to write the rest of the code below. Explanations of how they work are in their API.
 
 > Try it out! Ctrl+F in the following API references to search for descriptions of functions used in this code 
 - [esp_log.h](https://my-esp-idf.readthedocs.io/en/stable/api-reference/system/log.html?__cf_chl_f_tk=ehK.DaQDboBsr7lyW1GqqgfX2ZOfX9Nyw5j.zoHBKzI-1782777579-1.0.1.1-e.O8t49iLQx_2nJFvmRg9GEf1oG3TqYHT0jCLhIn3Nc) 
