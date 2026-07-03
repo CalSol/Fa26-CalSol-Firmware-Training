@@ -99,11 +99,14 @@ What is <i>**payload**?</i>
 "&" masks these shifted bytes with 0xFF (a hexidecimal number that equals 11111111 in binary).
 <br><br>
 Imagine each byte in "now" sits directly under the corresponding 0xFF bytes (in 64 bits). 
-**During Masking**
+<br><br>
+<b>Masking</b>
+
 ```
 ... 00000000 00000000 11111111 <-- This is OxFF
 ... xxxxxxxx xxxxxxxx XXXXXXXX <-- This is "now"
 ```
+
 
 The output of masking these with each other is that any bits sitting under a 1 are kept, while any under a 0 are discarded.
 <br><br>
