@@ -6,9 +6,7 @@
 
 A development board with features useful for general development and creation of anything.
 As a microcontroller, it acts as the ‘brain’ of your project. The code you upload will control its features.
-
-<img width="751" height="497" alt="Screenshot 2026-07-11 133643" src="https://github.com/user-attachments/assets/3349b08a-6612-4e39-976a-40b2e2dbbefc" />
-
+<img width="899" height="616" alt="Arial" src="https://github.com/user-attachments/assets/1df285eb-7f13-4d20-bc89-485e335144b2" />
 
 **GPIO Pins**
 Can be configured through code as (usually) either Inputs or Outputs. In the LED circuit above, GPIO 38 is an output that can be coded to HIGH, so it flows current to the LED.
@@ -22,12 +20,25 @@ RX = Where ESP32-S3 listens for CAN Packets (more accurate desc?)
 **[ESP32-S3 setup with lights board here]**
 
 
-### Pulse Width Modulation
 
+
+<br><br>
 ### What are CAN Packets
- Message Containers
- (add more)
+They function as message containers (also called frames) that are sent across the CAN network. 
+<img width="433" height="45" alt="CAN Frame" src="https://github.com/user-attachments/assets/e8b40d6e-b786-4343-b1b7-83bf5cf067ac" />
 
+<sup><sub>From [CAN Protocol Overview](https://www.ni.com/en/shop/seamlessly-connect-to-third-party-devices-and-supervisory-system/controller-area-network--can--overview.html?srsltid=AfmBOorU1zvAJigLmHfHU1ybkgBWtry8Tv-Zwm5Jaf2WLQuyYqfSllEi)</sub><sup>
+
+<br><br>
+
+They have 12 parts shown in the image above. The three most important are:
+- ID
+- The data
+- DLC
+
+
+
+### Pulse Width Modulation
 
 
 
