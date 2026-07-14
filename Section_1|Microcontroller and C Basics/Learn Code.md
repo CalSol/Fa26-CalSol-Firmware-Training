@@ -43,7 +43,7 @@ static const char *TAG = "CAN_TX";
 void app_main(void)
 {
     ESP_ERROR_CHECK(CAN_init());
-    ESP_LOGI(TAG, "Starting CAN transmit test...");
+    ESP_LOGI(TAG, "Initialized CAN. Preparing message...");
 ```
 
 <i>Void</i> is the return type of the <i>app_main()</i> function, which runs all code inside of it once. (Void = returns nothing when done running). Every variable/function defined must have a return/data type declared before it.
@@ -60,7 +60,7 @@ Examples in this code: int64_t, esp_err_t, CAN_message_t, etc.
 - CAN_init() initializes CAN. Necessary before any CAN actions.
 - ESP_ERROR_CHECK() takes the value returned by CAN_init() (its output) and, based on that, decides if initialization worked or if something went wrong.
 <br><br>
-<i>ESP_LOGI(TAG...)</i> announces: "CAN_TX: Starting CAN transmit test..."
+<i>ESP_LOGI(TAG...)</i> announces: "CAN_TX: Initialized CAN. Preparing message..."
 
 ### The Message
 
@@ -92,15 +92,18 @@ What is <i>**payload**?</i>
 >(Extra:) What is <i>masking?</i>
 
 <details> 
-8 bits are eight 1s or 0s, (i.e. 11111111, 11011001, 00000000, etc.) These form numbers in binary! 1 byte = 8 bits.
+<summary><i>Explanation</i></summary>
+>Not a concept used in this lab, but very important to know for packing data!
+>
+>**8 bits are eight 1s or 0s, (i.e. 11111111, 11011001, 00000000, etc.) These form numbers in binary! 1 byte = 8 bits.**
 <br><br>
-(now >> 8) shifts all bytes in "now" to the right by 1 byte. For example, (00001111 00000000) becomes --> (00000000 00001111)
+>**(now >> 8) shifts all bytes in "now" to the right by 1 byte. For example, (00001111 00000000) becomes --> (00000000 00001111)**
 <br><br>
-"&" masks these shifted bytes with 0xFF (a hexidecimal number that equals 11111111 in binary).
+>**"&" masks these shifted bytes with 0xFF (a hexidecimal number that equals 11111111 in binary).**
 <br><br>
-Imagine each byte in "now" sits directly under the corresponding 0xFF bytes (in 64 bits). 
+>**Imagine each byte in "now" sits directly under the corresponding 0xFF bytes (in 64 bits).** 
 <br><br>
-<b>Masking</b>
+>### <i>During Masking</i>
 
 ```
 ... 00000000 00000000 11111111 <-- This is OxFF
@@ -108,14 +111,14 @@ Imagine each byte in "now" sits directly under the corresponding 0xFF bytes (in 
 ```
 
 
-The output of masking these with each other is that any bits sitting under a 1 are kept, while any under a 0 are discarded.
+>**The output of masking these with each other is that any bits sitting under a 1 are kept, while any under a 0 are discarded.**
 <br><br>
-**Output**
+>### <i>Output</i>
 ```
 ... 00000000 00000000 XXXXXXXX <-- This is the result
 ```
 
-As payload stores XXXXXXXX to one element, it then shifts "now" by another byte (8 bits) to store its next byte (xxxxxxxx).
+>**As payload stores XXXXXXXX to one element, it then shifts "now" by another byte (8 bits) to store its next byte (xxxxxxxx).**
 </details>
 <br><br>
 
@@ -148,19 +151,55 @@ The <i>**packet**</i> has...
 - The contents (payload)
 - Data length Limit (8 bytes)
 
-CAN_send() sends the packet, and returns ESP_OK if successful.
+**CAN_send() sends the packet out of this device's TX pin**, and returns ESP_OK if successful.
+- Specificaly, this packet is given a turn to be read by the receving device in a queue (known as the buffer)
 
 The <i>**if/else**</i> control statements...
 - Announce "CAN_TX: Sent ID: [TX_ID here], Time: [now here], Data [each of payload's stored bytes]"
 - Announce "CAN_TX: Send failed [insert error name]"
 
 ## Code to Receive
-Much simpler
+```
+#include "esp_log.h"
+#include "esp_timer.h"
+#include "CAN.h"             
+#include "freertos/task.h"
 
-**Explanation here**
+static const char *TAG = "Lights Board";
+
+void app_main(void)
+{
+    ESP_ERROR_CHECK(CAN_init());
+    ESP_LOGI(TAG, "Initialized CAN. Preparing to read incoming messages...");
+
+while (1) {
+        CAN_message_t incoming_message;
+        if (CAN_recieve(&incoming_message, portMAX_DELAY) == ESP_OK) {
+            ESP_LOGI(TAG, "Received message: Byte 1 = %d, Byte 2 = %d, Byte 3 = %d, Byte 4 = %d",
+                    incoming_message.payload[0],                     // <--- or .data?
+                    incoming_message.payload[1],
+                    incoming_message.payload[2],
+                    incoming_message.payload[3]);
+        } else {
+            ESP_LOGI(TAG, "Did not receive message. Preparing to read incoming messages...");
+        }
+    }
+}
+```
+*Remember that this device's RX pin connects to the TX pin of the one it receives code from (through a transceiver of course)..
+
+**Inside while loop**
+- The variable <i>incoming_message</i> is created to later store the next received message. (its data type is <i>CAN_message_t</i>).
+- CAN_receive() fills sent_info with the contents of the first message in the buffer (successful send and receive!).
+- ESP_LOGI() announces the success and also the exact message received (each byte. There are 4 more, but only half written in ESP_LOGI() for simplicity).,
+    - Each %d is replaced by a corresponding element in the payload array (where each element contains 1 byte)
+ 
+<br><br>
+
+After that, the message content can be used for anything.
 
 ## Your Turn
-Remember key components, because now you will write code to send out a different CAN packet to control lights on the receiving board (next section?).
+Remember key components, because now you will write code to send out a different CAN packet to control lights on the receiving board (next section!).
 
 
 
