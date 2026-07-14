@@ -1,17 +1,25 @@
 # Create a Custom Message to control Lights
 
-## General Idea
+## Write for the Grader ESP32
 
-You'll choose what to send <i>(CAN Packet)</i> from the grader esp, and also choose how the receiving board (the lights board) responds.
+**General Idea**
+You'll choose what to send <i>(CAN Packet)</i> from the grader ESP32, and also choose how the receiving board (the lights board) responds.
 
-First, to turn the lights on, off, and give them certain brightness, have three distinct messages (CAN packets). Then write code so the lights board will recognize the purpose and respond accordingly. 
+First, to turn the lights on, off, and give them certain brightness, have two distinct payloads (message content). Then fill in the blanks in the code below based on the given goal.
 <br><br>
 ### Create the Project
 
-Open/Create a new project using the set up instructions from Section 0.
-Go to the main.c file (if it's named "main," rename and add the ".c")
+Download the files of this training (on the left) and open them in your code editor (like VS Code) or (navigate to through a terminal?)
+
+These files are set up using instructions from Section 0.
+
+The "main" file is where you'll put the code below.
+
+You'll build, flash, and monitor this file to the device you want to control (i.e. grader ESP32, lights board)
 
 <br><br>
+
+ 
 
 
 
@@ -19,32 +27,35 @@ Go to the main.c file (if it's named "main," rename and add the ".c")
 Then fill in the blanks based on the following instructions:
 
 <br><br>
-Goal: Tell the lights board to blink its lights with 1 second intervals.
+<i>**Goal:**</i> Tell the lights board to turn on an LED with 50% brightness.
+
+Payload: 0 for off, and any integer 1-255 for on with a certain brightness (0.4% to 100%).
 
 **Requirements:**
-- Send a CAN Packet with ID [Desired ID], payload [Message content]
-- Use a TAG called [specific name] for the grader, and [other name] for the lights board to announce to the monitor
-- Define Macros ON and OFF for their message payloads, which equal 1 and 0 respectively.
+- Define the Macro ON to equal the message payload (AKA the integer that represents brightness value, it doesn't have to be exactly 50%, just close).
+- Send a CAN Packet with ID [Desired ID], and a payload to turn lights on half of full brightness.
+- Use a TAG called "Control" for the grader ESP32.
+
 
 **Hints:**
-- A Blink interval of 1 second separates the ON and OFF messages.
+- 
 
 
 **Code**
 ```
 #include "esp_timer.h"
 #include "CAN.h"
-#include _________   // <--- FILL
+#include _________         // <--- FILL
 #include "freertos/task.h"    
 
-static const char *TAG = ________;        // <--- FILL
+static const char *TAG = ________;       // <--- FILL
 
-#define TX_ID          ____               // <--- FILL
-#define BLINK_INTERVAL_MS 1000
-#define ______ 1
-#define _____ 0
+#define TX_ID  ____                    // <--- FILL
+#define ON ____                       // <--- FILL
+#define INTERVAL_MS 500
 
-void ________(void)                        // <--- FILL
+
+void ________(void)                // <--- FILL
 {
     ESP_ERROR_CHECK(CAN_init());
     ESP_LOGI(TAG, "Starting CAN transmit test...");
@@ -52,34 +63,27 @@ void ________(void)                        // <--- FILL
     while (1) {
         ;
 
-        CAN_message_t lights_ON = build_packet_no_ext(TX_ID, ___, 1);        // <--- What's the payload?
+        CAN_message_t lights_ON = build_packet_no_ext(____, ___, 1);          // <--- What are the macros for the ID and then the payload?
 
-        CAN_message_t lights_OFF = build_packet_no_ext(TX_ID, ___, 1);       // <--- What's the payload?
-
-        esp_err_t ON_message_status = CAN_send(&______, 100);                 // <--- What's the CAN Packet called?
+        esp_err_t ON_message_status = CAN_send(&______, 100);                  // <--- What's the CAN Packet called? (was created in the line above)
         if (err == ESP_OK) {
-            ESP_LOGI(TAG, "Lights turned ON.");
+            ESP_LOGI(TAG, "__________");                                       // <--- Write anything you'd like to announce that the lights were turned on 50%.
         } else {
             ESP_LOGE(TAG, "Send failed: %s", esp_err_to_name(err));
         }
 
-        vTaskDelay(pdMS_TO_TICKS(BLINK_INTERVAL_MS));
-
-        esp_err_t OFF_message_status = CAN_send(&______, 100);
-        if (OFF_message_status == ESP_OK) {
-            ESP_LOGI(TAG, "Lights turned OFF.");
-        } else {
-            ESP_LOGE(TAG, "Send failed: %s", esp_err_to_name(err));
-        }
-
-        vTaskDelay(pdMS_TO_TICKS(BLINK_INTERVAL_MS));
+        vTaskDelay(pdMS_TO_TICKS(INTERVAL_MS));
 
     }
 }
 ```
 
+## Write for the Lights Board
 
 
-## Build, Flash, and Monitor
 
-use info from Section 0?
+
+
+## Test it out!
+
+Go to Section 0 and follow the instructions to **Build, Flash, and Monitor.** Can be done from your terminal or using your code editor GUI for ESP-IDF. Through monitoring, you can see your ESP_LOGI announcement.
