@@ -58,7 +58,7 @@ static const char *TAG = ________;       // <--- FILL
 void ________(void)                // <--- FILL
 {
     ESP_ERROR_CHECK(CAN_init());
-    ESP_LOGI(TAG, "Starting CAN transmit test...");
+    ESP_LOGI(TAG, "Initialized CAN. Preparing message...");
 
     while (1) {
         ;
@@ -80,10 +80,37 @@ void ________(void)                // <--- FILL
 
 ## Write for the Lights Board
 
+```
+#include "esp_log.h"
+#include "esp_timer.h"
+#include "_______"             
+#include "freertos/task.h"
+
+static const char *TAG = "________";
+
+void _________(void)
+{
+    ESP_ERROR_CHECK(_________);
+    ESP_LOGI(TAG, "Initialized CAN. Preparing to read incoming messages...");
+
+while (1) {
+        CAN_message_t incoming_message;
+        if (_________(&incoming_message, portMAX_DELAY) == ESP_OK) {          // <-- What function extracts the received message?
+            ESP_LOGI(TAG, "Received message. Desired brightness out of 255 is: %d", _______) <-- What variable stores this number?
+            [Insert code to use integer from 0-255 for PWM pins on Light Board]
+
+        } else {
+            ESP_LOGI(TAG, "Did not receive message. Preparing to read incoming messages...");
+        }
+    }
+}
+```
 
 
 
-
+<br><br>
 ## Test it out!
-
+<br><br>
 Go to Section 0 and follow the instructions to **Build, Flash, and Monitor.** Can be done from your terminal or using your code editor GUI for ESP-IDF. Through monitoring, you can see your ESP_LOGI announcement.
+
+Once that works, try to turn the lights off!
