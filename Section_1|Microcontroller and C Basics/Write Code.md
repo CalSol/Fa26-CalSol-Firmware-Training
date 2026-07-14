@@ -29,16 +29,14 @@ Then fill in the blanks based on the following instructions:
 <br><br>
 <i>**Goal:**</i> Tell the lights board to turn on an LED with 50% brightness.
 
-Payload: 0 for off, and any integer 1-255 for on with a certain brightness (0.4% to 100%).
+**Payload:** 0 for off, and any integer 1-255 for on with a certain brightness (0.4% to 100%).
 
 **Requirements:**
 - Define the Macro ON to equal the message payload (AKA the integer that represents brightness value, it doesn't have to be exactly 50%, just close).
 - Send a CAN Packet with ID [Desired ID], and a payload to turn lights on half of full brightness.
 - Use a TAG called "Control" for the grader ESP32.
 
-
-**Hints:**
-- 
+<br><br>
 
 
 **Code**
@@ -77,9 +75,22 @@ void ________(void)                // <--- FILL
     }
 }
 ```
+<br><br>
 
+<br><br>
 ## Write for the Lights Board
 
+### Copy & Paste the below code into ___ file in (file path for the light board's main file) 
+
+Then fill in the blanks based on the following instructions:
+
+<i>**Goal:**</i> Receive payload and report its content (through an announcement). Then use it to adjust pin [pin #]'s brightness.
+
+
+<br><br>
+
+
+**Code**
 ```
 #include "esp_log.h"
 #include "esp_timer.h"
