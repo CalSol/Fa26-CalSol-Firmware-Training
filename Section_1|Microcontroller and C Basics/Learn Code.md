@@ -165,7 +165,7 @@ The <i>**if/else**</i> control statements...
 #include "CAN.h"             
 #include "freertos/task.h"
 
-static const char *TAG = "Lights Board";
+static const char *TAG = "CAN_RX";
 
 void app_main(void)
 {
