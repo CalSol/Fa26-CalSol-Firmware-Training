@@ -2,21 +2,28 @@
 
 *For the ESP32-S3 DevKitC-1
 
-## Prerequisites:
-Download VS Code
+# Windows ESP-IDF Setup
 
-## Begin Software Setup (from this [Link](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitc-1/user_guide_v1.1.html))
+### Prerequisites:
+- Download VS Code
+- Download ESP-IDF extension
 
+## Begin Software Setup
+
+(Start from this [Link](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-devkitc-1/user_guide_v1.1.html))
 
 Click "Installation"
 
-<img width="899" height="143" alt="fw1" src="https://github.com/user-attachments/assets/b1581fe2-fece-4522-a436-1d9f8e7441b4" />  
+<img width="449" height="71.5" alt="fw1" src="https://github.com/user-attachments/assets/b1581fe2-fece-4522-a436-1d9f8e7441b4" />  
 
+<br><br>
 
 
 Click the appropriate ESP-IDF (GUI) installation for your computer.
 
 <img width="390" height="188" alt="fw2" src="https://github.com/user-attachments/assets/ab0287d6-399b-4a04-b00b-34d3ce722428" />  
+
+<br><br>
 
 If you are using macOS or Linux and do not have Homebrew installed:
 
@@ -33,7 +40,7 @@ Then follow the whole installation process until you reach this window.
 
 
 
-
+<br><br>
 
 
 If Installation fails, then:
@@ -46,7 +53,7 @@ If Installation fails, then:
 
 
 
-
+<br><br>
 
 
 ## Create (& Build) a Project (Start from this [Link](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/get-started/index.html#get-started-build))
@@ -89,9 +96,9 @@ Make sure to press what's underlined in red below!
 
 <img width="448" height="36" alt="fw9" src="https://github.com/user-attachments/assets/2c6e33f5-b437-4c8f-b96b-88bc0efa0345" />  
 
+<br><br>
 
-
-## At this step, if unsure about which port (place on your laptop/PC to connect ESP32 through cable), press hyperlinked ‘Establish Serial Communication.”
+### At this step, if unsure about which port (place on your laptop/PC to connect ESP32 through cable), press hyperlinked ‘Establish Serial Communication.”
 
 <img width="458" height="233" alt="fw11" src="https://github.com/user-attachments/assets/d14900ec-9507-442c-8b94-eb4b5ec84972" />  
 
@@ -112,12 +119,27 @@ Can do more with the guides below
 
 <img width="392" height="94" alt="fw10" src="https://github.com/user-attachments/assets/cc1f7ebf-385d-4ecb-8c71-8da7ddac3a49" />  
 
-
+<br><br>
 
 ## Access & code project
 (Usual) file path to your project.
 esp-idf > examples > get_started > project_name
-In project folder, go to ‘main’ folder. The C or C++ file can be opened in VS code and edited.
+In project folder, go to ‘main’ file. The C or C++ file can be opened in VS code and edited.
 Get the C/C++ extension!!
 Code in C/C++
+
+Section 1 walks you through preparing this 'main' file to be built, flashed, and then for the output to be monitored.
+
+## Build, Flash, and Monitor:
+
+[Short desc of buttons in VS Code GUI]
+
+Whenever edits to the file/code are made, rebuild  before flashing. 
+
+**Always clear the build before rebuilding!**
+
+**Shortcut:** Build, Flash, Monitor in one button
+
+
+
 
