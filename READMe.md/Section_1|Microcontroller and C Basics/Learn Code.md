@@ -5,8 +5,6 @@
 Through the contents of the project you build and flash, you can tell the ESP32 how and what to communicate over CAN, or listen for from others.
 Specifically, you'll write code in a "main.c" file of your project to this.
 
-**Basic description of Project file path structure & components folder?**
-
 ---
 
 ## Code to Send 
