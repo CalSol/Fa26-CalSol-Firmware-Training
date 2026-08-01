@@ -5,7 +5,7 @@
 ### What is the ESP32-S3?
 
 A development board with features useful for general development and creation of anything.
-As a microcontroller, it acts as the ‘brain’ of your project. The code you upload will control its features.
+As a microcontroller, it acts as the ‘brain’ of your project. The code you upload will use its features to control the components it's connected to.
 <img width="899" height="616" alt="Arial" src="https://github.com/user-attachments/assets/1df285eb-7f13-4d20-bc89-485e335144b2" />
 
 **GPIO Pins**
