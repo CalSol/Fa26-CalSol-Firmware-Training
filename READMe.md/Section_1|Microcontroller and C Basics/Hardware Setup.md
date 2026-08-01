@@ -55,6 +55,8 @@ Specifically, it creates a **duty cycle** where, for a certain duration of that 
 
 <sup><sub>From [GeeksforGeeks](https://www.geeksforgeeks.org/electronics-engineering/pulse-width-modulation-pwm/)</sub><sup>
 
+In the next part about code, you'll learn how to write the code that tells the ESP32-S3 when to output (or input, i.e. read) these voltage signals to other connected boards!
+
 
 
 
