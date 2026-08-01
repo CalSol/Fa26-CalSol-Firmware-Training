@@ -94,14 +94,14 @@ Then fill in the blanks based on the following instructions:
 ```
 #include "esp_log.h"
 #include "esp_timer.h"
-#include "_______"             
+#include "_______"                             // <--- FILL     
 #include "freertos/task.h"
 
-static const char *TAG = "________";
+static const char *TAG = "________";          // <--- FILL
 
-void _________(void)
+void _________(void)                          // <--- FILL
 {
-    ESP_ERROR_CHECK(_________);
+    ESP_ERROR_CHECK(_________);                // <--- FILL
     ESP_LOGI(TAG, "Initialized CAN. Preparing to read incoming messages...");
 
 while (1) {
