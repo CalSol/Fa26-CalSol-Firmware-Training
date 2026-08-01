@@ -29,9 +29,8 @@ They are the message containers (also called frames) that are sent across the CA
 
 <sup><sub>From [CAN Protocol Overview](https://www.ni.com/en/shop/seamlessly-connect-to-third-party-devices-and-supervisory-system/controller-area-network--can--overview.html?srsltid=AfmBOorU1zvAJigLmHfHU1ybkgBWtry8Tv-Zwm5Jaf2WLQuyYqfSllEi)</sub><sup>
 
-<br><br>
 
-They have 12 parts shown in the image above. The three used in this lab are:
+They have 12 parts shown in the image above. The three (highlighted) used in this lab are:
 - **ID:** The identifier (name) of the CAN Packet
 - **The data (0-8 bytes):** Also called **payload.** They're the content sent.
 - **DLC:** The length of the data.
@@ -42,8 +41,22 @@ In this lab, you'll send a CAN Packet whose payload determines what the lights d
 
 ### Pulse Width Modulation (PWM)
 
-You'll use built-in PWM to control light brightness accoring to what the payload says.
-**PWM explaination**
+You'll use built-in <i>PWM</i> to control <i>light brightness</i> according to what the payload says.
+
+**What is PWM?**
+It's a method that uses direct current (DC), which only outputs a HIGH (ON) or LOW (OFF) current, to output voltage values in between those two (similar to Analog current (AC), which automatically can output a range of those two values).
+
+<i>How high is HIGH and how low is LOW?</i>
+>Depends on the circuitry/microchips' preferences. The ESP32-S3's internal logic specifically recognizes a 5V or 3.3V as the maximum. (This and and any close values are HIGH). Same for 0V when it comes to LOW.
+
+Specifically, it creates a **duty cycle** where, for a certain duration of that cycle, output is HIGH, and for the rest of the cycle, output is LOW. This duty cycle repeats and over time, outputs the average voltage. The longer that HIGH is the output, the higher the average voltage. This allows the average voltage to take a range of values.
+>For example, if duty cycle is 50% HIGH and 50% low, the ultimate output is half of the maximum voltage, which would tell an LED to be half as bright.
+<img width="412" height="74" alt="PWM wave" src="https://github.com/user-attachments/assets/f6b41997-1890-4135-91ee-de3773572dc9" />
+
+<sup><sub>From [GeeksforGeeks](https://www.geeksforgeeks.org/electronics-engineering/pulse-width-modulation-pwm/)</sub><sup>
+
+
+
 
 
 
