@@ -6,7 +6,8 @@
 
 ### Prerequisites:
 - Download VS Code
-- Download ESP-IDF extension
+
+<br><br>
 
 ## Begin Software Setup
 
@@ -56,13 +57,14 @@ If Installation fails, then:
 <br><br>
 
 
-## Create (& Build) a Project (Start from this [Link](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/get-started/index.html#get-started-build))
+## Create a Project (Start from this [Link](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/get-started/index.html#get-started-build))
 Download the ESP-IDF VS Code Extension
 
 <img width="460" height="198" alt="fw5" src="https://github.com/user-attachments/assets/bc95dc35-1921-44d3-b011-23bd910960c0" />  
 
 
 
+<br><br>
 
 Open the hyperlinked text above ("ESP-IDF Extension for VS Code") 
 Then go to Install ESP-IDF and Tools
@@ -80,6 +82,9 @@ Follow instructions until you reach yellow box below:
 
 Any Problems? Press "Troubleshooting"
 If not, continue to Step 6 
+
+<br><br>
+
 Click on "Start a Project" guide or “ (Both open this page: [Link](https://docs.espressif.com/projects/vscode-esp-idf-extension/en/latest/startproject.html#create-an-esp-idf-project))
 
 <img width="266" height="239" alt="fw8" src="https://github.com/user-attachments/assets/b9d01ee0-5772-4403-9f52-53e143debcfe" />  
@@ -91,10 +96,34 @@ Follow all instructions to Create a Project
 
 
 
+
+<img width="448" height="36" alt="fw9" src="https://github.com/user-attachments/assets/2c6e33f5-b437-4c8f-b96b-88bc0efa0345" />  
+
+<br><br>
+
 DURING COMMAND PALETTE STEP:
 Make sure to press what's underlined in red below!
 
-<img width="448" height="36" alt="fw9" src="https://github.com/user-attachments/assets/2c6e33f5-b437-4c8f-b96b-88bc0efa0345" />  
+<img width="392" height="94" alt="fw10" src="https://github.com/user-attachments/assets/cc1f7ebf-385d-4ecb-8c71-8da7ddac3a49" />  
+<br><br>
+
+While creating New Project: Select a template project or any example project 
+
+<img width="250" height="105.5" alt="image" src="https://github.com/user-attachments/assets/cbeb0143-6103-4bc6-83e0-582a28728485" />
+
+<br><br>
+
+Project Attributes Breakdown:
+
+<img width="315.5" height="221" alt="image" src="https://github.com/user-attachments/assets/289bc19e-56f6-48bc-9d3e-136a97fcdd1e" />
+
+
+1) Project Name
+2) Project Folder location of choice in your file manager 
+3) Target Device
+4) Distinction between having built-in hardware for debugging (JTAG) vs. needing to connect external hardware
+5) Choosing the port on your computer that your ESP32 connects to (detect will automatically choose the port that's connected for you.)
+6) Add locations of component folders (components explained later!)
 
 <br><br>
 
@@ -102,7 +131,7 @@ Make sure to press what's underlined in red below!
 
 <img width="458" height="233" alt="fw11" src="https://github.com/user-attachments/assets/d14900ec-9507-442c-8b94-eb4b5ec84972" />  
 
-
+<br><br>
 
 Scroll down to ‘Check Port on Windows’:
 To identify serial port, follow instructions
@@ -111,34 +140,53 @@ If cable is data-transferrable, Upon connection, device manager page should auto
 
 <img width="340" height="169" alt="fw12" src="https://github.com/user-attachments/assets/c63c07e7-a18b-40c3-8ad3-b4a7c9c0bc1a" />  
 
+<br><br>
 
 
-
-First project made!
-Can do more with the guides below
-
-<img width="392" height="94" alt="fw10" src="https://github.com/user-attachments/assets/cc1f7ebf-385d-4ecb-8c71-8da7ddac3a49" />  
+<i></i>**Congrats, you made your first project!**<i></i>
 
 <br><br>
 
 ## Access & code project
-(Usual) file path to your project.
-esp-idf > examples > get_started > project_name
-In project folder, go to ‘main’ file. The C or C++ file can be opened in VS code and edited.
-Get the C/C++ extension!!
-Code in C/C++
 
-Section 1 walks you through preparing this 'main' file to be built, flashed, and then for the output to be monitored.
+To edit/use it at any point, open VS Code, open the project folder (File > Open Folder..), and enable the ESP-IDF extension.
+
+The Extension opens this left side-bar:
+
+
+<img width="218" height="361" alt="image" src="https://github.com/user-attachments/assets/1699c93b-77b3-4081-be3d-7ef7ebae7a7a" />
+
+- Choose your opened project folder as the current workspace using the first checkboxed command.
+
+Each command (and more) with a checkbox should open a button used for that purpose at the bottom:
+
+
+<img width="362.5" height="148" alt="image" src="https://github.com/user-attachments/assets/2825aebc-83b1-4705-bf6c-ddc72d4cfdfd" />
+
+
+
+<br><br>
+
+Info on the purpose of each file/folder in your project folder [here](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-guides/build-system.html).
+
+In project folder, go to ‘main’ file. Get the C/C++ extension in VS Code so you can write C/C++ code in this file.
+
+Section 1 walks you through how to write this code before you test it out.
 
 ## Build, Flash, and Monitor:
 
-[Short desc of buttons in VS Code GUI]
+When you're ready to test your code by flashing it to the ESP32 connected to your computer, first build, flash, and then you can monitor its output.
 
-Whenever edits to the file/code are made, rebuild  before flashing. 
+These commands will have matching buttons at the bottom of your screen that you press to execute:
 
-**Always clear the build before rebuilding!**
+<img width="180" height="111" alt="image" src="https://github.com/user-attachments/assets/5f18b35e-0109-40b3-9bf1-774e8b1bb322" />
 
-**Shortcut:** Build, Flash, Monitor in one button
+<br><br>
+
+IMPORTANT:
+- Whenever edits to the file/code are made, rebuild  before flashing. 
+- **Always full clean before rebuilding!**
+- **Shortcut:** Build, Flash, Monitor in one button
 
 
 
