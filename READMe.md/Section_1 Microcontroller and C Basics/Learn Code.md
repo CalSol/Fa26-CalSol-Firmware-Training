@@ -22,6 +22,9 @@ Allows us access to 'libraries' which contain functions, data types (and more) n
 > Try it out! Ctrl+F in the following API references to search for descriptions of functions used in this code 
 - [esp_log.h](https://my-esp-idf.readthedocs.io/en/stable/api-reference/system/log.html?__cf_chl_f_tk=ehK.DaQDboBsr7lyW1GqqgfX2ZOfX9Nyw5j.zoHBKzI-1782777579-1.0.1.1-e.O8t49iLQx_2nJFvmRg9GEf1oG3TqYHT0jCLhIn3Nc) 
 - [esp_err_t (contained in esp.log.h)](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/esp_err.html)
+- [Can.h](https://github.com/CalSol/ESP32_CAN_BUS_Debugger/blob/main/components/can_driver/CAN.h#L50)
+- [esp_timer.h](https://espressif-docs.readthedocs-hosted.com/projects/esp-idf/en/latest/api-reference/system/esp_timer.html)
+- [freertos/task.h](https://espressif-docs.readthedocs-hosted.com/projects/esp-idf/en/stable/api-reference/system/freertos.html)
 
 ### Macros & Set Up
 

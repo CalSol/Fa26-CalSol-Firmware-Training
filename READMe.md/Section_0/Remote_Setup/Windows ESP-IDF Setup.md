@@ -168,6 +168,9 @@ Each command (and more) with a checkbox should open a button used for that purpo
 <br><br>
 
 Info on the purpose of each file/folder in your project folder [here](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-guides/build-system.html).
+(Great breakdown of components [here](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-guides/build-system.html)).
+
+<br><br>
 
 In project folder, go to ‘main’ file. Get the C/C++ extension in VS Code so you can write C/C++ code in this file.
 
