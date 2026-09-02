@@ -28,3 +28,5 @@ The baud rate is 3 (changes per second) because 3 changes to the signal (its val
 Here, 6 changes to the signal are made per second. The bit rate however, is still 3 (because per 2 signal changes, 1 bit was communicated).
 
 
+Sources: https://www.geeksforgeeks.org/computer-networks/baud-rate-and-its-importance/
+https://scienceinsights.org/what-is-the-baud-rate-and-why-does-it-matter/
