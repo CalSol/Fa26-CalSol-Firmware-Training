@@ -2,7 +2,7 @@
 ### What is UART?
 UART is a Universal Asynchronous Receiver Transmitter protocol that is used for serial communication.
 - What kind of protocol?
-  - **Universal:** usable on any transmitting/receiving device.
+  - **Universal:** usable on <i>any</i> transmitting/receiving device.
   - **Asynchronous:** does not follow any clock/time, simply sends receives when it does.
   - **Receiver/Transmitter**: This protocol is for devices that transmit and receive data.
 - Serial communication is the method of communication between devices where bits are sent along some wire/line or even remotely (like a TV remove to a TV!).
