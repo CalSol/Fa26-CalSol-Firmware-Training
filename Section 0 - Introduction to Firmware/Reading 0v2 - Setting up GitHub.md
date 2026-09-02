@@ -13,7 +13,7 @@ We recommend using GitHub Desktop to make this process easier. You can download 
 This lab will use GitHub Desktop for all Git-related tasks. However, if you are comfortable using Git through the command line, you may also use
 Git Bash instead.
 
-This is a useful link from CS61B this semester on how to set up Git Bash for your computer. [here](https://fa26.datastructur.es/homeworks/hw01/).
+This is a [useful link](https://fa26.datastructur.es/homeworks/hw01/) from CS61B this semester on how to set up Git Bash for your computer.
 Please refer to task 1 and choose the appropriate OS (Windows, Mac, Linux,...) of your computer for the right setup instructions.
 
 ## Additional Info
