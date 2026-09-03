@@ -21,11 +21,13 @@ There are a lot of questions that need to be answered.
 
 ## Schemes to Manage It
 
+As you can see, there is a lot of complexity. Now we must find a way to manage it.
+
 ### Abstraction
 
+### Planning
 
-
-### 
+### Modules and Libraries
 
 ## What Tools Will We Use?
 
