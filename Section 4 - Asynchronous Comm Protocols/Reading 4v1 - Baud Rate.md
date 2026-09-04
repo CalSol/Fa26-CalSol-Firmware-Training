@@ -14,7 +14,7 @@ The significance of a signal being sent is so that the value (height) is communi
 
 <img width="472" height="343" alt="image" src="https://github.com/user-attachments/assets/794ee29f-0c8f-4b1a-a391-6731ee05dc61" />
 
-Here, the red numbers denote each change, which counts toward the baud rate. 
+Here, the red numbers denote each change to the signal value, which counts toward the baud rate. 
 - Additionally (this is optional to know), the two bits sent when the value of the signal is high are 1s, while the bit sent when the value of the signal is low is 0.
 - The bit rate, which counts how many of these bits are sent per second, is <i>not</i> the baud rate.
 
