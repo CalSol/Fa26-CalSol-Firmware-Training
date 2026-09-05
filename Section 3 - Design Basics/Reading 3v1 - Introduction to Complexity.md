@@ -76,6 +76,8 @@ Wow, with a little abstraction, we have fixed our brake lights problem!!! Not so
 
 As you can see, there are a lot of unseen problems that will come up. The complexity from this comes with needing to integrate all of these cases sequentially after writing each one. You will learn that the secret to simple code is planning out these cases ahead of time. If you don't, you will make code more complicated. We call this technical debt, because you will need to pay off the time of lack of planning in debugging later down the line.
 
+To cope with this, there is no shortcut. We will need to plan things out. Later on, we will discuss in detail smarter ways to do this.
+
 ## What Tools Will We Use?
 
 Throughout this section, you will see a lot of techniques that programmers everywhere use to write non-complex code. You will soon learn, that all of the seemingly difficult techniques you will see are actually clever ways to manage complexity and make code easier to read and write. This lab is only the tip of the iceberg (and you learn much more in EVERY hardware and software class at Berkeley about this), but we hope this is a good start.
