@@ -4,7 +4,8 @@ Two-Wire serial communication protocol used to connect peripheral ICs to the mic
 
 ## Master <--> Slave / Controller <--> Peripheral Communication
 <img width="800" height="392" alt="image" src="https://github.com/user-attachments/assets/cf68fc32-088a-4398-8754-1c13d49d5b06" />
-* I2C uses 2 lines: Serial Data Line (SDA) and Serial Clock Line (SCL)
+
+* I2C uses 2 lines: Serial Data Line (SDA) and Serial Clock Line (SCL) to communicate between the microcontroller (master) and peripherals (slaves)
 
 SCL:
 * Hardware: must be pulled up to 3.3V or 5V with a pull up resistor
