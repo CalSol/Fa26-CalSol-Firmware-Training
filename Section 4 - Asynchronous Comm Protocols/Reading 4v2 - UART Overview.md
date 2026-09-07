@@ -19,6 +19,8 @@ Both the receiving and transmitting device should be configured to use UART befo
 - The length of the data sent/received (fixed amount)
 The above configurations must be the same for both devices involved. More configurations also exist.
 
+**<i>More on how to configure this in another section!</i>**
+
 
 Sources: https://www.geeksforgeeks.org/computer-networks/universal-asynchronous-receiver-transmitter-uart-protocol/
 
