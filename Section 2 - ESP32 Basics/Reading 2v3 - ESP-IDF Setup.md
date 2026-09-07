@@ -7,6 +7,7 @@
 ## MacOS
 <br><br>
 ## Windows
+- Tutorial for Windows [Here!](https://esp32tutorials.com/install-esp32-esp-idf-windows-integrate-vs-code/)
 <br><br>
 <br><br>
 
