@@ -1,8 +1,8 @@
-#*I2C (Inter-Integrated Circuit) Overview*
+# I2C (Inter-Integrated Circuit) Overview
 
 Two-Wire serial communication protocol used to connect peripheral ICs to the microcontroller.
 
-##*Master <--> Slave / Controller <--> Peripheral Communication*
+## Master <--> Slave / Controller <--> Peripheral Communication
 <img width="800" height="392" alt="image" src="https://github.com/user-attachments/assets/cf68fc32-088a-4398-8754-1c13d49d5b06" />
 * I2C uses 2 lines: Serial Data Line (SDA) and Serial Clock Line (SCL)
 
@@ -19,7 +19,7 @@ SDA (Bidirectional):
 The microcontroller calls out the peripheral it wants to talk to, tells it if it wants to read or write data (with the R/W bit), transmits/receives data, and finally sends an acknowledgement (ACK) and stop command.
 
 
-##What if the microcontroller wants to talk to multiple devices at the same time?
+## What if the microcontroller wants to talk to multiple devices at the same time?
 Because all devices are on a shared *bus* on the same data line, only one peripheral device can communicate with the MCU at a time. However, this data is sent at a very fast rate (100 kBits/sec, around 100 kHz), so the MCU can speak to all these devices sequentially. 
 
 
