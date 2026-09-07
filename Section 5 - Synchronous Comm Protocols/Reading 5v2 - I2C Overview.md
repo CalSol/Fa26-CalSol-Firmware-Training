@@ -7,16 +7,19 @@ Two-Wire serial communication protocol used to connect peripheral ICs to the mic
 * I2C uses 2 lines: Serial Data Line (SDA) and Serial Clock Line (SCL)
 
 SCL:
+* Hardware: must be pulled up to 3.3V or 5V with a pull up resistor
 * Controller device sets a clock pulse (usually on the order of 100-500 kbits/second) to synchronize devices
 * For each pulse, 1 bit of data is send over the data (SDA) line.
-* 
+  
 
 SDA (Bidirectional): 
-* Hardware: the SDA line must be pulled up to 3.3V or 5V with a *pull up resistor* so the idle state is high. Devices on the line will pull the voltage down to indicate logic low.
+* Hardware: the SDA line must be pulled up to 3.3V or 5V with a pull up resistor so the idle state is high. Devices on the line will pull the voltage down to indicate logic low.
 * Addressing: Each peripheral device has a 7 bit address, and listens to the data line at all times. Once it hears its address come from the microcontroller + an 8th bit (which indicates if the controller wants to read or write data from the peripheral), it pulls the SDA line low. This address is sometimes hardwired by connecting certain pins on the device to a given voltage rail.
 
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/b7541661-5b60-4676-964a-764bd783726d" />
 The microcontroller calls out the peripheral it wants to talk to, tells it if it wants to read or write data (with the R/W bit), transmits/receives data, and finally sends an acknowledgement (ACK) and stop command.
+
+Implementation: most microcontrollers will have a built in library for I2C, which can be used with any I2C compatible device.
 
 
 ## What if the microcontroller wants to talk to multiple devices at the same time?
