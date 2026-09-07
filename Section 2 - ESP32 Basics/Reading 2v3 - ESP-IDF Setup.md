@@ -1,5 +1,5 @@
 # CLI Setup
-
+- Tutorial for Linux Ubuntu [Here!](https://esp32tutorials.com/install-esp32-esp-idf-linux-ubuntu/)
 <br><br>
 <br><br>
 
@@ -123,7 +123,7 @@ Project Attributes Breakdown:
 
 <br><br>
 
-### At this step, if unsure about which port (place on your laptop/PC to connect ESP32 through cable), press hyperlinked ‘Establish Serial Communication.”
+### (Windows Only) At this step, if unsure about which port (place on your laptop/PC to connect ESP32 through cable), press hyperlinked ‘Establish Serial Communication.”
 
 <img width="458" height="233" alt="fw11" src="https://github.com/user-attachments/assets/d14900ec-9507-442c-8b94-eb4b5ec84972" />  
 
