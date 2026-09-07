@@ -1,5 +1,12 @@
 # CLI Setup
+
+##Linux
 - Tutorial for Linux Ubuntu [Here!](https://esp32tutorials.com/install-esp32-esp-idf-linux-ubuntu/)
+
+<br><br>
+##MacOS
+<br><br>
+##Windows
 <br><br>
 <br><br>
 
