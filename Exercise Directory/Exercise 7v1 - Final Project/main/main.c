@@ -3,7 +3,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
-static const char *TAG = "CAN_Receiver";
+static const char *TAG = "Final_Project";
 
 void app_main(void)
 {
