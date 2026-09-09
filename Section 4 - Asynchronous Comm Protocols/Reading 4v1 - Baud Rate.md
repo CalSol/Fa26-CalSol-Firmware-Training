@@ -1,12 +1,13 @@
 # What is a Baud Rate?
 
-A baud rate is the number of changes to a signal that happen per second.
+A baud rate is the number of changes to a (data) signal that happen per second.
 
 The higher the baud rate, the **faster the data** is sent/received.
+- In the sense that, the information (represented by specific changes in the signal) is received faster because each change happens faster.
 
 <br><br>
 
-#### Visual Example:
+### Visual Example:
 
 Context: Imagine a signal as a wave pattern; usually modeled as a line that (the height of the line is the value of the signal, and the x-axis measures time). 
 The significance of a signal being sent is so that the value (height) is communicated at a certain time.
@@ -27,6 +28,12 @@ The baud rate is 3 (changes per second) because 3 changes to the signal (its val
 
 Here, 6 changes to the signal are made per second. The bit rate however, is still 3 (because per 2 signal changes, 1 bit was communicated).
 
+<br><br>
 
+### Data Signals
+**IMPORANT:** In general, data signals are customizable to send certain combinations of bits in differently sized chunks (i.e. could send "11011010", 8 bits. You could send 16 if you want). Certain combinations can represent specific letters, numbers, etc.
+-  The signal value changes to communicate this specific combination, which is how data signals send information.
+
+<br><br>
 Sources: https://www.geeksforgeeks.org/computer-networks/baud-rate-and-its-importance/
 https://scienceinsights.org/what-is-the-baud-rate-and-why-does-it-matter/
