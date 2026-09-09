@@ -8,6 +8,11 @@
 <br><br>
 ## Windows
 - Tutorial for Windows [Here!](https://esp32tutorials.com/install-esp32-esp-idf-windows-integrate-vs-code/)
+
+**On this step, get v6.0, not v4.3!!**
+
+<img width="400" height="241" alt="image" src="https://github.com/user-attachments/assets/0b98b13e-5ca1-42af-8a06-7a3d2babcb49" />
+
 <br><br>
 <br><br>
 
