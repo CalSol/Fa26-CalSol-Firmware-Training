@@ -4,7 +4,7 @@
 
 Firmware is the intersection of software (code) and hardware (circuitry). 
 
-Basically, FW is how we're able to talk (through code) to our printed circuit boards (circuitry) and tell it how to logically control the functions it is capable of through its circuit design.
+Basically, FW is how we're able to talk (through code) to our printed circuit boards (circuitry) and logically control the functions they are capable of through their circuit design.
 <br><br>
 
 ### How will I learn that in this Lab?
