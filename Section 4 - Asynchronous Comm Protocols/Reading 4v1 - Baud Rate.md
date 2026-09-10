@@ -32,7 +32,7 @@ Here, 6 changes to the signal are made per second. The bit rate however, is stil
 
 ### Data Signals
 **IMPORANT:** In general, data signals are customizable to send certain combinations of bits in differently sized chunks (i.e. could send "11011010", which is 8 bits of info. You could send 16 if you want). Certain combinations can represent specific letters, numbers, etc.
--  The signal value changes to communicate this specific combination, which is how data signals send information.
+-  The signal value changes to communicate this specific combination, which is how data signals send specific information.
 
 <br><br>
 Sources: https://www.geeksforgeeks.org/computer-networks/baud-rate-and-its-importance/
