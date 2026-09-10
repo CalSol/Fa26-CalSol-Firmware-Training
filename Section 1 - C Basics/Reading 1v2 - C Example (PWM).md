@@ -165,3 +165,119 @@ int main(void)
     return 0;
 }
 ```
+# Breaking Down the Code
+
+## 1. Setting the PWM Frequency
+
+The PWM frequency is defined here:
+
+```c
+#define PWM_FREQUENCY_HZ 1000
+```
+
+This means the PWM signal operates at:
+
+```text
+1000 Hz = 1 kHz
+```
+
+## 2. Calculating the PWM Period
+
+The period is calculated using:
+
+```c
+#define PWM_PERIOD_US (1000000U / PWM_FREQUENCY_HZ)
+```
+
+There are `1,000,000` microseconds in one second.
+
+Therefore:
+
+```text
+PWM_PERIOD_US = 1,000,000 / 1000
+              = 1000 us
+```
+
+Each complete PWM cycle lasts `1000 us`.
+
+## 3. Calculating HIGH Time
+
+The amount of time the signal remains HIGH depends on the duty cycle.
+
+```c
+uint32_t high_time_us =
+    (PWM_PERIOD_US * duty_percent) / 100;
+```
+
+For a **50% duty cycle**:
+
+```text
+HIGH Time = 1000 us × 50 / 100
+
+HIGH Time = 500 us
+```
+
+## 4. Calculating LOW Time
+
+The remaining part of the PWM period is LOW.
+
+```c
+uint32_t low_time_us =
+    PWM_PERIOD_US - high_time_us;
+```
+
+For a 50% duty cycle:
+
+```text
+LOW Time = 1000 us - 500 us
+
+LOW Time = 500 us
+```
+
+The resulting signal looks like:
+
+```text
+        500 us          500 us
+
+HIGH ───────────┐
+                │
+LOW             └───────────
+```
+
+This pattern repeats continuously.
+
+---
+
+# Changing the Duty Cycle
+
+To generate a **25% duty cycle**:
+
+```c
+pwm_write(PWM_PIN, 25);
+```
+
+To generate a **50% duty cycle**:
+
+```c
+pwm_write(PWM_PIN, 50);
+```
+
+To generate a **75% duty cycle**:
+
+```c
+pwm_write(PWM_PIN, 75);
+```
+
+To completely turn the output OFF:
+
+```c
+pwm_write(PWM_PIN, 0);
+```
+
+To keep the output completely ON:
+
+```c
+pwm_write(PWM_PIN, 100);
+```
+
+---
