@@ -17,6 +17,7 @@ UART is a block of circuitry that implements serial communication through its Un
   - the same UART circuitry also samples sent data from this wire at rate according to baud rate
 - **These wires are the <i>Serial Bus</i>.** On your microcontroller, you'll choose which pins on it will connect to these wires.
   - In general, a bus refers to a set of data lines (wires) of transmission/receiving.
+    - (Data is sent through signals along these wires, as described in previous reading) 
 <br><br>
 <i>Note:</i> Serial communication happens in almost any protocol (i.e. CAN, I2C), just conveniently introduced through UART here.
 <br><br>
