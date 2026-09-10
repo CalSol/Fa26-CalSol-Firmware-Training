@@ -52,3 +52,116 @@ Period = 1 / 1000
        = 1 ms
        = 1000 microseconds
 ```
+
+# C Example
+
+The following program demonstrates the basic idea behind PWM using software.
+
+This example assumes that the microcontroller provides functions similar to:
+
+```c
+gpio_init_output();
+gpio_write();
+delay_us();
+```
+
+The exact GPIO functions will depend on the microcontroller being used.
+
+```c
+#include <stdint.h>
+
+#define PWM_PIN 5
+#define PWM_FREQUENCY_HZ 1000
+
+#define PWM_PERIOD_US (1000000U / PWM_FREQUENCY_HZ)
+
+/*
+ * These functions represent hardware-specific GPIO functions.
+ * The actual implementation depends on the microcontroller.
+ */
+void gpio_init_output(uint8_t pin);
+void gpio_write(uint8_t pin, uint8_t value);
+void delay_us(uint32_t microseconds);
+
+
+/*
+ * Generate one PWM period.
+ *
+ * pin          - GPIO pin used for PWM
+ * duty_percent - duty cycle from 0 to 100
+ */
+void pwm_write(uint8_t pin, uint8_t duty_percent)
+{
+    /*
+     * Prevent duty cycles greater than 100%.
+     */
+    if (duty_percent > 100)
+    {
+        duty_percent = 100;
+    }
+
+    /*
+     * Calculate how long the signal should stay HIGH.
+     */
+    uint32_t high_time_us =
+        (PWM_PERIOD_US * duty_percent) / 100;
+
+    /*
+     * Calculate how long the signal should stay LOW.
+     */
+    uint32_t low_time_us =
+        PWM_PERIOD_US - high_time_us;
+
+    /*
+     * 0% duty cycle means the output is always LOW.
+     */
+    if (duty_percent == 0)
+    {
+        gpio_write(pin, 0);
+        delay_us(PWM_PERIOD_US);
+        return;
+    }
+
+    /*
+     * 100% duty cycle means the output is always HIGH.
+     */
+    if (duty_percent == 100)
+    {
+        gpio_write(pin, 1);
+        delay_us(PWM_PERIOD_US);
+        return;
+    }
+
+    /*
+     * HIGH portion of the PWM signal.
+     */
+    gpio_write(pin, 1);
+    delay_us(high_time_us);
+
+    /*
+     * LOW portion of the PWM signal.
+     */
+    gpio_write(pin, 0);
+    delay_us(low_time_us);
+}
+
+
+int main(void)
+{
+    /*
+     * Configure the PWM pin as an output.
+     */
+    gpio_init_output(PWM_PIN);
+
+    while (1)
+    {
+        /*
+         * Generate a 1 kHz PWM signal
+         * with a 50% duty cycle.
+         */
+        pwm_write(PWM_PIN, 50);
+    }
+
+    return 0;
+}
+```
