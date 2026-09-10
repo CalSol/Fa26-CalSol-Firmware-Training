@@ -271,3 +271,27 @@ pwm_write(PWM_PIN, 100);
 ```
 
 ---
+
+# Example: Controlling LED Brightness
+
+PWM can be used to control the apparent brightness of an LED.
+
+For example:
+
+```c
+pwm_write(PWM_PIN, 10);   // Dim
+pwm_write(PWM_PIN, 50);   // Medium brightness
+pwm_write(PWM_PIN, 90);   // Bright
+```
+
+The microcontroller is **not changing the HIGH voltage**.
+
+Instead, the GPIO pin is rapidly switching between:
+
+```text
+0V and VCC (or in the image's case, 5V)
+```
+
+Increasing the duty cycle causes the LED to receive power for a greater percentage of each PWM period.
+
+Because this switching happens very quickly, the LED appears brighter or dimmer to the human eye.
