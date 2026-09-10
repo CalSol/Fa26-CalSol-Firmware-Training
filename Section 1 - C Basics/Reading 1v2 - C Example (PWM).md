@@ -18,3 +18,4 @@ HIGH = ON
 LOW  = OFF
 ```
 PWM switches rapidly between these two states. Below are some of the basic duty cycles:
+![Install Picture](./../images/Arduino-PWM.png)
