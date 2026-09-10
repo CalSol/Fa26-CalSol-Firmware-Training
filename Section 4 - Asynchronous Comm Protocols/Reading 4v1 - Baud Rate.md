@@ -3,7 +3,7 @@
 A baud rate is the number of changes to a (data) signal that happen per second.
 
 The higher the baud rate, the **faster the data** is sent/received.
-- In the sense that, the information (represented by specific changes in the signal) is received faster because each change happens faster.
+- In the sense that, the information (represented by specific changes in the signal) is received faster because each change happens sooner.
 
 <br><br>
 
