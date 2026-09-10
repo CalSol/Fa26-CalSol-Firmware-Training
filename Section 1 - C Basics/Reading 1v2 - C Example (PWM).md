@@ -234,16 +234,6 @@ LOW Time = 1000 us - 500 us
 LOW Time = 500 us
 ```
 
-The resulting signal looks like:
-
-```text
-        500 us          500 us
-
-HIGH ───────────┐
-                │
-LOW             └───────────
-```
-
 This pattern repeats continuously.
 
 ---
