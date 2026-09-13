@@ -7,7 +7,7 @@ Converts an analog **voltage** to a discrete, digital signal that can be process
 ADCs have a:
 * Resolution (e.g. 12 bit ADC)
   * Resolution is the smallest voltage "step size" that the ADC can relay. Higher resolution leads to a more precise signal. 
-  * N bit ADC means that it has 2<sup>N</sup> codes, and can therefore represent $$\frac{V<sub>ref</sub>}{2<sup>N</sup>}$$
+  * N bit ADC means that it has 2<sup>N</sup> codes, and can therefore represent $\frac{V<sub>ref</sub>}{2<sup>N</sup>}$
 * Reference Voltage (e.g. 3.3V)
   * The absolute maximum input voltage that can be read by the ADC
   * Used as a reference point for the measurement of other voltages
