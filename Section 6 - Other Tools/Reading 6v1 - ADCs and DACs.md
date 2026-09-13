@@ -34,7 +34,7 @@ DACs also have a:
 * Resolution (N-bit DAC has {2^N} codes)
 * Reference Voltage (N-bit DAC can produce a $\frac{V_{ref}}{2^N}$ change in voltage)
   * Output voltage:
-    $$V_{out} = V_{ref} \times \left( \frac{digital input code}{2^n} \right)$$
+    $$V_{out} = V_{ref} \times \left( \frac{code}{2^n} \right)$$
 
 ### Implementation:
 To use the build in DAC on an ESP32:
