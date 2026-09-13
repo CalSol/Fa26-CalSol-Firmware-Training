@@ -7,7 +7,19 @@ Converts an analog **voltage** to a discrete, digital signal that can be process
 ADCs have a:
 * Resolution (e.g. 12 bit ADC)
   * Resolution is the smallest voltage "step size" that the ADC can relay. Higher resolution leads to a more precise signal. 
-  * N bit ADC means that it has 2<sup>N</sup> codes, and can therefore represent $\frac{V_{ref}}{2^N}$
+  * N bit ADC means that it has 2<sup>N</sup> codes (which divide up 0 to V_{ref} evenly), and can therefore represent a step size of V = $\frac{V_{ref}}{2^N}$
 * Reference Voltage (e.g. 3.3V)
   * The absolute maximum input voltage that can be read by the ADC
   * Used as a reference point for the measurement of other voltages
+* Sampling rate (e.g. 1000Hz)
+  * The frequency at which the ADC takes samples of the voltage signal in order to create a discrete digital signal
+  * **Nyquist Sampling**: to get an accurate digital conversion of an analog signal, the sampling rate must be at least **twice** the maximum frequency of the analog signal itself
+
+### Implementation
+To use the built in ADC on an ESP32:
+* Connect the analog voltage signal to a GPIO that has ADC capability (read the datasheet!)
+* use the analogRead() function to get the integer value
+   ```int analogRead(uint8_t pin);```
+* use/log this integer value!
+
+
