@@ -736,12 +736,15 @@ int main(void)
 ```
 
 <div style="padding: 2px 16px; background-color: #705337; border-radius: 6px;">
-<h3>🎯 <b>TASK 1:</b> Change the temperature variable to a different value and run the program.</h3>
+<h3>🎯 <b>TASK 1:</b> Change the temperature variable to 100 and run the program.</h3>
 </div>
 
 <br>
+Your output should look something like:
 
-
+```text
+Temperature: 100
+```
 
 <div style="padding: 2px 16px; background-color: #705337; border-radius: 6px;">
 <h3>🎯 <b>TASK 2:</b> Use an if statement to print a warning when the temperature is greater than 90.</h3>
