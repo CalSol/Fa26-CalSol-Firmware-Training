@@ -664,6 +664,55 @@ A multi-line comment uses:
 
 Comments are ignored by the compiler.
 
+# Example Program
+
+Let's combine some of the concepts we just learned.
+
+```c
+#include <stdio.h>
+
+void check_temperature(int temperature)
+{
+    if (temperature > 100)
+    {
+        printf("WARNING: Temperature is too high!\n");
+    }
+    else if (temperature > 80)
+    {
+        printf("Temperature is warm.\n");
+    }
+    else
+    {
+        printf("Temperature is normal.\n");
+    }
+}
+
+int main(void)
+{
+    int temperatures[5] = {70, 85, 95, 105, 75};
+
+    for (int i = 0; i < 5; i++)
+    {
+        printf("Temperature: %d\n", temperatures[i]);
+
+        check_temperature(temperatures[i]);
+    }
+
+    return 0;
+}
+```
+
+This example uses:
+
+- Variables
+- Arrays
+- Functions
+- `for` loops
+- `if` statements
+- Comparisons
+- `printf()`
+
+These concepts will appear frequently throughout the rest of the firmware training.
 
 
 ## Exercise 1v1 - C Basics
