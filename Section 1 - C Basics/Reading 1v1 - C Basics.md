@@ -719,3 +719,86 @@ These concepts will appear frequently throughout the rest of the firmware traini
 [https://www.onlinegdb.com/online_c_compiler](https://www.onlinegdb.com/online_c_compiler)
 
 Will have to download the C/C++ extension in VSCode.
+
+Start with the following program:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int temperature = 75;
+
+    printf("Temperature: %d\n", temperature);
+
+    return 0;
+}
+```
+
+<div style="padding: 2px 16px; background-color: #705337; border-radius: 6px;">
+<h3>🎯 <b>TASK 1:</b> Change the temperature variable to a different value and run the program.</h3>
+</div>
+
+<br>
+
+Next, add an `if` statement that prints a warning if the temperature is greater than `90`.
+
+Your output should look something like:
+
+```text
+Temperature: 100
+WARNING: Temperature is too high!
+```
+
+<div style="padding: 2px 16px; background-color: #705337; border-radius: 6px;">
+<h3>🎯 <b>TASK 2:</b> Use an if statement to print a warning when the temperature is greater than 90.</h3>
+</div>
+
+<br>
+
+Next, create a `for` loop that prints the numbers `0` through `9`.
+
+Expected output:
+
+```text
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+```
+
+<div style="padding: 2px 16px; background-color: #705337; border-radius: 6px;">
+<h3>🎯 <b>TASK 3:</b> Create a for loop that prints the numbers 0 through 9.</h3>
+</div>
+
+<br>
+
+Finally, create a function called:
+
+```c
+void print_temperature(int temperature)
+```
+
+The function should print:
+
+```text
+Current Temperature: 75
+```
+
+when called using:
+
+```c
+print_temperature(75);
+```
+
+<div style="padding: 2px 16px; background-color: #705337; border-radius: 6px;">
+<h3>🎯 <b>TASK 4:</b> Create and call the print_temperature() function.</h3>
+</div>
+
+---
