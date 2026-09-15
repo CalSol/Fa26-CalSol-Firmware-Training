@@ -168,6 +168,52 @@ Then we can write:
 bool motor_running = true;
 ```
 
+# Printing Variables
+
+We can use `printf()` to print variables.
+
+For an integer:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int speed = 50;
+
+    printf("Speed: %d\n", speed);
+
+    return 0;
+}
+```
+
+Output:
+
+```text
+Speed: 50
+```
+
+`%d` tells `printf()` that we want to print an integer.
+
+Some common formatting symbols are:
+
+| Symbol | Type |
+|---|---|
+| `%d` | Integer |
+| `%f` | Float |
+| `%c` | Character |
+| `%s` | String |
+
+Example:
+
+```c
+int temperature = 85;
+
+printf("Temperature: %d\n", temperature);
+```
+
+---
+
 
 ## Exercise 1v1 - C Basics
 [https://www.onlinegdb.com/online_c_compiler](https://www.onlinegdb.com/online_c_compiler)
