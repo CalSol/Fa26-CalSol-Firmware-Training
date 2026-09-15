@@ -741,6 +741,14 @@ int main(void)
 
 <br>
 
+
+
+<div style="padding: 2px 16px; background-color: #705337; border-radius: 6px;">
+<h3>🎯 <b>TASK 2:</b> Use an if statement to print a warning when the temperature is greater than 90.</h3>
+</div>
+
+<br>
+
 Next, add an `if` statement that prints a warning if the temperature is greater than `90`.
 
 Your output should look something like:
@@ -751,7 +759,7 @@ WARNING: Temperature is too high!
 ```
 
 <div style="padding: 2px 16px; background-color: #705337; border-radius: 6px;">
-<h3>🎯 <b>TASK 2:</b> Use an if statement to print a warning when the temperature is greater than 90.</h3>
+<h3>🎯 <b>TASK 3:</b> Create a for loop that prints the numbers 0 through 9.</h3>
 </div>
 
 <br>
@@ -774,10 +782,8 @@ Expected output:
 ```
 
 <div style="padding: 2px 16px; background-color: #705337; border-radius: 6px;">
-<h3>🎯 <b>TASK 3:</b> Create a for loop that prints the numbers 0 through 9.</h3>
+<h3>🎯 <b>TASK 4:</b> Create and call the print_temperature() function.</h3>
 </div>
-
-<br>
 
 Finally, create a function called:
 
@@ -796,9 +802,4 @@ when called using:
 ```c
 print_temperature(75);
 ```
-
-<div style="padding: 2px 16px; background-color: #705337; border-radius: 6px;">
-<h3>🎯 <b>TASK 4:</b> Create and call the print_temperature() function.</h3>
-</div>
-
 ---
