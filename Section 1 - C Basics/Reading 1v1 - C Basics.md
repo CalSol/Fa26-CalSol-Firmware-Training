@@ -637,6 +637,33 @@ Output:
 75
 ```
 
+# Comments
+
+Comments allow us to leave notes inside our code.
+
+A single-line comment uses:
+
+```c
+// This is a comment
+```
+
+For example:
+
+```c
+int speed = 50; // Motor speed
+```
+
+A multi-line comment uses:
+
+```c
+/*
+ * This is a
+ * multi-line comment.
+ */
+```
+
+Comments are ignored by the compiler.
+
 
 
 ## Exercise 1v1 - C Basics
