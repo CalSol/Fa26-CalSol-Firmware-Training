@@ -213,6 +213,430 @@ printf("Temperature: %d\n", temperature);
 ```
 
 ---
+# Arithmetic
+
+C can perform normal mathematical operations.
+
+```c
+int a = 10;
+int b = 5;
+
+int addition = a + b;
+int subtraction = a - b;
+int multiplication = a * b;
+int division = a / b;
+```
+
+The main arithmetic operators are:
+
+| Operator | Meaning |
+|---|---|
+| `+` | Addition |
+| `-` | Subtraction |
+| `*` | Multiplication |
+| `/` | Division |
+| `%` | Remainder |
+
+For example:
+
+```c
+int value = 10 % 3;
+```
+
+The result is:
+
+```text
+1
+```
+
+because:
+
+```text
+10 / 3 = 3 remainder 1
+```
+
+---
+
+# Comparison Operators
+
+Comparison operators allow us to compare values.
+
+| Operator | Meaning |
+|---|---|
+| `==` | Equal to |
+| `!=` | Not equal to |
+| `>` | Greater than |
+| `<` | Less than |
+| `>=` | Greater than or equal to |
+| `<=` | Less than or equal to |
+
+For example:
+
+```c
+speed > 50
+```
+
+checks whether `speed` is greater than `50`.
+
+Be careful with:
+
+```c
+=
+```
+
+and:
+
+```c
+==
+```
+
+They mean different things.
+
+`=` assigns a value:
+
+```c
+speed = 50;
+```
+
+`==` compares two values:
+
+```c
+speed == 50
+```
+
+---
+
+# If Statements
+
+An `if` statement allows the program to make decisions.
+
+```c
+int temperature = 100;
+
+if (temperature > 90)
+{
+    printf("Temperature is high!\n");
+}
+```
+
+The code inside the `{ }` only runs if the condition is true.
+
+---
+
+## `if` and `else`
+
+We can also provide another action if the condition is false.
+
+```c
+int temperature = 70;
+
+if (temperature > 90)
+{
+    printf("Temperature is high!\n");
+}
+else
+{
+    printf("Temperature is normal.\n");
+}
+```
+
+---
+
+## `else if`
+
+We can check multiple conditions:
+
+```c
+int temperature = 85;
+
+if (temperature > 100)
+{
+    printf("Temperature is too high!\n");
+}
+else if (temperature > 80)
+{
+    printf("Temperature is warm.\n");
+}
+else
+{
+    printf("Temperature is normal.\n");
+}
+```
+
+---
+
+# Logical Operators
+
+Sometimes we want to check multiple conditions at once.
+
+The most common logical operators are:
+
+| Operator | Meaning |
+|---|---|
+| `&&` | AND |
+| `||` | OR |
+| `!` | NOT |
+
+For example:
+
+```c
+if (temperature > 80 && temperature < 100)
+{
+    printf("Temperature is within range.\n");
+}
+```
+
+Both conditions must be true because we used:
+
+```c
+&&
+```
+
+---
+
+# Loops
+
+Loops allow us to repeat code.
+
+Two important loops in C are:
+
+- `for`
+- `while`
+
+---
+
+## `for` Loop
+
+A `for` loop repeats code a specific number of times.
+
+```c
+for (int i = 0; i < 5; i++)
+{
+    printf("%d\n", i);
+}
+```
+
+Output:
+
+```text
+0
+1
+2
+3
+4
+```
+
+The variable `i` increases by one after every loop.
+
+This:
+
+```c
+i++;
+```
+
+is equivalent to:
+
+```c
+i = i + 1;
+```
+
+---
+
+## `while` Loop
+
+A `while` loop continues running while a condition is true.
+
+```c
+int count = 0;
+
+while (count < 5)
+{
+    printf("%d\n", count);
+
+    count++;
+}
+```
+
+Output:
+
+```text
+0
+1
+2
+3
+4
+```
+
+---
+
+# Infinite Loops
+
+Embedded systems commonly use infinite loops.
+
+For example:
+
+```c
+while (1)
+{
+    printf("Running...\n");
+}
+```
+
+Because `1` represents true, this loop runs forever.
+
+You will see this pattern often in embedded programming.
+
+Conceptually, a microcontroller might do:
+
+```c
+while (1)
+{
+    read_sensor();
+
+    process_data();
+
+    control_motor();
+}
+```
+
+The microcontroller continuously performs its tasks until power is removed or the system is reset.
+
+---
+
+# Functions
+
+Functions allow us to organize and reuse code.
+
+Instead of writing the same code repeatedly, we can put it inside a function.
+
+Example:
+
+```c
+#include <stdio.h>
+
+void say_hello(void)
+{
+    printf("Hello!\n");
+}
+
+int main(void)
+{
+    say_hello();
+
+    say_hello();
+
+    return 0;
+}
+```
+
+Output:
+
+```text
+Hello!
+Hello!
+```
+
+---
+
+# Function Parameters
+
+Functions can also receive information.
+
+```c
+void print_speed(int speed)
+{
+    printf("Speed: %d\n", speed);
+}
+```
+
+We can call it using:
+
+```c
+print_speed(50);
+```
+
+Output:
+
+```text
+Speed: 50
+```
+
+---
+
+# Functions That Return Values
+
+Functions can also calculate and return a value.
+
+```c
+int add(int a, int b)
+{
+    return a + b;
+}
+```
+
+We can use the function like this:
+
+```c
+int result = add(5, 10);
+
+printf("%d\n", result);
+```
+
+Output:
+
+```text
+15
+```
+
+---
+
+# Arrays
+
+Arrays allow us to store multiple values of the same type.
+
+For example:
+
+```c
+int temperatures[5] = {70, 72, 75, 78, 80};
+```
+
+Each value has an **index**.
+
+```text
+Index:       0   1   2   3   4
+Value:      70  72  75  78  80
+```
+
+Notice that array indexing begins at:
+
+```text
+0
+```
+
+To access the first value:
+
+```c
+temperatures[0]
+```
+
+To access the third value:
+
+```c
+temperatures[2]
+```
+
+Example:
+
+```c
+printf("%d\n", temperatures[2]);
+```
+
+Output:
+
+```text
+75
+```
+
 
 
 ## Exercise 1v1 - C Basics
