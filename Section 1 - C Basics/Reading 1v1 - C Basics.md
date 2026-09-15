@@ -27,6 +27,82 @@ For example, C can be used to:
 - Control an ESP32
 Throughout this training, we will use C to write firmware for our microcontrollers.
 
+# Hello World
+
+A basic C program looks like this:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    printf("Hello World!\n");
+
+    return 0;
+}
+```
+
+When this program runs, it prints:
+
+```text
+Hello World!
+```
+
+Let's break down what each part means.
+
+---
+
+## `#include`
+
+```c
+#include <stdio.h>
+```
+
+`#include` allows us to use code from another library.
+
+`stdio.h` stands for:
+
+```text
+Standard Input / Output
+```
+
+It gives us access to functions such as:
+
+```c
+printf();
+```
+
+which allows us to print information to the terminal.
+
+---
+
+## The `main()` Function
+
+```c
+int main(void)
+{
+    
+}
+```
+
+`main()` is where a normal C program begins executing.
+
+Everything inside the `{ }` belongs to the function.
+
+For example:
+
+```c
+int main(void)
+{
+    printf("Hello!\n");
+
+    return 0;
+}
+```
+
+The computer executes the program starting from the first statement inside `main()`.
+
+
 ## Exercise 1v1 - C Basics
 [https://www.onlinegdb.com/online_c_compiler](https://www.onlinegdb.com/online_c_compiler)
 
