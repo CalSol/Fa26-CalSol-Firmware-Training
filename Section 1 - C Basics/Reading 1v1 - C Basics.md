@@ -102,6 +102,72 @@ int main(void)
 
 The computer executes the program starting from the first statement inside `main()`.
 
+# Variables
+
+Variables allow us to store information.
+
+For example:
+
+```c
+int speed = 50;
+```
+
+This creates a variable named:
+
+```text
+speed
+```
+
+and gives it the value:
+
+```text
+50
+```
+
+We can later change it:
+
+```c
+speed = 75;
+```
+
+---
+
+# Basic Data Types
+
+C requires us to specify what type of information a variable stores.
+
+Some common types are:
+
+| Type | Description | Example |
+|---|---|---|
+| `int` | Whole number | `25` |
+| `float` | Decimal number | `3.14` |
+| `double` | Higher precision decimal | `3.141592` |
+| `char` | Single character | `'A'` |
+| `bool` | True or false | `true` |
+
+Examples:
+
+```c
+int speed = 50;
+
+float voltage = 12.5;
+
+char letter = 'A';
+```
+
+To use `bool`, include:
+
+```c
+#include <stdbool.h>
+```
+
+Then we can write:
+
+```c
+bool motor_running = true;
+```
+
 
 ## Exercise 1v1 - C Basics
 [https://www.onlinegdb.com/online_c_compiler](https://www.onlinegdb.com/online_c_compiler)
