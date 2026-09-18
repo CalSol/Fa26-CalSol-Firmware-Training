@@ -1,9 +1,15 @@
 # What is a Baud Rate?
 
 A baud rate is the number of changes to a (data) signal that happen per second.
+- Change specifically meaning: a new signal value (the next one, regardless of whether the actual value is different from the previous).
 
 The higher the baud rate, the **faster the data** is sent/received.
-- In the sense that, the information (represented by specific changes in the signal) is read faster because each change is received sooner.
+- In the sense that, the information (represented by specific changes in the signal) is read faster because each new signal value is received sooner.
+
+<br><br>
+
+## Importance
+Microcontrollers communicating with each other must agree upon a baud rate so that they communicate at the same speed. The baud rate is fixed from the start.
 
 <br><br>
 
@@ -15,11 +21,11 @@ The significance of a signal being sent is so that the value (height) is communi
 
 <img width="472" height="343" alt="image" src="https://github.com/user-attachments/assets/794ee29f-0c8f-4b1a-a391-6731ee05dc61" />
 
-Here, the red numbers denote each change to the signal value, which counts toward the baud rate. 
+Here, the red numbers denote each new signal value, which counts toward the baud rate. 
 - Additionally (this is optional to know), the two bits sent when the value of the signal is high are 1s, while the bit sent when the value of the signal is low is 0.
 - The bit rate, which counts how many of these bits are sent per second, is <i>not</i> the baud rate.
 
-The baud rate is 3 (changes per second) because 3 changes to the signal (its value/height) are made per second. The bit rate is also 3 because 3 bits (1, 0, and 1) are sent per second.
+The baud rate is 3 (changes per second) because 3 different signal values are occur per second. The bit rate is also 3 because 3 bits (1, 0, and 1) are sent per second.
 
 <br><br>
 
