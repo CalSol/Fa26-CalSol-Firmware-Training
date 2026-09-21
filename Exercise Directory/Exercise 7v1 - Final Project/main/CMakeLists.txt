@@ -6,4 +6,5 @@ idf_component_register(
     REQUIRES
         can_driver
         esp_driver_usb_serial_jtag
+        esp_driver_i2c
 )

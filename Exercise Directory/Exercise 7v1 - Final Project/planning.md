@@ -82,3 +82,26 @@ This is the board that will be taking in potentiometer data through an ADC (ESP3
     - Set up the SPI
     - Make the LED turn on
     - Vary the brightness using CAN data (pedal position)
+
+# Process
+
+## I2C
+https://docs.espressif.com/projects/esp-idf/en/stable/esp32s3/api-reference/peripherals/i2c.html
+
+The frequency of SCL is influenced by both the pull-up resistor and the wire capacitance. Therefore, it is strongly recommended to choose appropriate pull-up resistors to make the frequency accurate. The recommended value for pull-up resistors usually ranges from 1 kΩ to 10 kΩ.
+
+Keep in mind that the higher the frequency, the smaller the pull-up resistor should be (but not less than 1 kΩ). Indeed, large resistors will decline the current, which will increase the clock switching time and reduce the frequency. A range of 2 kΩ to 5 kΩ is recommended, but adjustments may also be necessary depending on their current draw requirements.
+
+Clock Config:
+- i2c_clock_source_t::I2C_CLK_SRC_DEFAULT
+
+
+# ESP32 Process
+- FreeRTOS (Tasks & Queues): freertos/FreeRTOS.h, freertos/task.h, freertos/queue.h
+- ADC (Pedal Position): ESP-IDF Analog to Digital Converter (ADC) driver (esp_adc/adc_oneshot.h).
+- GPIO (Buttons & LEDs): ESP-IDF GPIO API (driver/gpio.h).
+- PWM (LED Brightness): ESP-IDF LED Control (LEDC) API (driver/ledc.h).
+-SPI Master (DAC): ESP-IDF SPI Master driver (driver/spi_master.h).
+- I2C (Power Monitor): ESP-IDF I2C driver (driver/i2c.h).
+- TWAI (CAN Communication): ESP-IDF Two-Wire Automotive Interface (driver/twai.h).
+- UART (Serial Debugging): ESP-IDF UART driver (driver/uart.h).
