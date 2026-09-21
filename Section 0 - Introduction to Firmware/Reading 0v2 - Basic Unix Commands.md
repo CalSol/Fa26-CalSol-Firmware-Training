@@ -5,10 +5,10 @@
 You'll see something like this in the terminal:
  
 ```
-oski@stolerpi:~ $
+(env) oski@stolerpi:~ $
 ```
  
-This tells you: your username (`oski`), the machine you're on (`stolerpi`), and where you are in the filesystem (`~` means your home folder). The `$` just means it's ready for a command.
+This tells you: your environment (env), your username (`oski`), the you're machine's host name (`stolerpi`), and where you are in the filesystem (`~` means your home folder). The `$` or '%' is just a prompt character that means it's ready for a command.
  
 ### Moving around
  
