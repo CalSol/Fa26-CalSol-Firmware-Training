@@ -806,3 +806,367 @@ when called using:
 print_temperature(75);
 ```
 ---
+
+# Answer Key
+
+Try completing all of the exercises on your own before looking at the solutions below.
+
+<details>
+<summary><b>Click here to reveal the answers</b></summary>
+
+<br>
+
+## Task 1 - Change the Temperature Variable
+
+The original program was:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int temperature = 75;
+
+    printf("Temperature: %d\n", temperature);
+
+    return 0;
+}
+```
+
+You can change `temperature` to any integer value.
+
+For example:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int temperature = 100;
+
+    printf("Temperature: %d\n", temperature);
+
+    return 0;
+}
+```
+
+### Output
+
+```text
+Temperature: 100
+```
+
+The important part is understanding that:
+
+```c
+int temperature = 100;
+```
+
+creates an integer variable named `temperature` and stores the value `100` inside it.
+
+---
+
+## Task 2 - Temperature Warning
+
+The goal was to print a warning whenever the temperature is greater than `90`.
+
+One solution is:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int temperature = 100;
+
+    printf("Temperature: %d\n", temperature);
+
+    if (temperature > 90)
+    {
+        printf("WARNING: Temperature is too high!\n");
+    }
+
+    return 0;
+}
+```
+
+### Output
+
+```text
+Temperature: 100
+WARNING: Temperature is too high!
+```
+
+If we change:
+
+```c
+int temperature = 100;
+```
+
+to:
+
+```c
+int temperature = 75;
+```
+
+the output becomes:
+
+```text
+Temperature: 75
+```
+
+The warning does not appear because:
+
+```c
+temperature > 90
+```
+
+is false.
+
+### Bonus Solution
+
+You could also use an `else` statement:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int temperature = 75;
+
+    printf("Temperature: %d\n", temperature);
+
+    if (temperature > 90)
+    {
+        printf("WARNING: Temperature is too high!\n");
+    }
+    else
+    {
+        printf("Temperature is normal.\n");
+    }
+
+    return 0;
+}
+```
+
+---
+
+## Task 3 - For Loop
+
+The goal was to print the numbers `0` through `9`.
+
+One solution is:
+
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+```
+
+### Output
+
+```text
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+```
+
+The loop:
+
+```c
+for (int i = 0; i < 10; i++)
+```
+
+can be broken into three parts:
+
+```text
+int i = 0
+```
+
+Starts `i` at `0`.
+
+```text
+i < 10
+```
+
+Keeps running the loop while `i` is less than `10`.
+
+```text
+i++
+```
+
+Increases `i` by `1` after each loop.
+
+So the value of `i` changes like:
+
+```text
+0 → 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9
+```
+
+Once `i` becomes `10`, the condition:
+
+```c
+i < 10
+```
+
+is false and the loop stops.
+
+---
+
+## Task 4 - Creating a Function
+
+The goal was to create the function:
+
+```c
+void print_temperature(int temperature)
+```
+
+and call it using:
+
+```c
+print_temperature(75);
+```
+
+One solution is:
+
+```c
+#include <stdio.h>
+
+void print_temperature(int temperature)
+{
+    printf("Current Temperature: %d\n", temperature);
+}
+
+int main(void)
+{
+    print_temperature(75);
+
+    return 0;
+}
+```
+
+### Output
+
+```text
+Current Temperature: 75
+```
+
+The function:
+
+```c
+void print_temperature(int temperature)
+```
+
+takes an integer as an input.
+
+When we write:
+
+```c
+print_temperature(75);
+```
+
+the value `75` is passed into the function and stored in the parameter:
+
+```c
+temperature
+```
+
+We could also call the function multiple times:
+
+```c
+print_temperature(75);
+print_temperature(90);
+print_temperature(105);
+```
+
+### Output
+
+```text
+Current Temperature: 75
+Current Temperature: 90
+Current Temperature: 105
+```
+
+---
+
+# Complete Example
+
+Here is one program that combines all four tasks:
+
+```c
+#include <stdio.h>
+
+void print_temperature(int temperature)
+{
+    printf("Current Temperature: %d\n", temperature);
+}
+
+int main(void)
+{
+    // Task 1
+    int temperature = 100;
+
+    printf("Temperature: %d\n", temperature);
+
+
+    // Task 2
+    if (temperature > 90)
+    {
+        printf("WARNING: Temperature is too high!\n");
+    }
+
+
+    // Task 3
+    printf("\nCounting from 0 to 9:\n");
+
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d\n", i);
+    }
+
+
+    // Task 4
+    printf("\nFunction Example:\n");
+
+    print_temperature(75);
+
+    return 0;
+}
+```
+
+### Output
+
+```text
+Temperature: 100
+WARNING: Temperature is too high!
+
+Counting from 0 to 9:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+Function Example:
+Current Temperature: 75
+```
