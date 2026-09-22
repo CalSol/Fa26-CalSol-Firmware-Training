@@ -20,7 +20,8 @@ How it uses these components: it interacts with the circuit it's apart of to con
 
 ### What is the ESP32-S3 Dev Board?
 
-The ESP32-S3 is the development board model (a PCB with a microcontroller on it) that our subteam uses to write firmware to control parts/circuit boards in the car.
+A development board is a PCB with a microcontroller (MCU) on it! Our team uses a custom ESP32-S3 development board to write firmware to control parts/circuit boards in the car (and has the ability to communicate through CAN, you'll learn more about that later).
+
 The code you flash to it will use its features to control the devices it's connected to.
 <img width="899" height="616" alt="Arial" src="https://github.com/user-attachments/assets/1df285eb-7f13-4d20-bc89-485e335144b2" />
 
