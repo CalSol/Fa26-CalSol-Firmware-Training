@@ -130,7 +130,7 @@ Project Attributes Breakdown:
 1) Project Name
 2) Project Folder location of choice in your file manager 
 3) Target Device
-4) Distinction between having built-in hardware for debugging (JTAG) vs. needing to connect external hardware
+4) Distinction between having built-in hardware for debugging (USB or JTAG) vs. needing to connect external hardware
 5) Choosing the port on your computer that your ESP32 connects to (detect will automatically choose the port that's connected for you.)
 6) Add locations of component folders (components explained later!)
 
