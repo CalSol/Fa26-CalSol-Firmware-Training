@@ -126,7 +126,7 @@ void app_main(void)
         "power_monitor",
         4096,
         (void *)ltc_handle,
-        2,
+        2, // should be 0?
         NULL,               
         0
     );
