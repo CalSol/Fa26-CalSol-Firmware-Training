@@ -1,4 +1,4 @@
-# Reading 3.2 - Modularity
+# Modularity
 
 In the previous section, we discussed modularity, but here we will go deeper into how modularity is implemented into our firmware!
 
@@ -40,12 +40,37 @@ We will formalize this more in a later section on planning, but you want to imag
 
 In this section, we will be focusing on the individual tasks! The way we want to functionally program, is writing a function to do a specific task. It's easiest to explain with an example!
 
-Let's take the simple example of blinking an LED when a button signal is received. How would I naively implement this without functional programming?
+Let's take the simple example of blinking an LED when a button signal is received after 5 consecutive polls. How would I naively implement this without functional programming? The pseudo-code is below
 ```
-while (1) {
+#include "esp_timer.h"
+
+...
+
+bool button_pressed
+
+...
+
+#define BLINK_GPIO GPIO_NUM_2
+
+...
+
+// Main Control Loop
+main() {
+
   ...
-   
-  if (
+  // poll the button input into a buffer
+
+  // parse the buffer
+  button_pressed = true
+  for (size_t i = 0; i < size; i++) {
+    if (data in buffer isn't expected) { button_pressed = false; }
+  }
+
+  // if button is pressed, 
+  if (button_pressed == true) {
+    // Use the timer API inside the loop to know if we need to switch states
+    // Potentially toggle IO states
+  }
 }
 ```
 
