@@ -16,7 +16,7 @@ In the header we can link in other modules (think library imports in higher leve
 
 Utilizing our idea of abstraction, this lets us use really complex and useful tools by simply importing them in!
 
-We won't go into this in detail, but we also import files with the .h keyword. This is a header file. Basically, a simplified version of a library that only gives the functions and how to interact with them. Another example of abstraction making our life easier!!!
+Another very important thing is header files which we write ourselves! Later I will talk about specifically how that works.
 
 ### Macros / Constants
 
@@ -25,10 +25,28 @@ Let's say that part of our code is accessing a very specific value (like an IO p
 TODO
 ```
 
-The # define keyword lets us define a macro.
+The # define keyword lets us define a macro to abstract some number to it's meaning.
 
 ## Modular Design
 
-### Multiple Functions 
+As mentioned in section 1, modular design is KEY to decreasing complexity! Here you will see how we would generally make our program more modular. Later you will even see how this will simplify some of the more complicated techniques like concurrent programming.
 
-### Multiple Files
+### Functional Programming 
+
+We will formalize this more in a later section on planning, but you want to imagine your code as being made up of two parts.
+
+1) The main control loop: the logic of the code that determines what is happening and when
+2) The functions to be executed: the individual tasks that interact firmware with hardware or other firmware 
+
+In this section, we will be focusing on the individual tasks! The way we want to functionally program, is writing a function to do a specific task. It's easiest to explain with an example!
+
+Let's take the simple example of blinking an LED when a button signal is received. How would I naively implement this without functional programming?
+```
+while (1) {
+  ...
+   
+  if (
+}
+```
+
+### Header Files
