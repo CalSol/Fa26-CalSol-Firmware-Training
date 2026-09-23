@@ -75,3 +75,9 @@ main() {
 ```
 
 ### Header Files
+
+A header file is the .h files in our codebase. As mentioned before, imported files at the top of our code are linked and effectively printed at the top! We can use this to simplify our code with a .h file.
+
+A header file tells the C compiler what functions, macros, and data structures exist in your project without cluttering the file with the actual implementation details (the code that does the work, which lives in .c files).
+
+.h files is used both to decrease the complexity needed, while also providing documentation. PLEASE use these
