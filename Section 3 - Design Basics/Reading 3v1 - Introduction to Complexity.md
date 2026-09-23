@@ -51,7 +51,6 @@ Modularity also matters in how YOU program! Later, we will discuss ways to make 
 The worst part of code is being lost and not understanding how the code works. At worst, we can see complexity with obscure and hard to understand code. This can prop up in so many ways:
 - Functions are badly named and explained. You have no idea what calling that function would do, so you go on a wild goose chase to understand it
 - What is a variables purpose? Sometimes it is unclear what you are even doing to a variable
-- 
 - And so much more confusing code :(
 
 ### Documented Code
