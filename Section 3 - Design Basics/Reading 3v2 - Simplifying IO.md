@@ -30,7 +30,7 @@ Our outputs are similar, but instead of reading a threshold, we are pushing or p
 
 ### Re-motivating Pull-ups and Pull-downs
 
-Hopefully this re-motivated the idea of pull-ups from the hardware lab. If we really need our digital signal to be high or low, why risk it? We can set a "nominal" state of that line as high with a pull-up or low with a pull-down!
+Hopefully this re-motivated the idea of pull-ups from the hardware lab. If we really need our digital signal to be high or low, why risk it? If we are not high or low, we are called floating, and this can cause problems. Instead, we can set a "nominal" state of that line as high with a pull-up or low with a pull-down! 
 
 ## Polling
 
@@ -72,7 +72,7 @@ Now let's say I am sitting in Supernode and I need to get input from people agai
 
 We commonly see interrupts in ICs and communication protocols, but we can really use it for anything.
 
-An example of how we would use an interrupt, is to sit idle and not poll on our "data IO pin" in our nominal state. However, when an interrupt is seen on our "interrupt IO pin" we now start polling on the data IO pin at the exact frequency we expect to see!
+An example of how we would use an interrupt, is to sit idle and not poll on our "data IO pin" in our nominal state. However, when an interrupt is seen on our "interrupt IO pin" we now start reading data on the data IO pin at the exact frequency we expect to see!
 
 ### Trade-Offs
 
@@ -82,7 +82,7 @@ We can see that we have just solved our two problems!
 
 2) Data Loss: we can't miss data if we are notified exactly when the data is coming. Another important fun hardware note is that we must make sure in layout the timing of our interrupts are precise, as otherwise we will poll at the wrong time.
 
-However, there are some new drawbacks. The main one being complexity. For interrupts to work, we need a syncronized and dedicated interrupt IO pin. We also need to know how to time the polling.
+However, there are some new drawbacks. The main one being complexity. For interrupts to work, we need a synchronized and dedicated interrupt IO pin. We also need to know how to time the polling.
 
 In summary, we should use interrupts when the data we need is very precise and known, while polling deals with more general cases.
 
@@ -116,17 +116,17 @@ A common implementation of a firmware buffer is a ring buffer!
 
 Going back to my example, you can imagine I try to write everything down on a piece of paper, but eventually after enough questions I will run out of paper!
 
-A solution is to use a whiteboard! Imagine I write everything on the whiteboard in Supernode. Now when I run out of whiteboard space, I can erase the top question of the board and use that space.
+A solution is to use a whiteboard! Imagine I write everything on the whiteboard in Supernode. Now when I run out of whiteboard space at the bottom, I can erase the top question of the board and use that space.
 
 As you can imagine we get the positive of effectively infinite space, but with the possibility we might **overwrite** our data. In C we generally implement a ring buffer as an array where we wrap the index to the front when we get to the end of the array. 
 
-To get a little more detailed on implementaiton, you would probably also need to store where you are in the buffer at any given moment, but this can easily be done by storing the index of the last read and last write.
+To get a little more detailed on implementation, you would probably also need to store where you are in the buffer at any given moment, but this can easily be done by storing the index of the last read and last write.
 
 ### Common Schemes (Hardware)
 
 We just saw dealing with multiple packets, but what about multiple bits. Luckily, the hardware does this for you! Each bit is put into a buffer the size of a packet or two, such that we can buffer a whole packet before we read it in!
 
-Due to the complexity of the subject and the fact you won't be implementing these, I will leave this to you to 
+Due to the complexity of the subject and the fact you won't be implementing these, I will leave this to you to learn more specifically how these are implemented. For those interested in working with FPGAs, this is pretty important.
 
 ## Conclusion
 
