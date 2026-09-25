@@ -106,8 +106,18 @@ The way we should design code is as follows:
 
 ## Implementation Tips
 
-TODO
+When implementing your FSMs, you want to think of your enums as your states, and then your main loop logic as the arrows getting you between the states.
+
+We recommend the actions being done in specific state be caused by an if statement checking if you are within the state.
+
+The reason why, is it allows for cleaner code, where certain function calls and logic can be re-used in multiple states trivially.
 
 ## Summary
 
-TODO
+In all, section 6 should've taught you a lot about how to manage complexity! 
+
+Section 6 hopefully showed you how to structure your main loop logic, with the timing and synchronization section being of aid.
+
+Section 4 hopefully showed you how to use functions that spur off of the main logic, with the IO techniques and the RTOS showing you how to utilize the ESP32 hardware to do more powerful firmware.
+
+In the next few sections, we will go more in depth with IO and show some of the communication protocols on the ESP32!
