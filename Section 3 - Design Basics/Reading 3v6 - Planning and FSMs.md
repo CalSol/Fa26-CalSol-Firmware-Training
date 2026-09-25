@@ -114,10 +114,10 @@ The reason why, is it allows for cleaner code, where certain function calls and 
 
 ## Summary
 
-In all, section 6 should've taught you a lot about how to manage complexity! 
+In all, Section 3 should've taught you a lot about how to manage complexity! 
 
-Section 6 hopefully showed you how to structure your main loop logic, with the timing and synchronization section being of aid.
+Reading 3v6 hopefully showed you how to structure your main loop logic, with the Reading 3v3 being of aid to your timing logic.
 
-Section 4 hopefully showed you how to use functions that spur off of the main logic, with the IO techniques and the RTOS showing you how to utilize the ESP32 hardware to do more powerful firmware.
+Reading 3v4 hopefully showed you how to use functions that spur off of the main logic, with Reading 3v2 and 3v5 showing you how to utilize the ESP32 hardware to do more powerful firmware.
 
 In the next few sections, we will go more in depth with IO and show some of the communication protocols on the ESP32!
