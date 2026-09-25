@@ -95,12 +95,19 @@ if ((elevator_state == kClosing) && (!door_sense) && (!open_door_pressed)){
 
 There is obviously a bit more nuance to this example, but I hope you got the point that flags can be useful as additional conditionals to know to switch states.
 
-## Workflow
+### Workflow
 
+The way we should design code is as follows:
 
+1) Define the goals of the project. What actually needs to happen in the firmware?
+2) Write out what functions and states you will need to accomplish these goals
+3) Draw the FSM out!
+4) Implement the logic in the main loop based off of the FSM
 
 ## Implementation Tips
 
+TODO
+
 ## Summary
 
-
+TODO
