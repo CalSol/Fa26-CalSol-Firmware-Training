@@ -42,7 +42,7 @@ enum ElevatorState {
 };
 ```
 
-<i> Note that k prefix refers to the fact that these enums are implemented as integers </i>
+<i> Note that k prefix refers to the fact that these enums are implemented as integers, with the kStartup being enumerated to 0, kClosedWaiting to 1, etc. </i>
 
 Here you can see for our elevator we defined our states above. The enum tells the code to enumerate (assign numbers) to each of the values. The data type of our enum is **ElevatorState**. You can see some examples as follows:
 
