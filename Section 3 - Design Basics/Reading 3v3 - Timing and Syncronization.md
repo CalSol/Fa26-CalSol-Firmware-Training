@@ -2,10 +2,6 @@
 
 ## Motivation
 
-### Car Level
-
-### Board Level
-
 ## Timers / Tickers
 
 ### Timer Setup

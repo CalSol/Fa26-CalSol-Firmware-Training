@@ -20,11 +20,84 @@ In this example, we change our states by pressing a floor button.
 
 ## Finite State Machines (FSM)
 
-Whether you like it or not, we have basically derived how a finite state machines work!
+We have basically derived how a finite state machines work!
 
-An FSM is a state transition diagram. In other words, it is a bunch of states accompanied with which events in firmware move the system to a different state.
+An FSM is a state transition diagram. In other words, it is a bunch of states accompanied with events, which in firmware move the system to a different state.
 
-### ENUM / Flags
+In CS61C, you will learn the more formal FSM, where certain read bits send you from what state to another, but it works here as well!
+
+### ENUM
+
+To define our states more formally, we use an enum!
+
+```
+enum ElevatorState {
+  kStartup,
+  kClosedWaiting,
+  kClosedMoving,
+  kOpening,
+  kClosing,
+  kOpen,
+  kShutdown
+};
+```
+
+<i> Note that k prefix refers to the fact that these enums are implemented as integers </i>
+
+Here you can see for our elevator we defined our states above. The enum tells the code to enumerate (assign numbers) to each of the values. The data type of our enum is **ElevatorState**. You can see some examples as follows:
+
+```
+// Used at start to put the state into startup
+ElevatorState elevator_state = kStartup;
+
+/** When the door is in opening state, run the motor to open the door. After enough time switch the state to the door being open **/
+if (elevator_state == kOpening) {
+    // Drive motor to open elevator door
+    if ( //Timer is finished running ) {
+        elevator_state = kOpen;
+    }
+}
+```
+
+As you can see, we can in our code abstract away a lot of book keeping into a single state variable that we can check to see where we are at. We can then off certain conditions swap the state!
+
+### Flags
+
+Another useful tool for book keeping is using flags. A flag is a boolean variable (true or false) that keeps track if something has happened or not. 
+
+An example is let's say for our elevator we would like a flag for whether when the door is closing someone clicks the open button again. You can see a mock implementation below:
+
+```
+// flag true if object sensed in door
+boolean door_sense = false;
+
+// flag true if the open_door button was pressed
+boolean open_door_pressed = false; 
+
+// Check to see if object in door
+if ( // object in door ) { door_sense = true; }
+
+...
+
+// Check to see if door open button was pressed
+if ( // button pressed ) { open_door_pressed = true; }
+
+...
+
+// Closing code
+if ((elevator_state == kClosing) && (!door_sense) && (!open_door_pressed)){
+    // Drive motor to close elevator door
+    if ( //Timer is finished running ) {
+        elevator_state = kOpen;
+    }
+}
+```
+
+There is obviously a bit more nuance to this example, but I hope you got the point that flags can be useful as additional conditionals to know to switch states.
+
+## Workflow
+
+
 
 ## Implementation Tips
 
