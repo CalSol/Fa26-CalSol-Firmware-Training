@@ -1,5 +1,5 @@
 # Command Line Basics
-![XKCD Sudo Sandwich](./../images/sandwich.png)
+![XKCD Sudo Sandwich](./../images/SECTION0/sandwich.png)
 
 *Taken from XKCD*
 
