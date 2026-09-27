@@ -18,12 +18,6 @@ This begs a few questions.
 
 There are a lot of questions that need to be answered and to be honest, it seems intimidating. To even understand one simple part of the car, it seems as if you would need to understand a bunch of other things.
 
-Another example (which some of you may recognize and others will see in the future) is the RISC-V CPU. For anyone seeing this for the first time, this is an incredibly daunting piece of computing. However, those who have taken it will know that we can handle the complexity of this in a very simple way.
-
-![CS61C RISCV PIPELINE](./../images/SECTION3/CS61C_RISCV_PIPELINE.png)
-
-*Taken from CS61C Reference Card*
-
 ### Abstraction
 
 Our solution (and one you will see EVERYWHERE in EE and CS) is Abstraction!!!
@@ -32,13 +26,7 @@ Abstraction is simplifying a system through omitting unimportant details. For ex
 
 ### Modularity
 
-Abstraction is often implemented with modularity. A module in code can be a function where we abstract away the exact details of how it works, and instead just focus on how the function can be used. Throughout this lab we will go through a lot of important abstractions, but here I will give a general overview of how to read libraries and common firmware abstractions.
-
-Take here, me hovering over the makeMessage function.
-
-![makeMessage Function](./../images/SECTION3/makeMessage_function.png)
-
-We will talk more in detail of what this function actually does, but the point I'm making is that instead of understanding the details of the function, we just need to know that it makes a message with parameters, being a specific ID and specific data. It becomes a lot simpler to have complicated functions be implemented modularly, so we don't need to deal with the details as much as the system.
+Abstraction is often implemented with modularity. A module in code can be a function where we abstract away the exact details of how it works, and instead just focus on how the function can be used. Throughout this lab we will go through a lot of important abstractions we will utilize, which will be covered in the next section.
 
 Modularity also matters in how YOU program! Later, we will discuss ways to make the whole code for a system modular, but for now we will discuss on a more micro level. Here are a few rules for this:
 - If you are doing something multiple times, create a function for it! This will make code shorter and more readable. It will also save a lot of time
