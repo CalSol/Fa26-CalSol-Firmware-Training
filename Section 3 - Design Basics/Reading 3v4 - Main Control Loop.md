@@ -1,6 +1,6 @@
 # Planning and FSMs
 
-All of these techniques are good and all, but the biggest way to mitigate complexity is through good planning! Here, I will go less into how firmware and hardware work, but more how systems work. You will learn in this project, understanding systems and firmware are the same skill.
+The Main Control Loop is the logic base of your firmware. In this section, I will go less into how the firmware of the control loop is implemented, but more how the system itself works. This section will teach you how to plan out your main control loop to be simple!
 
 ## Naive - Flow Chart
 
@@ -10,25 +10,27 @@ TODO IMAGE OF ELEVATOR BLOCK DIAGRAM
 
 ### What is a block?
 
-A block is a thing your system is doing, or in other words the state your system is in. For example, with our elevator we have a block representing the elevator door being opened. In this state, you are opening the door to the elevator.
+A block is a thing your **system** is doing, or in other words the state your system is in. For example, with our elevator we have a block representing the elevator door being opened. In this state, you are opening the door to the elevator.
 
 ### What is an arrow?
 
-An arrow in our flow chart represents the ways we can move from one block to another block. An example is the block of the doors being closed to the elevator moving. For each arrow, we also want to define all the ways we can change these states.
+An arrow in our flow chart represents the reasons we move from one block to another block. An example is the block of the doors being closed to the elevator moving. For each arrow, we also want to define all the ways we can change these states.
 
 In this example, we change our states by pressing a floor button.
 
+We can think of these arrows as **conditions** that when true cause the state of our system to change.
+
 ## Finite State Machines (FSM)
 
-We have basically derived how a finite state machines work!
+We have basically derived how a **finite state machines** work!
 
-An FSM is a state transition diagram. In other words, it is a bunch of states accompanied with events, which in firmware move the system to a different state.
+An FSM is a **state** transition diagram. In other words, it is a bunch of states accompanied with events, which in firmware move the system to a different state.
 
 In CS61C, you will learn the more formal FSM, where certain read bits send you from what state to another, but it works here as well!
 
 ### ENUM
 
-To define our states more formally, we use an enum!
+To define our states more formally, we use an **enum** (an enumeration relating variable names to numbers)!
 
 ```
 enum ElevatorState {
@@ -42,7 +44,7 @@ enum ElevatorState {
 };
 ```
 
-<i> Note that k prefix refers to the fact that these enums are implemented as integers, with the kStartup being enumerated to 0, kClosedWaiting to 1, etc. </i>
+<i> Note that k prefix refers to the fact that these variables are integers, with the kStartup being enumerated to 0, kClosedWaiting to 1, etc. </i>
 
 Here you can see for our elevator we defined our states above. The enum tells the code to enumerate (assign numbers) to each of the values. The data type of our enum is **ElevatorState**. You can see some examples as follows:
 
@@ -63,7 +65,7 @@ As you can see, we can in our code abstract away a lot of book keeping into a si
 
 ### Flags
 
-Another useful tool for book keeping is using flags. A flag is a boolean variable (true or false) that keeps track if something has happened or not. 
+Another useful tool for book keeping is using **flags**. A flag is a boolean variable (true or false) that keeps track if something has happened or not. 
 
 An example is let's say for our elevator we would like a flag for whether when the door is closing someone clicks the open button again. You can see a mock implementation below:
 
@@ -97,12 +99,12 @@ There is obviously a bit more nuance to this example, but I hope you got the poi
 
 ### Workflow
 
-The way we should design code is as follows:
+The way we should design our main code loop block is as follows:
 
 1) Define the goals of the project. What actually needs to happen in the firmware?
 2) Write out what functions and states you will need to accomplish these goals
 3) Draw the FSM out!
-4) Implement the logic in the main loop based off of the FSM
+4) Implement the logic in the main loop based off of the FSM using enum and flags!
 
 ## Implementation Tips
 
@@ -114,10 +116,4 @@ The reason why, is it allows for cleaner code, where certain function calls and 
 
 ## Summary
 
-In all, Section 3 should've taught you a lot about how to manage complexity! 
-
-Reading 3v6 hopefully showed you how to structure your main loop logic, with the Reading 3v3 being of aid to your timing logic.
-
-Reading 3v4 hopefully showed you how to use functions that spur off of the main logic, with Reading 3v2 and 3v5 showing you how to utilize the ESP32 hardware to do more powerful firmware.
-
-In the next few sections, we will go more in depth with IO and show some of the communication protocols on the ESP32!
+In this section we talked about how we want to imagine our firmware as a system with **states** and conditions to move between states.
