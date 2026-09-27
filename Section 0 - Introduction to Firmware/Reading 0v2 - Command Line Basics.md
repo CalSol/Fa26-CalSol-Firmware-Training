@@ -1,7 +1,9 @@
 # Command Line Basics
-Before writing firmware, you will need to know how to interact with your computer using the command line interface (CLI). Whether you are on Windows, macOS, or Linux, the terminal is how we communicate directly with the ESP-IDF environment to compile and flash our code. For the purposes of this reading, we will be showing the Git Bash terminal, which mimics a Unix-based environment.
+![XKCD Sudo Sandwich](./../images/sandwich.png)
 
-![Blank Git Bash Terminal](./../images/git_bash_terminal_blank.png)
+*Taken from XKCD*
+
+Before writing firmware, you will need to know how to interact with your computer using the command line interface (CLI). Whether you are on Windows, macOS, or Linux, the terminal is how we communicate directly with the ESP-IDF environment to compile and flash our code. For the purposes of this reading, we will be showing the Git Bash terminal, which mimics a Unix-based environment.
 
 ## Understanding the CLI
 When opening Git Bash (or another terminal), you may see something like this in the terminal (also in the screenshot above!):
