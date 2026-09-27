@@ -116,4 +116,6 @@ The reason why, is it allows for cleaner code, where certain function calls and 
 
 ## Summary
 
-In this section we talked about how we want to imagine our firmware as a system with **states** and conditions to move between states.
+In this section we talked about how we want to imagine our firmware as a system with **states** and **conditions** to move between the states. We found we can formalize this in a **FSM** and implement it using **enum** and **flags**
+
+In the next section, we will talk about the different tasks the Main Control Loop will call.
