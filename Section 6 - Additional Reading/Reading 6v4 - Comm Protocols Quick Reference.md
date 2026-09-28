@@ -22,10 +22,10 @@
 - Go to Reading 5v2 - I2C Overview
 
 ### SPI (Serial Peripheral Interface)
-- Go to Reading 5v3 - SPI & IsoSPI Overview
+- Go to [Reading 5v3 - SPI & IsoSPI Overview](<../Section 5 - Synchronous Comm Protocols/Reading 5v3 - SPI & IsoSPI Overview.md>)
 
 ### IsoSPI (Isolated SPI)
-- Go to Reading 5v3 - SPI & IsoSPI Overview
+- Go to [Reading 5v3 - SPI & IsoSPI Overview](<../Section 5 - Synchronous Comm Protocols/Reading 5v3 - SPI & IsoSPI Overview.md>)
 
 ### JTAG (Joint Test Action Group) 
 - Used to program to or read from MCU's
