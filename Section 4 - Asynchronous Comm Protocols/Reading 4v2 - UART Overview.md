@@ -30,7 +30,7 @@ The above configurations must be the same for both devices involved. More config
 
 **<i>More on how to configure this in another section!</i>**
 
-### UART Bits Breakdown
+## UART Bits Breakdown
 
 Each transmitted message in UART follows a structured format to ensure reliable communication between devices. Here’s a breakdown of each component:
 - Start Bit (1 bit):
