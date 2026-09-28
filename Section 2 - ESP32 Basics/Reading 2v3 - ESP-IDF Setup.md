@@ -221,6 +221,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    ```
    <details>
        <summary>Setting up alias shortcut (optional but highly recommended)</summary>
+       <blockquote>
        <details>
            <summary>Setting up alias shortcut for MacOS</summary>
            Coming soon!
@@ -233,6 +234,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
            <summary>Setting up alias shortcut for Linux</summary>
            Coming soon!
        </details>
+       </blockquote>
    </details>
    
 3. Generates sdkconfig file for target chip (only have to do this once)
