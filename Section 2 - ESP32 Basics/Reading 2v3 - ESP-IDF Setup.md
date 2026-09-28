@@ -268,9 +268,6 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    <details>
    <summary>Setting up alias shortcut for Windows</summary>
 
-   <details>
-    <summary>Setting up alias shortcut for Windows</summary>
-
     *Note: This is untested for windows (not sure if it works, please let us know!)*
 
    These steps use **PowerShell**. Your PowerShell profile (a file that runs every time you open PowerShell) is the Windows equivalent of `.zshrc` / `.bashrc`.
@@ -321,7 +318,6 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
     
    </details>
 
-   </details>
    
    <details>
     <summary>Setting up alias shortcut for Linux</summary>
