@@ -367,7 +367,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    ```bash
    idf.py menuconfig
    ```
-5. Build your code (this calls cmake and ninja in right order to compile/build the code)
+5. Build your code. This calls CMake and Ninja in right order to compile code, link libraries, and generate binary files (.bin) that can be flashed onto an ESP32 chip). idf.py build First build takes a few minutes — it's compiling the entire ESP-IDF stack. Subsequent builds only recompile files you've changed.
    ```bash
    idf.py build
    ```
