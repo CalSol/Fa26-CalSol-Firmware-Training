@@ -433,7 +433,7 @@ To find the port, run:
 ls /dev/tty.* /dev/cu.* 2>/dev/null
 ```
 
-Just like for sourcing the ESP-IDF tool chain (Step 1), we HIGHLY recommend setting up alias/shortcut for finding the port. This allows you to source the tool chain with a simple command such as:
+Just like for sourcing the ESP-IDF tool chain (Step 1), we HIGHLY recommend setting up alias/shortcut for locating the port. This allows you to locate the port with a simple command such as:
 
 ```bash
 ports
@@ -500,7 +500,7 @@ To find the port, run:
 ls /dev/ttyUSB* /dev/ttyACM* 2>/dev/null
 ```
 
-Just like for sourcing the ESP-IDF tool chain (Step 1), we HIGHLY recommend setting up alias/shortcut for sourcing the toolchain. This allows you to source the tool chain with a simple command such as:
+Just like for sourcing the ESP-IDF tool chain (Step 1), we HIGHLY recommend setting up alias/shortcut for locating the port. This allows you to locate the port with a simple command such as:
 
 ```bash
 ports
