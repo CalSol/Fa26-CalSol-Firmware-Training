@@ -326,7 +326,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    ```bash
    idf.py flash
    ```
-   OR specify the port using
+   OR specify the port using (check location port section bellow)
    ```bash
    idf.py -p [port e.g. COM6] flash
    ```
@@ -334,16 +334,34 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    ```bash
    idf.py monitor
    ```
-   OR specify the port using
+   OR specify the port using (check location port section bellow)
    ```bash
    idf.py -p [port e.g. COM6] monitor
    ```
 
-<details>
-<summary>Locating the port</summary>
-<dl><dd>
+You can alternatively do all three at the same time by running:
 
-       
+`idf.py build flash monitor` (OR specify the port using:  `idf.py -p [port e.g. COM6] build flash monitor`) 
+
+Or you can run any combinations involving two of the three like:
+
+`idf.py build flash` (OR specify the port using: `idf.py -p [port e.g. COM6] build flash`), 
+
+`idf.py build monitor` (OR specify the port using: `idf.py -p [port e.g. COM6] build monitor`),
+
+`idf.py flash monitor` (OR specify the port using: `idf.py -p [port e.g. COM6] monitor flash`)
+
+Here is how find the port you're connected for instructions 8 and 9 
+
+### Option 2 - GUI
+
+You can use the GUI buttons provided by the VSCode exntension! 
+
+These commands will have matching buttons at the bottom of your screen that you press to execute:
+
+<img width="180" height="111" alt="image" src="https://github.com/user-attachments/assets/5f18b35e-0109-40b3-9bf1-774e8b1bb322" />
+
+## Locating the Port
 <details>
 <summary>MacOS</summary>
 
@@ -455,32 +473,6 @@ ports
 </details>
 
 </details>
-
-
-</dd></dl>
-</details>
-
-You can alternatively do all three at the same time by running:
-
-`idf.py build flash monitor` (OR specify the port using:  `idf.py -p [port e.g. COM6] build flash monitor`) 
-
-Or you can run any combinations involving two of the three like:
-
-`idf.py build flash` (OR specify the port using: `idf.py -p [port e.g. COM6] build flash`), 
-
-`idf.py build monitor` (OR specify the port using: `idf.py -p [port e.g. COM6] build monitor`),
-
-`idf.py flash monitor` (OR specify the port using: `idf.py -p [port e.g. COM6] monitor flash`)
-
-Here is how find the port you're connected for instructions 8 and 9 
-
-### Option 2 - GUI
-
-You can use the GUI buttons provided by the VSCode exntension! 
-
-These commands will have matching buttons at the bottom of your screen that you press to execute:
-
-<img width="180" height="111" alt="image" src="https://github.com/user-attachments/assets/5f18b35e-0109-40b3-9bf1-774e8b1bb322" />
 
 
 ## General Tips:
