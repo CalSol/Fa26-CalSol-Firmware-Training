@@ -1,18 +1,21 @@
 # CAN (Controller Area Network) Overview
-Intuitive definition: A network (place where devices connect and share data) that lets the (electrical) controllers all around the car communicate with each other.
+
+CAN is a network (place where devices connect and share data) that lets the (electrical) controllers all around the car communicate with each other.
 - Formally, the **CAN Bus** is the system that enables **communication between ECU's** (basically each circuit board in the car meant to control a specific part, i.e. pedals, lights).
+
 <img width="369" height="129" alt="image" src="https://github.com/user-attachments/assets/b96ba3cb-d4e3-4f53-aa17-6672f896a4c0" />
 
 
 
 
-
-
 ### How does CAN Bus Work?
-It uses two wires (CAN HIGH and CAN LOW), and all ECU's each connect to both, and communicate (accept, send, or ignore messages)  along these wires.
+It uses two **differential** wires (CAN HIGH and CAN LOW), and all ECU's each connect to both, and communicate (accept, send, or ignore messages)  along these wires.
 
 <img width="382" height="203" alt="image" src="https://github.com/user-attachments/assets/d5875e11-5f84-492a-8ee5-ce50925555a1" />
 
+<i> What are differential signals?</i>
+  - Using two wires instead of one to send signals (communicate) by having one send positive signal values and the other send the negative equivalent. The signal received will be the difference (through subtraction) between these high and low signals. This is so outside noise (which will distort the signal) affects both wires and cancels itself out with this method.
+  - This makes it very useful for long-distance communication since it is much more resistant to noise!
 
 #### <i>ECU Requirements</i>
 Each ECU (board that can communicate with other ECU's) must have...
@@ -20,8 +23,6 @@ Each ECU (board that can communicate with other ECU's) must have...
 - A **CAN Controller** to keep communication actions in line with CAN protocol (or the rules). Does the work behind MCU decisions. Sometimes built into the MCU.
 - A **CAN Transceiver (Transmitter and Receiver at the same time!)** Connects to CAN Controller to send messages it encodes as signals to other ECU's (differential signals specifically).
 <img width="299" height="280" alt="image" src="https://github.com/user-attachments/assets/eb50b49b-caf1-4933-94d8-602b3a147056" />
-  <i> What are differential signals?</i>
-  - Using two wires instead of one to send signals (communicate) by having one send positive signal values and the other send the negative equivalent. The signal received will be the difference (through subtraction) between these high and low signals. This is so outside noise (which will distort the signal) affects both wires and cancels itself out with this method.
 
 <br><br>
 
