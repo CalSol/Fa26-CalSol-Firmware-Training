@@ -52,8 +52,6 @@ ssh-copy-id yourname@<device_name>
 
 After this, you won't need to type your password to log in.
 
----
-
 ## Part 2 — Changing your password
 
 When your account is first created it has no password set (login is via SSH key or a temporary password given by an admin). You should set your own password on first login.
