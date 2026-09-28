@@ -2,9 +2,9 @@
 
 SPI is anoter protocol to implement serial communication, a method of communication between devices where bits are sent along some wire/line or even remotely (like a TV remove to a TV!).
 
-Important notes about UART:
+Important notes about SPI:
 - **Synchronous:** Follows a clock (SCLC)
-- **4 Wire Minimum:** UART has 4 wires minimum (more info later)
+- **4 Wire Minimum:** SPI has 4 wires minimum (more info later)
 - **One-to-Many communication:** One MCU (formally called a "Master") can communinicate to multiple ICs (formally called "Slaves") 
 - **Full-duplex:** Can send and receive at the same time
 - **Speed:** Faster than UART and I2C but more prone to noise
