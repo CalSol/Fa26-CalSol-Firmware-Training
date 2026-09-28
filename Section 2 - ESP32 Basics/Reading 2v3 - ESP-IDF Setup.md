@@ -346,7 +346,6 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
            
     <details>
     <summary>MacOS</summary>
-    <dd><dl>
     
     To find the port, run:
     ```bash
@@ -395,22 +394,18 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    
     </details>
 
-    </dd></dl>
     </details>
     
     <details>
     <summary>Windows</summary>
-    <dd><dl>
         
     For Windows you can see what ports are available using your device manager_
 
-   </dd></dl>
    </details>
 
     
     <details>
     <summary>Linux</summary>
-    <dd><dl>
     
     To find the port, run:
     ```bash
@@ -458,8 +453,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
     ```
 
     </details>
-        
-    </dd></dl>
+   
     </details>
 
     
