@@ -209,10 +209,17 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    ```bash
    C:\esp\v6.1-beta1\esp-idf\export.ps1
    ```
+
    On Mac, this would be something like:
    ```bash
    source $HOME/.espressif/tools/activate_idf_v5.5.2.sh
    ```
+
+   NOTE: We HIGHLY recommend setting up alias/shortcut for sourcing the toolchain. Look at the bottom of this section for how to do this. This allows you to source the tool chain with a simple command such as:
+   ```bash
+   get_idf
+   ```
+   
 3. Generates sdkconfig file for target chip (only have to do this once)
    ```bash
    idf.py set-target esp32s3
