@@ -11,12 +11,11 @@ CAN is a network (place where devices connect and share data) that lets the (ele
 ### How does CAN Bus Work?
 It uses two **differential** wires (CAN HIGH and CAN LOW), and all ECU's each connect to both, and communicate (accept, send, or ignore messages)  along these wires.
 
-<img width="382" height="203" alt="image" src="https://github.com/user-attachments/assets/d5875e11-5f84-492a-8ee5-ce50925555a1" />
-
-
 <i> What are differential signals?</i>
   - Using two wires instead of one to send signals (communicate) by having one send positive signal values and the other send the negative equivalent. The signal received will be the difference (through subtraction) between these high and low signals. This is so outside noise (which will distort the signal) affects both wires and cancels itself out with this method.
   - This makes it very useful for long-distance communication since it is much more resistant to noise!
+
+<img width="382" height="203" alt="image" src="https://github.com/user-attachments/assets/d5875e11-5f84-492a-8ee5-ce50925555a1" />
 
 #### <i>ECU Requirements</i>
 Each ECU (board that can communicate with other ECU's) must have...
