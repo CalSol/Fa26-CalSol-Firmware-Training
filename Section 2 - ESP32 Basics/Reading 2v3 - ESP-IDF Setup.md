@@ -547,9 +547,3 @@ ports
 
 </dd></dl>
 </details>
-
-## General Tips
-
-- Whenever edits to the file/code are made, rebuild before flashing.
-- **Always full clean before rebuilding!**
-- Sourcing your toolchain every single session is always a pain. See Reading 6v5 for an old sourcing toolchain walkthrough, no guarantees it will work though!
