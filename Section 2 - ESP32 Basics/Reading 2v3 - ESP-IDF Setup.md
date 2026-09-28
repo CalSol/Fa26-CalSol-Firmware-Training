@@ -222,6 +222,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    <details>
        <summary>Setting up alias shortcut (optional but highly recommended)</summary>
        <dl><dd>
+       <br>
        <details>
            <summary>Setting up alias shortcut for MacOS</summary>
            Coming soon!
