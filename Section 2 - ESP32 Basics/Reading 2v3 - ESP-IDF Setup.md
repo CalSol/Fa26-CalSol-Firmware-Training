@@ -267,7 +267,38 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    idf.py -p [port e.g. COM6] monitor
    ```
 
-_Note: for Windows you can see what ports are available using your device manager_
+<details>
+       <summary>Loacting the port</summary>
+       <dl><dd>
+       <br>
+       <details>
+           <summary>MacOS</summary>
+           To find the port, run:
+           ```bash
+           ls /dev/tty.* /dev/cu.* 2>/dev/null
+           ```
+           Just like for sourcing the ESP-IDF tool chain (Step 1), we HIGHLY recommend setting up alias/shortcut for sourcing the toolchain. This allows you to source the tool chain with a simple command such as:
+           ```bash
+           ports
+           ```
+       </details>
+       <details>
+           <summary>Windows</summary>
+           For Windows you can see what ports are available using your device manager_
+       </details>
+       <details>
+           <summary>Linux</summary>
+           To find the port, run:
+           ```bash
+           ls /dev/ttyUSB* /dev/ttyACM* 2>/dev/null
+           ```
+           Just like for sourcing the ESP-IDF tool chain (Step 1), we HIGHLY recommend setting up alias/shortcut for sourcing the toolchain. This allows you to source the tool chain with a simple command such as:
+           ```bash
+           ports
+           ```
+       </details>
+       </dd></dl>
+   </details>
 
 You can alternatively do all three at the same time by running:
 
