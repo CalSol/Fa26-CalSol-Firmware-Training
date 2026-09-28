@@ -17,19 +17,18 @@
 *.log
 
 # Build artifacts and directories
+**/build/
 build/
-build_dev/
-build_test/
 *.o
 *.a
 *.out
-*.exe
+*.exe # For any host-side utilities compiled on Windows
 
 # ESP-IDF specific build outputs
 *.bin
 *.elf
 *.map
-flasher_args.json
+flasher_args.json # Generated in build directory
 sdkconfig.old
 sdkconfig
 
@@ -48,7 +47,6 @@ CMakeFiles/
 cmake_install.cmake
 install_manifest.txt
 CTestTestfile.cmake
-compile_commands.json
 
 # Python environment files
 *.pyc
@@ -67,9 +65,6 @@ env/
 .clangd/
 .ccls-cache/
 compile_commands.json
-
-# IDE
-.vscode/
 
 # Windows specific
 Thumbs.db
