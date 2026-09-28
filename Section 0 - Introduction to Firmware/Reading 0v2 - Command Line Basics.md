@@ -1,5 +1,5 @@
 # Command Line Basics
-![XKCD Sudo Sandwich](./../images/sandwich.png)
+![XKCD Sudo Sandwich](./../images/SECTION0/sandwich.png)
 
 *Taken from XKCD*
 
@@ -44,12 +44,9 @@ There are also a few universal shortcuts that are constantly used (and can `cd` 
 `..` (double dot): represents the parent folder (one level up). Typing `cd ..` moves you backward. <br>
 `~` (tilde): represents your personal home directory. <br>
 
-## Running Scripts and ESP-IDF Tools
-The primary reason we use the terminal is to execute setup scripts and the ESP-IDF build system. We will go over this in more detail in a later section but just know that's why the CLI is important!
+## Moving around
+You can not only move around different folders, you can also move folders and files yourself! Below are some commands on how to manipulate files:
 
-## Appendix of Other Useful Unix Commands
-
-### Moving around
 ```bash
 mkdir myfolder          # create a new folder
 cp notes.txt backup.txt # copy a file
@@ -59,7 +56,7 @@ rm old.txt              # delete a file — no trash bin, this is permanent
 rm -r myfolder          # delete a folder and everything inside it
 ```
  
-### Useful shortcuts
+## Useful shortcuts
 ```bash
 Ctrl + C             # terminates process (program) that is running
 Ctrl + D             # log out of the session
@@ -68,7 +65,7 @@ Tab                  # autocomplete a filename or command
 clear                # clear the screen
 ```
  
-### Getting help
+## Getting help
  
 If you're not sure what a command does, two options:
  
@@ -76,3 +73,6 @@ If you're not sure what a command does, two options:
 man ls               # opens the full manual page for a command — q to quit
 ls --help            # shorter built-in help, works for most commands
 ```
+
+## Running Scripts and ESP-IDF Tools
+The primary reason we use the terminal is to execute setup scripts and the ESP-IDF build system. We will go over this in more detail in a later section but just know that's why the CLI is important!
