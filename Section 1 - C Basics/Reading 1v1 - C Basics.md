@@ -1,17 +1,17 @@
-# Reading 1v1 - C Basics
+# C Basics
 
 ## Installing C
 We actually don't need to have C installed on your local system due to ESP-IDF having its own specialized C compiler in the background.
 
 Thus the only setup for C that we have to do is to add the extension on VSCode which you can do by searching up C/C++ in the extensions tab.
 
-![Install Picture](./../images/VSCode_C_extensions.png)
+![Install Picture](./../images/SECTION1/VSCode_C_extensions.png)
 
 <div style="padding: 2px 16px; background-color: #705337; border-radius: 6px;">
-<h3>🎯 <b>TASK:</b> Download the C/C++ VSCode extension.</h3> 
+<h3><b>Exercise 🎯:</b> Download the C/C++ VSCode extension.</h3> 
 </div>
 
-# What is C?
+## What is C?
 
 C is a programming language commonly used for **embedded systems** and **microcontrollers**.
 Unlike higher-level programming languages, C allows us to work closely with the hardware.
@@ -27,7 +27,7 @@ For example, C can be used to:
 - Control an ESP32
 Throughout this training, we will use C to write firmware for our microcontrollers.
 
-# Hello World
+## Hello World
 
 A basic C program looks like this:
 
@@ -52,7 +52,7 @@ Let's break down what each part means.
 
 ---
 
-## `#include`
+### `#include`
 
 ```c
 #include <stdio.h>
@@ -76,7 +76,7 @@ which allows us to print information to the terminal.
 
 ---
 
-## The `main()` Function
+### The `main()` Function
 
 ```c
 int main(void)
@@ -102,7 +102,7 @@ int main(void)
 
 The computer executes the program starting from the first statement inside `main()`.
 
-# Variables
+## Variables
 
 Variables allow us to store information.
 
@@ -132,7 +132,7 @@ speed = 75;
 
 ---
 
-# Basic Data Types
+## Basic Data Types
 
 C requires us to specify what type of information a variable stores.
 
@@ -168,7 +168,7 @@ Then we can write:
 bool motor_running = true;
 ```
 
-# Printing Variables
+## Printing Variables
 
 We can use `printf()` to print variables.
 
@@ -213,7 +213,7 @@ printf("Temperature: %d\n", temperature);
 ```
 
 ---
-# Arithmetic
+## Arithmetic
 
 C can perform normal mathematical operations.
 
@@ -257,7 +257,7 @@ because:
 
 ---
 
-# Comparison Operators
+## Comparison Operators
 
 Comparison operators allow us to compare values.
 
@@ -306,7 +306,7 @@ speed == 50
 
 ---
 
-# If Statements
+## If Statements
 
 An `if` statement allows the program to make decisions.
 
@@ -323,7 +323,7 @@ The code inside the `{ }` only runs if the condition is true.
 
 ---
 
-## `if` and `else`
+### `if` and `else`
 
 We can also provide another action if the condition is false.
 
@@ -342,7 +342,7 @@ else
 
 ---
 
-## `else if`
+### `else if`
 
 We can check multiple conditions:
 
@@ -365,7 +365,7 @@ else
 
 ---
 
-# Logical Operators
+## Logical Operators
 
 Sometimes we want to check multiple conditions at once.
 
@@ -394,7 +394,7 @@ Both conditions must be true because we used:
 
 ---
 
-# Loops
+## Loops
 
 Loops allow us to repeat code.
 
@@ -405,7 +405,7 @@ Two important loops in C are:
 
 ---
 
-## `for` Loop
+### `for` Loop
 
 A `for` loop repeats code a specific number of times.
 
@@ -442,7 +442,7 @@ i = i + 1;
 
 ---
 
-## `while` Loop
+### `while` Loop
 
 A `while` loop continues running while a condition is true.
 
@@ -469,7 +469,7 @@ Output:
 
 ---
 
-# Infinite Loops
+### Infinite Loops
 
 Embedded systems commonly use infinite loops.
 
@@ -503,7 +503,7 @@ The microcontroller continuously performs its tasks until power is removed or th
 
 ---
 
-# Functions
+## Functions
 
 Functions allow us to organize and reuse code.
 
@@ -538,7 +538,7 @@ Hello!
 
 ---
 
-# Function Parameters
+### Function Parameters
 
 Functions can also receive information.
 
@@ -563,7 +563,7 @@ Speed: 50
 
 ---
 
-# Functions That Return Values
+### Functions That Return Values
 
 Functions can also calculate and return a value.
 
@@ -590,7 +590,7 @@ Output:
 
 ---
 
-# Arrays
+## Arrays
 
 Arrays allow us to store multiple values of the same type.
 
@@ -637,7 +637,7 @@ Output:
 75
 ```
 
-# Comments
+## Comments
 
 Comments allow us to leave notes inside our code.
 
@@ -664,7 +664,7 @@ A multi-line comment uses:
 
 Comments are ignored by the compiler.
 
-# Example Program
+## Example Program
 
 Let's combine some of the concepts we just learned.
 

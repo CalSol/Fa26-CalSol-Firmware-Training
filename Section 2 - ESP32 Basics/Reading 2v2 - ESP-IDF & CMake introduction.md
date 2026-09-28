@@ -2,21 +2,21 @@
 
 In order to program our ESP32-S3 DEV boards, we chose to use the ESP-IDF toolchain (there are plenty of other options). Which begs the following question...
 
-### What is ESP-IDF?
+## What is ESP-IDF?
  
-[ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/) (Espressif IoT Development Framework) is the official software development kit (SDK) for programming ESP32 chips. It gives you everything you need to write firmware, such as a standard c library, drivers (like an API) for the chip's hardware/engines (WiFi, Bluetooth, GPIO, SPI, I2C, etc.), a real-time operating system ([FreeRTOS](https://www.freertos.org/)), and a build system to compile it all together.
+[ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/) (Espressif IoT Development Framework) is the official software development kit (SDK) for programming ESP32 chips. It gives you everything you need to write firmware, such as a standard C library, drivers (like an API) for the chip's hardware/engines (WiFi, Bluetooth, GPIO, SPI, I2C, etc.), a real-time operating system ([FreeRTOS](https://www.freertos.org/)), and a build system to compile it all together.
  
 When you write code for the ESP32-S3, you're writing C (or C++) that runs directly on the chip so ESP-IDF provides the layer that manages hardware access, task scheduling, and memory, so you don't have to do it from scratch.
  
-### What is CMake?
+## What is CMake?
  
 [CMake](https://cmake.org/) is a build system generator, a fancy way to call a tool that figures out how to compile your project, but it's not actualy doing the compiling itself (translating human readable code like C to machine code 1's and 0's). When you have a project with many `.c` files, headers, and libraries, CMake reads a configuration file (`CMakeLists.txt`) and generates the exact compiler commands needed to turn all of it into a binary that can run on the chip. Otherwise you would need write these compiler commands yourself and it's annoying. 
  
 ESP-IDF uses CMake under the hood, so every ESP-IDF project has a `CMakeLists.txt` that describes what files to compile and what libraries to link.
  
-### What is Ninja?
+## What is Ninja?
  
-[Ninja](https://ninja-build.org/) is the tool that actually runs the compiler. There's a division of labour here that can be confusing at first:
+[Ninja](https://ninja-build.org/) is the tool that actually runs the compiler. There's a division of labor here that can be confusing at first:
  
 - **CMake** reads your `CMakeLists.txt` and figures out *what* needs to be compiled and in what order
 - **Ninja** takes that plan and *executes* it as fast as possible — it's designed to run many compile jobs in parallel and only recompile files that have actually changed
