@@ -204,6 +204,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
 
 ### Option 1 - CLI
 1. Source the ESP-IDF toolchain
+   
    On Windows, this would be something like:
    ```bash
    C:\esp\v6.1-beta1\esp-idf\export.ps1
