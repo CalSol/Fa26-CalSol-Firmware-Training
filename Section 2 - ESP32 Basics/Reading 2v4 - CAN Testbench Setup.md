@@ -1,3 +1,5 @@
+# NOTE: this section is not necessary to complete this Firmware Training. The CAN TestBench is still a WIP, but for future continuity we have chosen to leave this section here. We will NOT be helping people set up CAN TestBench access as of 9/27/2026
+
 # Remote SSH'ing into the CAN TestBench
 CalSol's remote CAN Testbench allows you to upload your code to an ESP32-S3 without needing the physical hardware with you. Of course, there are limitations to what you can do.
 
