@@ -24,7 +24,6 @@ Each ECU (board that can communicate with other ECU's) must have...
 - A **CAN Transceiver (Transmitter and Receiver at the same time!)** Connects to CAN Controller to send messages it encodes as signals to other ECU's (differential signals specifically).
 <img width="299" height="280" alt="image" src="https://github.com/user-attachments/assets/eb50b49b-caf1-4933-94d8-602b3a147056" />
 
-<br><br>
 
 ### What do ECU's send to each other? (CAN Frames)
 These are the message containers (also called CAN Packets, or just frames) that are sent across the CAN network. 
