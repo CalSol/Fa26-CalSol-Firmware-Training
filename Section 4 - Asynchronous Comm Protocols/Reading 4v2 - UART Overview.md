@@ -31,34 +31,31 @@ The above configurations must be the same for both devices involved. More config
 **<i>More on how to configure this in another section!</i>**
 
 ### UART Bits Breakdown
+
 Each transmitted message in UART follows a structured format to ensure reliable communication between devices. Here’s a breakdown of each component:
-Start Bit (1 bit):
+- Start Bit (1 bit):
+  - The start bit is always low (0), meaning the signal line transitions from idle (high) to active (low).
+  - This alerts the receiver that a new data frame is starting and helps it synchronize with the transmitter’s timing.
+  - Since UART is asynchronous (no shared clock), this synchronization is crucial for correct data interpretation.
 
+- Data Frame (5 to 9 bits):
+  - This is the actual payload of the transmission—the information being sent.
+  - Most UART systems use an 8-bit data frame since it aligns well with standard byte-based systems. However, some systems may use 5, 6, 7, or even 9 bits depending on the application.
+  - The least significant bit (LSB) is sent first, meaning the data is transmitted in little-endian order by default.
 
-The start bit is always low (0), meaning the signal line transitions from idle (high) to active (low).
-This alerts the receiver that a new data frame is starting and helps it synchronize with the transmitter’s timing.
-Since UART is asynchronous (no shared clock), this synchronization is crucial for correct data interpretation.
-Data Frame (5 to 9 bits):
+- Parity Bit (Optional, 0 to 1 bit):
+  - This is an optional error-checking mechanism used to detect single-bit errors during transmission.
+  - There are three common parity modes:
+      - Even parity: Ensures the total number of 1s in the data frame is even. If necessary, the parity bit is set to 1 to maintain even parity.
+      - Odd parity: Ensures the total number of 1s is odd by adjusting the parity bit accordingly.
+      - No parity: The parity bit is omitted (common in high-speed or low-power applications).
+  - While parity checking helps with error detection, it doesn’t correct errors, and more robust error-checking methods like CRC are used in critical systems.
 
+- Stop Bits (1 to 2 bits):
+  - The stop bit(s) are always high (1), signaling the end of the transmission.
+  - 1 stop bit is the standard, but some systems use 2 stop bits for increased reliability, allowing the receiver more time to process the received data.
+  - A longer stop bit duration can also help when communicating with slower devices that need more processing time between transmissions.
 
-This is the actual payload of the transmission—the information being sent.
-Most UART systems use an 8-bit data frame since it aligns well with standard byte-based systems. However, some systems may use 5, 6, 7, or even 9 bits depending on the application.
-The least significant bit (LSB) is sent first, meaning the data is transmitted in little-endian order by default.
-Parity Bit (Optional, 0 to 1 bit):
-
-
-This is an optional error-checking mechanism used to detect single-bit errors during transmission.
-There are three common parity modes:
-Even parity: Ensures the total number of 1s in the data frame is even. If necessary, the parity bit is set to 1 to maintain even parity.
-Odd parity: Ensures the total number of 1s is odd by adjusting the parity bit accordingly.
-No parity: The parity bit is omitted (common in high-speed or low-power applications).
-While parity checking helps with error detection, it doesn’t correct errors, and more robust error-checking methods like CRC are used in critical systems.
-Stop Bits (1 to 2 bits):
-
-
-The stop bit(s) are always high (1), signaling the end of the transmission.
-1 stop bit is the standard, but some systems use 2 stop bits for increased reliability, allowing the receiver more time to process the received data.
-A longer stop bit duration can also help when communicating with slower devices that need more processing time between transmissions.
 Together, these components ensure synchronized, reliable, and structured communication between UART devices, making it a widely used serial communication standard.
 
 
