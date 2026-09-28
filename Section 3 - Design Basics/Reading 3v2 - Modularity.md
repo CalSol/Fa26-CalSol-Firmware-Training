@@ -4,9 +4,7 @@ In the previous section, we discussed modularity, but here we will go deeper int
 
 ### Intro
 
-An important thing to keep in your mind is that the code you will deal with are all modules! For example, all functions are modules! All files are modules! Even the main function loop we use is a module.
-
-TODO talk about this as a motivation for abstraction
+An important thing to keep in your mind is that the code you will deal with are all modules! For example, all functions are modules! All files are modules! Even the main function loop we use is a module. With everything is a module, and modules helping us reduce complexity, let's try to see how modules work.
 
 ## Headers
 
