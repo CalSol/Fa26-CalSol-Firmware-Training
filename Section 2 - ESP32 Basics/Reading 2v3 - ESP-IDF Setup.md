@@ -216,8 +216,16 @@ These commands will have matching buttons at the bottom of your screen that you 
 ## General Tips:
 - Whenever edits to the file/code are made, rebuild before flashing. 
 - **Always full clean before rebuilding!**
+- Sourcing your toolchain every single session is always a pain. See Reading 6v5 for an old sourcing toolchain walkthrough, no guarantees it will work though!
 
 ### Running Code:
 If using the extension, you can click the buttons in the menu to build, flash, and monitor code. Otherwise, you can do the following:
+1. Run your toolchain export (`C:\esp\v6.1-beta1\esp-idf\export.ps1`)
+2. Build your code (`idf.py build`)
+3. Flash your code (`idf.py flash` or `idf.py -p [port e.g. COM6] flash`)
+4. Monitor your code (`idf.py monitor` or `idf.py -p [port e.g. COM6] monitor`)
 
+_Note: for Windows you can see what ports are available using your device manager_
+
+You can alternatively do all three at the same time by running `idf.py build flash monitor`.
 
