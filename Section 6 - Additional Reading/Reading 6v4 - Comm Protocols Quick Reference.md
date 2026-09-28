@@ -3,7 +3,7 @@
 ## Asynchronous Comm Protocols 
 
 ### UART (Universal Asynchronous Receiver Transmitter)
-- Go to [Reading 4v2 - UART Overview](Reading%204v2%20-%20UART%20Overview.md)
+- Go to [Reading 4v2 - UART Overview](<Section 4 - Asynchronous Comm Protocols/Reading 4v2 - UART Overview.md>)
 
 ### CAN (Controller Area Network) 
 - Go to Reading 4v3 - CAN Overview
