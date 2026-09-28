@@ -1,17 +1,13 @@
 # What is a Baud Rate?
+At its core, baud rate is the speed at which microcontrollers talk to each other. It measures the number of signal values (units of data) that are processed per second on a communication line. The higher the baud rate, the faster the hardware changes the voltage on the wire, meaning information is sent and received more quickly.
 
-A baud rate is the number of signal values (units of data) that are processed per second.
 - A new signal value meaning: (the next one, regardless of whether the actual value is different from the previous).
 
 The higher the baud rate, the **faster the data** is sent/received.
 - In the sense that, the information is read faster because each new signal value is received sooner.
 
-<br><br>
-
 ## Importance
 Microcontrollers communicating with each other must agree upon a baud rate so that they communicate at the same speed. The baud rate is fixed from the start.
-
-<br><br>
 
 ### Visual Example:
 
@@ -27,19 +23,14 @@ Here, the red numbers denote each new signal value, which counts toward the baud
 
 The baud rate is 3 because 3 different signal values are occur per second. The bit rate is also 3 because 3 bits (1, 0, and 1) are sent per second.
 
-<br><br>
-
 #### Example 2
 <img width="402" height="293" alt="image" src="https://github.com/user-attachments/assets/a4c5fbd6-0c23-4894-abe1-2790bb8b0fbf" />
 
 Here, 6 different signal values occur per second. The bit rate however, is still 3 (because per 2 signal values, 1 bit was communicated).
 
-<br><br>
-
 ### Data Signals
 **IMPORANT:** In general, data signals are customizable to send certain combinations of bits in differently sized chunks (i.e. could send "11011010", which is 8 bits of info. You could send 16 if you want). Certain combinations can represent specific letters, numbers, etc.
 -  The signal value changes to communicate this specific combination, which is how data signals send specific information.
 
-<br><br>
 Sources: https://www.geeksforgeeks.org/computer-networks/baud-rate-and-its-importance/
 https://scienceinsights.org/what-is-the-baud-rate-and-why-does-it-matter/
