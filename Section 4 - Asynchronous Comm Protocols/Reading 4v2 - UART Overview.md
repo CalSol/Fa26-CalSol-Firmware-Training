@@ -1,13 +1,15 @@
 
-# What is UART?
-UART is a block of circuitry that implements serial communication through its Universal Asynchronous Receiver Transmitter protocol.
-- What kind of protocol?
-  - **Universal:** usable on <i>any</i> transmitting/receiving device.
-  - **Asynchronous:** does not follow any clock/time, simply sends receives when it does.
-  - **Receiver/Transmitter**: This protocol is for devices that transmit and receive data.
-  - **One-to-One** communication (unlike other protocols, can only communicate between 2 devices)
-- Serial communication is the method of communication between devices where bits are sent along some wire/line or even remotely (like a TV remove to a TV!).
-- UART exists in most microcontrollers, including our ESP32.
+# UART (Universal Asynchronous Receiver Transmitter) Overview
+
+UART is one protocol to implement serial communication, a method of communication between devices where bits are sent along some wire/line or even remotely (like a TV remove to a TV!).
+
+Important notes about UART:
+- **Universal:** usable on <i>any</i> transmitting/receiving device
+- **Asynchronous:** does not follow any clock/time, simply sends receives when it does
+- **2 Wire:** UART has 2 wires, **Transmit (TX)** and **Receive (RX)** (more info later)
+- **One-to-One communication:** Unlike other protocols, UART only communicate between 2 devices
+- **Half-duplex:** Can only communicate one direction at a time
+- **Speed:** Usually 9600 baud (bits per section), but can go up to 115200 baud
 
 ### Serial communication happens via two wires.
 <img width="377" height="239" alt="image" src="https://github.com/user-attachments/assets/29e9b9bc-96e0-4354-941e-b4836159fae9" />
@@ -19,9 +21,9 @@ UART is a block of circuitry that implements serial communication through its Un
 - **These wires are the <i>Serial Bus</i>.** On your microcontroller, you'll choose which pins on it will connect to these wires.
   - In general, a bus refers to a set of data lines (wires) of transmission/receiving.
     - (Data is sent through signals along these wires, as described in previous reading) 
-<br><br>
+
 <i>Note:</i> Serial communication happens in almost any protocol (i.e. CAN, I2C), just conveniently introduced through UART here.
-<br><br>
+
 ### How to use UART?
 
 Both the receiving and transmitting device should be configured to use UART before any data is sent. You must also configure...
