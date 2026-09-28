@@ -1,4 +1,5 @@
 # Firmware-Training
+## FW Lab Instructions and Project Spec Found [here](https://docs.google.com/document/d/1VsC9TB3XrUjA6-NhKEqb3eP2UCfmX6sozX10Jz-2TJU/edit?tab=t.0)
 
 ## Welcome to CalSol Firmware Training!
 This lab is meant to teach you how to think about firmware while giving enough practice to get you started writing it.
@@ -22,6 +23,22 @@ readings, so use this section as a resource.
 - Section 5: Synchronous Comm Protocols
 - Section 6: Additional Reading
 - Section 7: Final Project
+
+## Timeline
+Below is the timeline for the FW lab. Extenuating circumstances notwithstanding and PMs informed (we have already considered the CS61A midterm), failure to meet checkpoint deliverables will result in being dropped from onboarding.
+
+- 9/28: Firmware Lab released!
+- 9/30: Finish readings and exercises
+- 10/4: (CHECKPOINT 1 DUE 11:59PM) Design Doc turned in
+- 10/5: Design Doc reviewed and feedback provided
+- 10/7: Hardware setup for lab is available for testing
+- 10/12: (CHECKPOINT 2 DUE 8:00PM) Code reviewed, ran and report written
+
+## Summary of Deliverables
+- Turn in your design doc by 10/4 11:59PM
+- Complete a code review
+- Test your code on hardware
+- Submit your report by 10/12 8:00PM
 
 ### Contributors:
 Kadon L, Matthew L, Huan N, Emma C, Tashvi M, Ahmed A
