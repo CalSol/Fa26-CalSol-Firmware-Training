@@ -199,7 +199,7 @@ In project folder, go to ‘main’ file. (As per the C Basics section, the C/C+
 
 </details>
 
-## Flashing Code:
+## Flashiing Code:
 There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF code on your computer. It is completely up to personal preference which one you use (and also just which one "magically" works). But *PLEASE* try to familiarize yourself with both options!!!
 
 ### Option 1 - CLI
@@ -260,7 +260,17 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
 
 _Note: for Windows you can see what ports are available using your device manager_
 
-You can alternatively do all three at the same time by running `idf.py build flash monitor` or any combinations involving two of the three like `idf.py build flash`, `idf.py build monitor`, or `idf.py flash monitor`
+You can alternatively do all three at the same time by running `idf.py build flash monitor` (or `idf.py -p [port e.g. COM6] build flash monitor`) 
+
+Or you can run any combinations involving two of the three like:
+
+`idf.py build flash` (or `idf.py -p [port e.g. COM6] build flash`), 
+
+`idf.py build monitor` (or `idf.py -p [port e.g. COM6] build monitor`),
+
+`idf.py flash monitor` (or `idf.py -p [port e.g. COM6] monitor flash`)
+
+Here is how find the port you're connected for instructions 8 and 9 
 
 ### Option 2 - GUI
 
