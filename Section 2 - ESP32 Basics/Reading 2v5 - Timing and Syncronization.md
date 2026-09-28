@@ -44,13 +44,36 @@ In ESP-IDF, we can use the High-Resolution Timer (`esp_timer`) API (documentatio
 2. Timer Configuration: telling the timer which callback to use
 3. Start Command: telling the timer how often to tick (in microseconds)
 
-### Timer Implementation
-In ESP-IDF, 
+### Exercise 🎯: Timer Example
+To see a complete, working example of a timer running in the background, please check out the code provided in your **example folder**!
 
-```c
+For example, on my file system the example is found here: `C:\esp\v6.1-beta1\esp-idf\examples\system\esp_timer\main`
 
-```
+Here is a cheat sheet of how they work:
+<details>
+<summary>Data Types and Configurations</summary>
+    
+- `esp_timer_handle_t`: the data type used to store the reference to your specific timer
+- `esp_timer_create_args_t`: a configuration struct used to set up the rules for your timer before it get built. The two most common fields are:
+    - `.callback`: a pointer to the function you want the timer to run when it ticks (e.g. `&my_timer_callback`)
+    - `.name`: a text string used to name your timer, which helps with debugging
+</details>
+
+<details>
+<summary>Core Functions</summary>
+
+- `esp_timer_create(const esp_timer_create_args_t* args, esp_timer_handle_t* out_handle)` takes the config struct (`args`) and links it to an uninitialized timer handle (`out_handle`). This builds the timer in memory and allocates resources, but **does not start** the block.
+- `esp_timer_start_periodic(esp_timer_handle_t timer, uint64_t timeout_us)` starts the timer and tells it to trigger its callback repeatedly on a set interval. The `timeout_use` argument dictate the length of the interval in microseconds.
+- `esp_timer_start_once(esp_timer_handle_t timer, uint64_t timeout_us)` starts the timer, but it will only trigger the callback a single time before automatically stopping. This is ideal for creating a one-off background delay without using busy-waiting.
+- `esp_timer_delete(esp_timer_handle_t timer)` immediately pauses an active timer so it stop triggering callbacks.
+- `esp_timer_delete(esp_timer_handle_t timer)` completely destroys the timer and frees up the memory it was using. You must call `esp_timer_stop()` before you can safely delete a timer.
+    
+</details>
 
 ## Scheduling
+Timers and interrupts are SO useful in keeping track of things. But let me pose a few questions:
+- What happens when you have fifty different things that need to run at different times?
+- What if a timer ticks while you are right in the middle of processing important Wi-Fi data?
+- Who gets to use the CPU first?
 
-TODO just hint that in the next section we will learn a better way to do this
+We can manage all of these overlapping tasks, timers, and interrupts automatically using Real-Time Operating Systems (FreeRTOS), which decide which tasks run, when they run, and who gets priority! You'll find out more in the next section!
