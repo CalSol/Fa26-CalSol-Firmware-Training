@@ -8,7 +8,7 @@ Thus the only setup for C that we have to do is to add the extension on VSCode w
 ![Install Picture](./../images/SECTION1/VSCode_C_extensions.png)
 
 <div style="padding: 2px 16px; background-color: #705337; border-radius: 6px;">
-<h3><b>TASK 🎯:</b> Download the C/C++ VSCode extension.</h3> 
+<h3><b>Exercise 🎯:</b> Download the C/C++ VSCode extension.</h3> 
 </div>
 
 ## What is C?
