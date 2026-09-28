@@ -1,5 +1,5 @@
 # Using ESP-IDF
-Now that we've seen how ESP-IDF works, let's get it working on our system! There are two ways (CLI or GUI) that you can build, upload, and monitor ESP-IDF code on your computer. It is completely up to personal preference which one you use (and also just which one "magically" works).
+Now that we've seen how ESP-IDF works, let's get it working on our system! There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF code on your computer. It is completely up to personal preference which one you use (and also just which one "magically" works).
 
 _Note: the download processes have yet to be rigorously tested so please inform us if there are any steps missing when you begin downloading ESP-IDF onto your system_
 
@@ -201,7 +201,23 @@ Info on the purpose of each file/folder in your project folder [here](https://do
 
 In project folder, go to ‘main’ file. (As per the C Basics section, the C/C++ extension in VS Code lets you write C/C++ code in this file).
 
-## Build, Flash, and Monitor:
+</details>
+
+## Flashing Code:
+There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF code on your computer. It is completely up to personal preference which one you use (and also just which one "magically" works). 
+
+## Option 1 - CLI
+If using the extension, you can click the buttons in the menu to build, flash, and monitor code. Otherwise, you can do the following:
+1. Run your toolchain export (`C:\esp\v6.1-beta1\esp-idf\export.ps1`)
+2. Build your code (`idf.py build`)
+3. Flash your code (`idf.py flash` or `idf.py -p [port e.g. COM6] flash`)
+4. Monitor your code (`idf.py monitor` or `idf.py -p [port e.g. COM6] monitor`)
+
+_Note: for Windows you can see what ports are available using your device manager_
+
+You can alternatively do all three at the same time by running `idf.py build flash monitor` or any combinations involving two of the three like `idf.py build flash`, `idf.py build monitor`, or `idf.py flash monitor`
+
+## Option 2 - GUI
 
 When you're ready to test your code by flashing it to the ESP32 connected to your computer, first build, flash, and then you can monitor its output.
 
@@ -211,21 +227,7 @@ These commands will have matching buttons at the bottom of your screen that you 
 
 <br><br>
 
-</details>
-
 ## General Tips:
 - Whenever edits to the file/code are made, rebuild before flashing. 
 - **Always full clean before rebuilding!**
 - Sourcing your toolchain every single session is always a pain. See Reading 6v5 for an old sourcing toolchain walkthrough, no guarantees it will work though!
-
-### Running Code:
-If using the extension, you can click the buttons in the menu to build, flash, and monitor code. Otherwise, you can do the following:
-1. Run your toolchain export (`C:\esp\v6.1-beta1\esp-idf\export.ps1`)
-2. Build your code (`idf.py build`)
-3. Flash your code (`idf.py flash` or `idf.py -p [port e.g. COM6] flash`)
-4. Monitor your code (`idf.py monitor` or `idf.py -p [port e.g. COM6] monitor`)
-
-_Note: for Windows you can see what ports are available using your device manager_
-
-You can alternatively do all three at the same time by running `idf.py build flash monitor`.
-
