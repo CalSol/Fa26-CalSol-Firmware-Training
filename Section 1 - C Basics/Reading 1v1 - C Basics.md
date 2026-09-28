@@ -1,4 +1,4 @@
-# Reading 1v1 - C Basics
+C Basics
 
 ## Installing C
 We actually don't need to have C installed on your local system due to ESP-IDF having its own specialized C compiler in the background.
