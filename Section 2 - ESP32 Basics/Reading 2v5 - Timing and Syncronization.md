@@ -14,7 +14,7 @@ Imagine you are in Supernode waiting for a 3D print to finish, and you know it t
 The most intuitive way to delay an action is to just make the processor count to a really high number before moving on. We call this **busy waiting** or blocking.
 
 ### Common Implementation
-In code, this usually looks like an empty `for` loop or a blocking delay function that hogs the CPU:
+In code, this usually looks like an empty `for` loop (also called spin waiting as we are spinning around an empty loop) or a blocking delay function that hogs the CPU:
 
 ```c
 // Busy waiting: the CPU is trapped in this loop doing nothing
