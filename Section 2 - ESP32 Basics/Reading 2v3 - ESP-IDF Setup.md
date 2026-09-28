@@ -220,13 +220,13 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    get_idf
    ```
    <details>
-       <summary>Setting up alias for MacOS</summary>
+       <summary>Setting up alias shortcut for MacOS (optional but highly recommended)</summary>
    </details>
    <details>
-       <summary>Setting up alias for Windows</summary>
+       <summary>Setting up alias shortcut for Windows (optional but highly recommended)</summary>
    </details>
    <details>
-       <summary>Setting up alias for Linux</summary>
+       <summary>Setting up alias shortcut for Linux (optional but highly recommended)</summary>
    </details>
    
 3. Generates sdkconfig file for target chip (only have to do this once)
