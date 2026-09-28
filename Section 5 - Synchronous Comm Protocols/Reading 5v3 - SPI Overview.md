@@ -15,6 +15,7 @@ Similarly to I2C, SPI uses the Master/Slave naming convention.
   * On the rising edge of the SCLK line, the slave reads what is coming in from the MOSI line. On the falling edge, the MCU reads the MISO line.
 * CS (Chip Select):
    * Each peripheral device has a separate Chip Select line connecting it to the microcontroller, which is pulled high (logic level 1). When the microcontroller wants to talk to that chip/device, it pulls the specific CS line down, waking the device up.
+     * Only **one** CS line should be low at a time
    * These CS lines are usually connected to the MCU via GPIO (General Purpose Input/Output) pins.
 
 ## Isolated SPI (IsoSPI)
