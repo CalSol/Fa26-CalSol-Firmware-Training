@@ -101,17 +101,17 @@ Otherwise, if things went smoothly you should see something like:
 
 </details>
 
-## 2. VSCode Extension Installation and Setup
+## 2. VSCode Extension Installation and Usage
 
 For convenience, we'll be installing the VSCode Extension for ESP-IDF. You should still try to familiarize yourself with the CLI, but it'll make some menial tasks easier. Make sure you've already installed VSCode and ESP-IDF before moving on.
 
 <details>
 <summary>Setup</summary>
 
-Follow the instructions at ["Install ESP-IDF and Tools"](https://docs.espressif.com/projects/vscode-esp-idf-extension/en/latest/installation.html) until you finish step 5 and reach the yellow box below:
-![Yellow Box](../images/SECTION2/yellow_box.png)
+### Install the ESP-IDF VSCode Extension
 
-If you have any problems, click "Troubleshooting"
+Follow step 1 at ["Install ESP-IDF and Tools"](https://docs.espressif.com/projects/vscode-esp-idf-extension/en/latest/installation.html). The rest of the instructions only apply if you don't already have ESP-IDF installed (like we installed earlier). Step 5 can only be completed in a workspace, so it doesn't apply to us quite yet.
+
 </details>
 
 <details>
