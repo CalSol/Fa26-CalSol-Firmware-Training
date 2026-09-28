@@ -227,8 +227,8 @@ cd /opt/esp-idf
    } 2>/dev/null | sort -t"|" -k1,1 -u | awk -F"|" "{print \$2}"'
    ```
    
-   1. Press `Esc` to go back to normal mode
-   2. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
+   4. Press `Esc` to go back to normal mode
+   5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
    If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
    
    Run this command to apply the changes to your current session without having to log out:
