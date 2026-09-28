@@ -242,8 +242,8 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
     alias get_idf='source $HOME/.espressif/tools/activate_idf_v5.5.2.sh'
     ```
 
-    1. Press `Esc` to go back to normal mode
-    2. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
+    4. Press `Esc` to go back to normal mode
+    5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
     If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
 
     Run this command to apply the changes to your current session without having to log out:
@@ -291,8 +291,8 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
     function get_idf { & 'C:\esp\v6.1-beta1\esp-idf\export.ps1' }
     ```
 
-    1. Press `Esc` to go back to normal mode
-    2. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
+    4. Press `Esc` to go back to normal mode
+    5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
     If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
 
     Run this command to apply the changes to your current session without having to close PowerShell:
@@ -336,8 +336,8 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
     alias get_idf='source /opt/esp-idf/export.sh'
     ```
 
-    1. Press `Esc` to go back to normal mode
-    2. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
+    4. Press `Esc` to go back to normal mode
+    5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
     If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
 
     Run this command to apply the changes to your current session without having to log out:
@@ -460,8 +460,8 @@ Vim has two modes — **normal mode** (for navigating) and **insert mode** (for 
 alias ports='ls /dev/tty.* /dev/cu.* 2>/dev/null'
 ```
 
-1. Press `Esc` to go back to normal mode
-2. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
+4. Press `Esc` to go back to normal mode
+5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
 If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
 
 Run this command to apply the changes to your current session without having to log out:
@@ -527,8 +527,8 @@ Vim has two modes — **normal mode** (for navigating) and **insert mode** (for 
 alias ports='ls /dev/ttyUSB* /dev/ttyACM* 2>/dev/null'
 ```
 
-1. Press `Esc` to go back to normal mode
-2. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
+4. Press `Esc` to go back to normal mode
+5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
 If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
 
 Run this command to apply the changes to your current session without having to log out:
