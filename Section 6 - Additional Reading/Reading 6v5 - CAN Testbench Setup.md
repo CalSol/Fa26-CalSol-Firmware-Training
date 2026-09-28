@@ -101,6 +101,8 @@ cd /opt/esp-idf
 
 # Flashing Firmware
 
+*Notice that these instructions are basically the same as the CLI instructions in Reading 2v2 - ESP-IDF Setup*
+
 1. Copy the hello world example from ESP-IDF
 
    ```bash
