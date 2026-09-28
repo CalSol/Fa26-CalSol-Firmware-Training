@@ -12,7 +12,7 @@ Important notes about SPI:
 <img width="1144" height="1172" alt="image" src="https://github.com/user-attachments/assets/ab6845a6-1f14-405d-889a-b21bb7f73e7f" />
 Similarly to I2C, SPI uses the Master/Slave naming convention.
 
-## SPI Lines:
+### SPI Lines:
 * MOSI (Master out, Slave in):
   * Carries data from the master to the slave.
 * MISO (Master in, Slave out):
@@ -25,7 +25,7 @@ Similarly to I2C, SPI uses the Master/Slave naming convention.
      * Only **one** CS line should be low at a time!!!
    * These CS lines are usually connected to the MCU via GPIO (General Purpose Input/Output) pins.
 
-## Isolated SPI (IsoSPI)
+# IsoSPI (Isolated SPI) Overview
 A variation of the SPI communication protocol that is more suitable for longer-distance communication (e.g. between boards), due to being differential and its resistance electromagnetic interference and ground loops. 
 
 What are differential signals?
