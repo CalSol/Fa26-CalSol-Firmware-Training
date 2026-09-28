@@ -5,7 +5,7 @@ A microcontroller (MCU) is a chip that acts as a "brain" to control hardware it'
 
 When we write firmware, we upload the logic to the MCU, which will handle all of the code during operation.
 
-### How?
+## How?
 <div>
   <img width="264" height="300" alt="microcontroller-mcu fit_lim size_1050x" src="https://github.com/user-attachments/assets/98eae797-5a10-41df-bc72-2f76ec79bdcd" />
   <img height="300" alt="mcu diagram" src="./../images/SECTION2/mcu_diagram.png" />
@@ -18,7 +18,7 @@ When we write firmware, we upload the logic to the MCU, which will handle all of
 
 How it uses these components: it interacts with the circuit it's apart of to control it.
 
-### What is the ESP32-S3 Dev Board?
+## What is the ESP32-S3 Dev Board?
 
 A development board is a PCB with a microcontroller (MCU) on it! Our team uses a custom ESP32-S3 development board to write firmware to control parts/circuit boards in the car (and has the ability to communicate through CAN, you'll learn more about that later).
 
