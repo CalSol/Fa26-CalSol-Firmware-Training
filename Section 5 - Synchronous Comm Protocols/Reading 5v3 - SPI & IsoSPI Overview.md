@@ -1,4 +1,4 @@
-# Serial Peripheral Interface (SPI) Overview
+# SPI (Serial Peripheral Interface) Overview
 
 SPI is anoter protocol to implement serial communication, a method of communication between devices where bits are sent along some wire/line or even remotely (like a TV remove to a TV!).
 
