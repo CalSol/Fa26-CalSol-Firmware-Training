@@ -64,6 +64,6 @@ A header file tells the C compiler what functions, macros, and data structures e
 
 ## Conclusion
 
-<img height="200" alt="Modularity diagram" src="./../images/SECTION2/modularity.png" />
+<img height="200" alt="Modularity diagram" src="./../images/SECTION3/modularity.png" />
 
 In all, we should strive in our code to use modularity. We can see this through how our header is setup with us importing modules and abstracting away hardware into things we can logically read. We then need to design modularly with functional programming!
