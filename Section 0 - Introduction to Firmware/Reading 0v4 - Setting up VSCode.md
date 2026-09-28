@@ -3,7 +3,7 @@ What is VSCode?
 - This is a code editing software that makes it easy to open projects and code in almost any programming language using extensions in the software.
 - This is where you'll create project files that you can move elsewhere to use (for firmware in the case of this lab!)
 
-## Action Item 🎯: Download VS Code
+## Exercise 🎯: Download VS Code
 
  Click this [link](https://code.visualstudio.com/Download?_exp_download=d53503e735)
  - Choose Windows, macOS, or Linux depending on your computer
