@@ -399,7 +399,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    idf.py -p [port e.g. COM6] monitor
    ```
 
-   **IMPORTANT:** Press `Ctrl+]` to exit the monitor. If that doesn't work, try `Ctrl+T` then `Ctrl+]`. Do not use `Ctrl+C` — that sends an interrupt to the chip, not to the monitor.*
+   **IMPORTANT:** Press `Ctrl+]` to exit the monitor. If that doesn't work, try `Ctrl+T` then `Ctrl+]`. *Do not use `Ctrl+C` — that sends an interrupt to the chip, not to the monitor.*
 
 You can alternatively do all three at the same time by running:
 
