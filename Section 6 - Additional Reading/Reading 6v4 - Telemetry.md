@@ -36,6 +36,8 @@ Finally, the InfluxDB bucket is connected as a Grafana Datasource, where data ca
 
 
 # Telemetry Code Stack
+Unlike all of this lab, Telemetry Software is written in **Python**. However, we (Strategy) still emphasize the need for all the lessons learned in Section 3 of this guide. This section will give you a short overview of how the lessons you learned before connect!
+
 
 ## Telemetry Messages 
 Each message is [COBS Encoded](https://en.wikipedia.org/wiki/Consistent_Overhead_Byte_Stuffing), using the null byte as a separator. The main code the encodes the messages on the car is [here](https://github.com/CalSol/Tachyon-FW/blob/master/Telemetry/encoding.cpp). 
@@ -176,6 +178,121 @@ Examples and possible future processors include:
 - A processor that integrates an SOC estimator.
 - A processor that converts GPS data into the correct units.  
 - A possible future processor that monitors GPS data and notes when we get near checkpoints
+
+## A Note on Coding Standards
+This following portion was written by Niels Voss.
+<details open>
+<summary>Click to Expand</summary>
+
+I know some of these rules might sound overbearing, and and you might want to say that we shouldn’t have to follow them because we are only doing a student project, but in my experience these rules will make things easier for us even even in the short term, and are absolutely critical if we want our code to work over the span of several months. That is to say, following these rules isn’t a trade-off between short-term ease of writing code and long-term code quality; it will benefit both of them!
+
+With that said, these conventions are highly opinionated and aren’t set in stone, so feel free to discuss them on Slack. Also, they aren’t cut and dry; if it makes a lot of sense in a particular situation to break a rule, then you should break it. All I ask is that you have a valid reason for doing so (and not something like “I don’t want to use type hints because it requires more keystrokes to write the code”), and you consider documenting why you broke the rule.
+
+This document is divided into Hard Conventions, which are guidelines where it can be determined objectively whether we are following them, and Soft Conventions, which are like guidelines that usually lead to better code but must be considered on a case-by-case basis.
+
+
+## Hard Conventions
+
+### Use type hints everywhere
+
+All code should be written with type hints, and code with errors in the type annotations should be considered incorrect. The parameters and return types of all python functions should be documented. Even if the function doesn’t return anything, you must still mark that the return type is None. Turn on strict type checking in VSCode or whatever IDE you use.
+
+Use the Any type if you need to interface with code that doesn’t have type hints, or if adding type hints would be extremely complicated. This is better than not writing type hints. (You might need to add “from typing import Any” to the top of your code.)
+
+Every time you override a method from a parent class, you must mark it with the @override annotation. (You might need to add “from typing import override” to the top of your code)
+
+### Private fields
+
+All fields which don't need to be public should be prefixed with an underscore, and we should treat fields which start with an underscore as private and not access them from other files.
+
+### Use pull requests
+
+Try to avoid pushing to the main/master branch regularly. It is best to create a new branch and push to that instead, and then make a pull request. Even if you think that your changes are simple enough to not need a review, it’s still better to make a pull request and then approve it yourself than it is to not make a pull request.
+
+### Use uv for package management
+
+Please use [uv](https://docs.astral.sh/uv/) for package management instead of pip or conda. uv has a few advantages over pip:
+
+* Dependencies are saved to your `pyproject.toml` file, which will be committed to version control, and your environment is synchronized with the `pyproject.toml` before any scripts are run. This means that no one’s environment will go out of date or drift apart from anyone else's. 
+* It also lets us have per-branch dependencies without it causing any friction.
+* uv pins dependency versions in a lock file, so that packages updating don’t destabilize our project and everyone has the same version of every package
+* A distinction is made between packages we explicitly depend on and transitive dependencies, unlike in a requirements.txt, so if we remove a package it's easy to see what we no longer rely on
+* Your python version is managed by uv, so everyone will have the same python version
+* There’s no longer any risk that your pip binary will refer to a different python version than your python binary
+* You no longer need to activate your .venv manually, and there’s no risk that you forget and install a bunch of stuff into your global environment
+* Package installation is much faster in uv than pip
+* There are fewer errors when installing native packages written in C, C++, or Rust
+
+
+What we care about most is the fact that environments that use uv are easy to reproduce, while environments that use pip are usually very hard to reproduce.
+
+### No platform specific code
+
+Don’t write code that depends on Unix specific libraries unless there is no good alternative (in which case, the fact that it doesn’t run on Windows should be documented). Don’t use absolute paths and don’t use the /tmp folder, which doesn’t exist on Windows. Similarly, don’t write Windows specific code that won’t run on Unix.
+
+This is currently true for our telemetry simulator, which uses `socat-manager`. 
+
+#### Some specific things worth mentioning:
+
+* Don’t use file names that aren’t allowed on WindowsDon’t include the characters <>:"/\|?* in file names, and don’t end file names in a space or a period.
+* Keep in mind that Windows and Unix use different line endings, i.e. \r\n vs \n
+* Don’t rely on shell commands like “ls” or “grep” and don’t rely on Windows Batch commands like “dir”
+
+
+
+
+### <span style="color: red;">Secret keys, sensitive data, and names</span>
+
+Do not include private keys or sensitive information in committed code. Private keys should be read from environment variables using a `.env` file, which belongs in `.gitignore`. Even though we will probably be working in a private GitHub repository, you should pretend that it is public for the purposes of data security.
+
+If you accidentally push a private key or other sensitive info and catch it quickly, it is fine to force push to delete it, as long as you send a message on Slack explaining that this is what you are doing. If it has been several days since the data was leaked, send a message on Slack and we can decide how to handle it.
+
+### Follow PEP 8 + Some of our own coding conventions
+
+Follow the [PEP 8](https://peps.python.org/pep-0008/) style guide as much as possible. The most important part is that we should be consistent about naming. We want:
+
+* file_name.py, ClassName, TypeName, function_name, variable_name, GLOBAL_CONSTANT_NAME
+
+In particular, never use uppercase letters in python file names. This has the risk of causing imports to no longer match in case with the actual file name, which can make it so that code only runs on certain operating systems (we had to debug this issue before in the ingestor code).
+
+
+In addition to PEP 8:
+
+Prefer double quotes over single quotes. This is not a hard rule, and if a string contains double quotes, you should switch to single quotes to avoid having to insert backslashes. This rule is just here because PEP 8 says we should be consistent about this.
+
+
+
+
+### Soft Conventions
+#### Commit early, commit often
+
+Data that has been committed is usually recoverable, even if it has been rebased over. Data that has not been committed is very fragile. Whenever you think you have accomplished something, commit your code. If you don’t think it is ready yet, you don’t have to push it right away, or you can push it to a new branch. It is much easier to squash commits together than it is to pull commits apart. Code that hasn’t been committed should be treated like it doesn’t exist for the purposes of tracking which tasks have been completed.
+
+As a rule of thumb, you shouldn’t accumulate more than an hour of code without committing. There should not be any long-lived uncommitted files in git; all files like this should be either committed (possibly to another branch) or added to .gitignore.
+
+####  Avoid global mutable variables
+
+It’s better to pass state explicitly from function to function than it is to track it with global variables. This makes the data dependencies between our modules clearer. It also makes it much easier to add unit tests.
+
+Global constant variables are completely fine, but it’s best to spell them in ALL_CAPS (as explained in the PEP 8 section of this document) so that people know they should not be reassigned.
+
+#### Dead files
+
+Keep track of which code is intended to belong in the final version of the code and which isn’t. All temporary scripts, code that hasn’t yet been successfully run yet, and jupyter notebooks should be kept in a special “temp-code” directory and should not be referenced from any code outside that directory. This rule only applies to the main/master branch; work-in-progress code is allowed on other branches.
+
+Remember that we can always extract code from the git history later if we need to, so don’t be worried about deleting files.
+
+#### Error handling for internal and external input
+
+When you write a function or other routine that expects the data it is passed to be in a particular format, how you handle it depends on where that data came from.
+
+If the data came from the external environment (e.g. telemetry data, user input, results of web requests): Your code should try to gracefully handle malformed input (preferably as soon as possible), possibly by giving a user-friendly error message. If the program receives extremely bad input, it should either cope with it or fail gracefully; it should not fail because of an index out of bounds error 100 lines down in the code. How you achieve this depends on the situation, but a nice rule of thumb to follow is that you should parse, not validate. That is, if we receive an input string and expect it to be of a particular format — let’s say a comma separated list of values — then instead of just checking to make sure the string is in the right format and continuing to pass it around as a string, we should turn it into a list of values, and then pass that list around instead. If you find yourself passing around unparsed strings in a completely different area of the code than where those strings came from, you are probably violating this advice.
+
+If your data comes from other parts of the code (e.g. a variable in our application’s long-lived internal state, an integer that we computed ourselves): If we find that this data is incorrect, like if a negative number is passed into a function that only accepts positive numbers, then then we should crash the program immediately by raising an exception that should not be caught. The rule of thumb is Fail Hard, Fail Fast, Fail Early. This is because if we ever receive invalid input like this, it should be considered a bug in our code, and we would like to know about bugs as soon as possible. This practice will make our code less reliable in the short run, but much more reliable in the long run.
+
+Basically, if we caused the error, we should crash the program and fix our code; if the external world caused the error, we should handle the error gracefully.
+
+</details>
 
 
 ## Grafana
