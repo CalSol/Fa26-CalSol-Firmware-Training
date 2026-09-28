@@ -349,9 +349,8 @@ Or you can run any combinations involving two of the three like:
 
 `idf.py build monitor` (OR specify the port using: `idf.py -p [port e.g. COM6] build monitor`),
 
-`idf.py flash monitor` (OR specify the port using: `idf.py -p [port e.g. COM6] monitor flash`)
+`idf.py flash monitor` (OR specify the port using: `idf.py -p [port e.g. COM6] flash monitor`)
 
-Here is how find the port you're connected for instructions 8 and 9 
 
 ### Option 2 - GUI
 
@@ -360,6 +359,7 @@ You can use the GUI buttons provided by the VSCode exntension!
 These commands will have matching buttons at the bottom of your screen that you press to execute:
 
 <img width="180" height="111" alt="image" src="https://github.com/user-attachments/assets/5f18b35e-0109-40b3-9bf1-774e8b1bb322" />
+
 
 ## Locating the Port
 <details>
@@ -370,7 +370,7 @@ To find the port, run:
 ls /dev/tty.* /dev/cu.* 2>/dev/null
 ```
 
-Just like for sourcing the ESP-IDF tool chain (Step 1), we HIGHLY recommend setting up alias/shortcut for sourcing the toolchain. This allows you to source the tool chain with a simple command such as:
+Just like for sourcing the ESP-IDF tool chain (Step 1), we HIGHLY recommend setting up alias/shortcut for finding the port. This allows you to source the tool chain with a simple command such as:
 ```bash
 ports
 ```
