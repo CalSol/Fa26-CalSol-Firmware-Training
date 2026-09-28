@@ -6,7 +6,7 @@ The Main Control Loop is the logic base of your firmware. In this section, I wil
 
 Let's say I want to make an elevator. I can draw a flow chart out like this:
 
-<img width="400" alt="Elevator Flow Chart" src="./../images/SECTION3/elevator.png" />
+<img width="600" alt="Elevator Flow Chart" src="./../images/SECTION3/elevator.png" />
 
 ### What is a block?
 
