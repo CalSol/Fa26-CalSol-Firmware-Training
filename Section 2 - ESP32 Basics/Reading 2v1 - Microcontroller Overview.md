@@ -1,4 +1,4 @@
-## Microcontroller (MCU) Overview
+# Microcontroller (MCU) Overview
 
 A microcontroller (MCU) is a chip that acts as a "brain" to control hardware it's directly connected to.
 - Like a mini computer, but less powerful because it doesn't need to do such intense tasks.
