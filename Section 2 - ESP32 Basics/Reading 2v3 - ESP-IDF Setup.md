@@ -266,8 +266,61 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    </details>
    
    <details>
-       <summary>Setting up alias shortcut for Windows</summary>
-       Coming soon!
+   <summary>Setting up alias shortcut for Windows</summary>
+
+   <details>
+    <summary>Setting up alias shortcut for Windows</summary>
+
+    *Note: This is untested for windows (not sure if it works, please let us know!)*
+
+   These steps use **PowerShell**. Your PowerShell profile (a file that runs every time you open PowerShell) is the Windows equivalent of `.zshrc` / `.bashrc`.
+
+    First, make sure your profile file exists (this is safe to run even if it already does):
+
+    ```powershell
+    New-Item -Path $PROFILE -ItemType File -Force
+    ```
+
+    Open your PowerShell profile in vim (a text editor that lives in the terminal):
+ 
+    ```powershell
+    vim $PROFILE
+    ```
+     
+    Vim has two modes — **normal mode** (for navigating) and **insert mode** (for typing). It opens in normal mode. To get to the bottom of the file and start editing:
+    
+    - Before trying to edit in Vim, do not try pressing anything with your mouse!!! It won't work!
+     
+    1. Press `Shift+G` to jump to the last line
+    2. Press `o` to open a new line below and enter insert mode
+    3. Type the following line:
+    ```powershell
+    function get_idf { & 'C:\esp\v6.1-beta1\esp-idf\export.ps1' }
+    ```
+     
+    4. Press `Esc` to go back to normal mode
+    5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
+    If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
+     
+    Run this command to apply the changes to your current session without having to close PowerShell:
+     
+    ```powershell
+    . $PROFILE
+    ```
+
+    If you get an error saying running scripts is disabled, run this once, then try again:
+
+    ```powershell
+    Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+    ```
+     
+    Now you have a alias/shortcut to source esp-idf by running:
+    ```powershell
+    get_idf
+    ```
+    
+</details>
+
    </details>
    
    <details>
