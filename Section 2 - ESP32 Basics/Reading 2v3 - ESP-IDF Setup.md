@@ -358,7 +358,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
     ```
 
    <details>
-    <summary>Setting up ports alias shortcut for Linux</summary>
+    <summary>Setting up ports alias shortcut for MacOS (optional but highly recommended)</summary>
 
     Open your `.zshrc` in vim (a text editor that lives in the terminal):
  
@@ -418,7 +418,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
     ```
 
     <details>
-    <summary>Setting up ports alias shortcut for Linux</summary>
+    <summary>Setting up ports alias shortcut for Linux (optional but highly recommended)</summary>
 
     Open your `.bashrc` in vim (a text editor that lives in the terminal):
  
