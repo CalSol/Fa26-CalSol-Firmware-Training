@@ -1,6 +1,7 @@
 # CAN (Controller Area Network) Overview
 
-CAN is a network (place where devices connect and share data) that lets the (electrical) controllers all around the car communicate with each other.
+CAN is anoter protocol to implement serial communication, a method of communication between devices where bits are sent along some wire/line or even remotely (like a TV remove to a TV!). 
+- Intuitively, CAN is a network (place where devices connect and share data) that lets the (electrical) controllers all around the car communicate with each other.
 - Formally, the **CAN Bus** is the system that enables **communication between ECU's** (basically each circuit board in the car meant to control a specific part, i.e. pedals, lights).
 
 <img width="369" height="129" alt="image" src="https://github.com/user-attachments/assets/b96ba3cb-d4e3-4f53-aa17-6672f896a4c0" />
