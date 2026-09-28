@@ -1,3 +1,7 @@
+
+// In this file, we are writing code for the Master Device in the I2C Bus.
+
+
 // --- INCLUDE HEADERS ---
 
 // FREE RTOS
@@ -11,6 +15,11 @@
 // DRIVERS
 #include "driver/gpio.h" // GPIO driver for ESP32 allows you to control the GPIO pins on the ESP32
 #include "driver/i2c_master.h" // I2C driver for ESP32, allows you to communicate with I2C devices (as the master device)
+
+
+
+
+
 
 
 
@@ -34,6 +43,12 @@
 
 
 
+static const char *TAG = "I2C_MASTER";
+
+
+
+
+
 // --- 1. INITIALIZATION ---
 
 
@@ -52,6 +67,9 @@ static void i2c_master_init(i2c_master_bus_handle_t *bus_handle, i2c_master_dev_
         .glitch_ignore_cnt = 7,
         .flags.enable_internal_pullup = false, // Set to true if external pull-up resistors are missing
     };
+
+
+
 
     // Instantiate (Create and name) the I2C master bus (and its handle)
     ESP_ERROR_CHECK(i2c_new_master_bus(&bus_config, bus_handle));
