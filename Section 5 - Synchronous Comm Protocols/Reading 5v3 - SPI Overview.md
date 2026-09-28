@@ -1,6 +1,13 @@
 # Serial Peripheral Interface (SPI) Overview
 
-Four-Wire serial communication protocol for quick and short-distance communication between a microcontroller and peripheral ICs.
+SPI is anoter protocol to implement serial communication, a method of communication between devices where bits are sent along some wire/line or even remotely (like a TV remove to a TV!).
+
+Important notes about UART:
+- **Synchronous:** Follows a clock (SCLC)
+- **4 Wire Minimum:** UART has 4 wires minimum (more info later)
+- **One-to-Many communication:** One MCU (formally called a "Master") can communinicate to multiple ICs (formally called "Slaves") 
+- **Full-duplex:** Can send and receive at the same time
+- **Speed:** Faster than UART and I2C but more prone to noise
 
 <img width="1144" height="1172" alt="image" src="https://github.com/user-attachments/assets/ab6845a6-1f14-405d-889a-b21bb7f73e7f" />
 Similarly to I2C, SPI uses the Master/Slave naming convention.
@@ -19,15 +26,16 @@ Similarly to I2C, SPI uses the Master/Slave naming convention.
    * These CS lines are usually connected to the MCU via GPIO (General Purpose Input/Output) pins.
 
 ## Isolated SPI (IsoSPI)
-A variation of the SPI communication protocol that is more suitable for longer-distance communication (e.g. between boards), due to resistance electromagnetic interference and ground loops. 
+A variation of the SPI communication protocol that is more suitable for longer-distance communication (e.g. between boards), due to being differential and its resistance electromagnetic interference and ground loops. 
+
+What are differential signals?
+  - Using two wires instead of one to send signals (communicate) by having one send positive signal values and the other send the negative equivalent. The signal received will be the difference (through subtraction) between these high and low signals. This is so outside noise (which will distort the signal) affects both wires and cancels itself out with this method.
+  - This makes it very useful for long-distance communication since it is much more resistant to noise!
 
 <img width="425" height="470" alt="image" src="https://github.com/user-attachments/assets/b9a37463-286c-48af-8c89-5aeb6324c34a" />
 
 Master Transceiver:
 * A chip that encodes the 4 SPI lines into differential pulses, so the SPI code does not need to be changed at all
-* Detour: what is a **differential line**?
-  * The twisted pair architecture (similar to what you saw in CAN) allows us to eliminate electromagnetic interference. Pulses are sent as mirror images of each other (through the HIGH and LOW lines that are twisted together) so that electromagnetic interference impacts both lines in exactly the same way.
-  * Noise can be subtracted from the signal like this: (HIGH - LOW)/2, which doubles the signal and cancels out the noise
 * Slave transceiver on the other side decodes these pulses into the conventional 4-line SPI protocol.
 
 
