@@ -357,7 +357,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    </dd></dl>
    </details>
 
-2. Generates sdkconfig file for target chip (only have to do this once)
+2. Generate the sdkconfig file for target chip (We use S3). You only have to do this once.
 
    ```bash
    idf.py set-target esp32s3
@@ -470,7 +470,7 @@ Run this command to apply the changes to your current session without having to 
 source ~/.zshrc
 ```
 
-Now you have a alias/shortcut to source esp-idf by running:
+Now you have a alias/shortcut to locate the port:
 
 ```bash
 ports
@@ -537,7 +537,7 @@ Run this command to apply the changes to your current session without having to 
 source ~/.bashrc
 ```
 
-Now you have a alias/shortcut to source esp-idf by running:
+Now you have a alias/shortcut to locate the port:
 
 ```bash
 ports
