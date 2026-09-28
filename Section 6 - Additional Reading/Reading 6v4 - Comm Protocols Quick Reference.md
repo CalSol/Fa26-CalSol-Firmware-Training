@@ -2,36 +2,36 @@
 
 ## Asynchronous Comm Protocols 
 
-### UART
+### UART (Universal Asynchronous Receiver Transmitter)
 - Go to Reading 4v2 - UART Overview
 
-### CAN
+### CAN (Controller Area Network) 
 - Go to Reading 4v3 - CAN Overview
 
-### RS485
+### RS485 (Recommended Standard 485)
 - Differential signal (similar to CAN)
 
-### USB D+/D-
+### USB D+/D- 
 - Differential signal (similar to CAN)
 - From USB to your MCU
     - Typically used for flashing firmware
 
 ## Synchronous Comm Protocols 
 
-### I2C
+### I2C (Inter-Integrated Circuit)
 - Go to Reading 5v2 - I2C Overview
 
-### SPI
+### SPI (Serial Peripheral Interface)
 - Go to Reading 5v3 - SPI & IsoSPI Overview
 
-### IsoSPI
+### IsoSPI (Isolated SPI)
 - Go to Reading 5v3 - SPI & IsoSPI Overview
 
 ### JTAG (Joint Test Action Group) 
 - Used to program to or read from MCU's
 - Similar to SPI wiring (check MCU data sheet)
 
-### I2S
+### I2S (Inter-IC Sound)
 - Used for audio (like your headphone jack!)
 - Wires:
     - SCK/BCLK: Bit Clock
