@@ -268,7 +268,7 @@ cd /opt/esp-idf
    
    The countdown and restart are expected. The Hello World example is designed to loop.
 
-   **IMPORTANT:** Press `Ctrl+]` to exit the monitor. If that doesn't work, try `Ctrl+T` then `Ctrl+]`. Do not use `Ctrl+C` — that sends an interrupt to the chip, not to the monitor.*
+   **IMPORTANT:** Press `Ctrl+]` to exit the monitor. If that doesn't work, try `Ctrl+T` then `Ctrl+]`. *Do not use `Ctrl+C` — that sends an interrupt to the chip, not to the monitor.*
 
 You can alternatively do all three at the same time by running:
 
