@@ -3,7 +3,7 @@
 I2C is anoter protocol to implement serial communication, a method of communication between devices where bits are sent along some wire/line or even remotely (like a TV remove to a TV!).
 
 Important notes about I2C:
-- **Synchronous:** Follows a clock (SCLC)
+- **Synchronous:** Follows a clock (SCL)
 - **2 Wire:** I2C has 2 wires, **Serial Clock Line (SCL)** and **Serial Data Line (SDA)** (more info later)
 - **One-to-Many communication:** One MCU (formally called a "Master") can communinicate to multiple ICs (formally called "Slaves") 
 - **Half-duplex:** Can only communicate one direction at a time
