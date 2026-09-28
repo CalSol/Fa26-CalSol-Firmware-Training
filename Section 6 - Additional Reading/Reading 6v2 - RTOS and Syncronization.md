@@ -24,18 +24,6 @@ The ESP32 is a powerful piece of hardware due to it being **multi-core**. A core
 
 Going back to our example, a second core is effectively me having a friend to help me out. Now I can take the multiple threads and assign them to a specific core to work with. Our ESP32 now can handle parallelism!
 
-## RTOS (Real Time Operating System)
-
-ESP-IDF offers us an RTOS (or a Real Time Operating System). The RTOS allows us to create threads for individual tasks as well as harness the second core of the ESP32!
-
-### How to Use
-
-TODO
-
-### Examples
-
-TODO
-
 ## Hazards
 
 However, concurrent and parallel programming can cause problems and create complexity. Below I will go into some common problems.
@@ -57,6 +45,26 @@ Oh no! The RTOS decided to switch, and now Thread B is running. Thread B now gra
 Whoops! We just lost data because of a **data race**. In general, anytime two threads are accessing the same shared data (like a buffer), we need to fear for data races! We can imagine that this holds true for multiple writers, but also when reading and writing are happening concurrently.
 
 Note: this is a challenging topic both conceptually, but also hard to catch. The subtlety of why this is a problem is hard to catch, which makes it that much harder to debug.
+
+### Starvation
+
+## Hazard Solutions
+
+As you can see, everytime we have shared data, we need to beware of hazards. Here we can see some protection.
+
+### Smart Programming
+
+The obvious solution is to not limit the amount of shared data between threads. In other words, isolate the data of threads as much as possible! If you can't you will need mutual exclusion!
+
+### Mutual Exclusion
+
+As mentioned before, it is in shared memory we need to beware for hazards. Here I will discuss the main tool we will use to protect our memory.
+
+The idea of the reader and writer flag in the deadlock example is implemented with something called a **lock**. A lock you can imagine is an object a thread can hold to get sole access to an area of code. Those who try to access the area without the lock need to wait for the thread with the lock to relinquish it.
+
+Syntax below:
+
+TODO
 
 ### Deadlock
 
@@ -81,21 +89,3 @@ buffer_read() {
 This implementation has a big problem! Imagine a writer thread enters buffer_write and grabs the writer flag, but a switch happens immediately after. Now the reader thread enters buffer_read and grabs the reader flag. The reader thread is forced to wait because the writer flag has been taken. When we switch back to the writer thread, it is also forced to wait because the reader flag has been taken. We have reached **deadlock** where both threads are effectively stuck and the software freezes.
 
 I don't need to elaborate on why deadlock for our solar car is potentially problematic.
-
-## Hazard Solutions
-
-As you can see, everytime we have shared data, we need to beware of hazards. Here we can see some protection.
-
-### Smart Programming
-
-The obvious solution is to not limit the amount of shared data between threads. In other words, isolate the data of threads as much as possible! If you can't you will need mutual exclusion!
-
-### Mutual Exclusion
-
-As mentioned before, it is in shared memory we need to beware for hazards. Here I will discuss the main tool we will use to protect our memory.
-
-The idea of the reader and writer flag in the deadlock example is implemented with something called a **lock**. A lock you can imagine is an object a thread can hold to get sole access to an area of code. Those who try to access the area without the lock need to wait for the thread with the lock to relinquish it.
-
-Syntax below:
-
-TODO
