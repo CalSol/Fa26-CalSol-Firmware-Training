@@ -65,6 +65,5 @@ In Task 3, notice that the `LED` lines and the `Main loop` lines are **mixed tog
 
 For the final project, think about:
 
-- The spec's hazards LED blinks only while hazards are **on**. How could you start and stop a blink ticker when a hazards message arrives?
 - What happens if a callback takes longer than its timer's period?
 - ESP-IDF also has **hardware** timers (`gptimer`). How are they different from `esp_timer`, and when would you need one?
