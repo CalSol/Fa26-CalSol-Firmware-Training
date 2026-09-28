@@ -1,4 +1,7 @@
 # Table of Contents
+<details>
+<summary><b>Click to expand</b></summary>
+
 - [Table of Contents](#table-of-contents)
 - [Telemetry Architecture](#telemetry-architecture)
 - [Telemetry Software Stack](#telemetry-software-stack)
@@ -24,7 +27,7 @@
       - [Avoid global mutable variables](#avoid-global-mutable-variables)
       - [Dead files](#dead-files)
       - [Error handling for internal and external input](#error-handling-for-internal-and-external-input)
-
+</details>
 
 
 # Telemetry Architecture 
