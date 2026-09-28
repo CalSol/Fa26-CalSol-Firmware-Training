@@ -5,12 +5,21 @@ Throughout the design cycle of our solar vehicles, many people work on many part
 Github is an online cloud-based platform where people store, share, and work together on computer code. It is also a tool for us to use for
 version control. For CalSol, we store all of our hardware and firmware files on GitHub, which lets us work on the car no matter where we are! For this reading, we will be heavily referencing the CS61B HW01 Setup. Please first read [this section](https://sp26.datastructur.es/homeworks/hw01/#tools-overview-git) on Git overview.
 
-## Action Item 🎯: Setup GitHub
+## Exercise 🎯: Setup GitHub
 1. Create a GitHub account at [here](https://github.com/) if you don't already have one. We recommend **using your personal email**, and adding your Berkeley account later for student benefits.
 2. Install Git/GitBash on your system. You can follow the CS61B HW01 Task 1 instructions [here](https://sp26.datastructur.es/homeworks/hw01/#task-1-install-git).
 3. Set up your Git! To connect your GitHub account to your terminal you can follow the CS61B HW01 Task 3 instructions [here](https://sp26.datastructur.es/homeworks/hw01/#task-3-set-up-git).
 4. Reach out to the Electrical PMs on Slack with the email you used to create your account so we can add you to the club organization.
-5. Clone **this** GitHub repository so that you access to the exercises and other content. You can use the following in your terminal commands to do so, and you can find more specific details from the CS61B HW01 Task 5 instructions [here](https://sp26.datastructur.es/homeworks/hw01/#task-5-cloning-repositories).
+
+## Exercise 🎯: Make a project directory
+1. Run `cd ~` to make sure you're in your home directory
+2. Run `mkdir projects` to create a folder called projects
+3. Run `cd projects` to move into it
+4. Run `ls` to list its contents. It's empty because you just created it! 
+5. Run `cd ..` to move back up to your home directory
+
+## Exercise 🎯: Clone the Firmware Lab
+Clone **this** GitHub repository so that you access to the exercises and other content. You can use the following in your terminal commands to do so, and you can find more specific details from the CS61B HW01 Task 5 instructions [here](https://sp26.datastructur.es/homeworks/hw01/#task-5-cloning-repositories).
 
 ```
 cd <folder you want to clone the repository folder in>
