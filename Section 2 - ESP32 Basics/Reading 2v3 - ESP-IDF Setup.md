@@ -199,7 +199,7 @@ In project folder, go to ‘main’ file. (As per the C Basics section, the C/C+
 
 </details>
 
-## Flashing Code:
+## Flashing Firmware:
 There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF code on your computer. It is completely up to personal preference which one you use (and also just which one "magically" works). But *PLEASE* try to familiarize yourself with both options!!!
 
 ### Option 1 - CLI
@@ -367,11 +367,11 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    ```bash
    idf.py menuconfig
    ```
-5. Build your code. This calls CMake and Ninja in right order to compile code, link libraries, and generate binary files (.bin) that can be flashed onto an ESP32 chip). idf.py build First build takes a few minutes — it's compiling the entire ESP-IDF stack. Subsequent builds only recompile files you've changed.
+5. Build your code. This calls CMake and Ninja in right order to compile code, link libraries, and generate binary files (.bin) that can be flashed onto an ESP32 chip). The first build takes a few minutes — it's compiling the entire ESP-IDF stack. Subsequent builds only recompile files you've changed.
    ```bash
    idf.py build
    ```
-6. Flash your code
+6. Flash your code. This uploads your firmware to the chip!
    ```bash
    idf.py flash
    ```
