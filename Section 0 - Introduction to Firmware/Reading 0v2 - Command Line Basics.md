@@ -9,7 +9,7 @@ Before writing firmware, you will need to know how to interact with your compute
 When opening Git Bash (or another terminal), you may see something like this in the terminal (also in the screenshot above!):
 
 ```bash
-(env) oski@stolerpi:~$
+(env) oski@stolerpi: ~ $
 ```
 `(env)` = environment <br> 
 `oski` = username <br>
