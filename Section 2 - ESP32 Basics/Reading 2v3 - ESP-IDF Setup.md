@@ -260,15 +260,17 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
 
 _Note: for Windows you can see what ports are available using your device manager_
 
-You can alternatively do all three at the same time by running `idf.py build flash monitor` (or `idf.py -p [port e.g. COM6] build flash monitor`) 
+You can alternatively do all three at the same time by running:
+
+`idf.py build flash monitor` (OR specify the port using:  `idf.py -p [port e.g. COM6] build flash monitor`) 
 
 Or you can run any combinations involving two of the three like:
 
-`idf.py build flash` (or `idf.py -p [port e.g. COM6] build flash`), 
+`idf.py build flash` (OR specify the port using: `idf.py -p [port e.g. COM6] build flash`), 
 
-`idf.py build monitor` (or `idf.py -p [port e.g. COM6] build monitor`),
+`idf.py build monitor` (OR specify the port using: `idf.py -p [port e.g. COM6] build monitor`),
 
-`idf.py flash monitor` (or `idf.py -p [port e.g. COM6] monitor flash`)
+`idf.py flash monitor` (OR specify the port using: `idf.py -p [port e.g. COM6] monitor flash`)
 
 Here is how find the port you're connected for instructions 8 and 9 
 
