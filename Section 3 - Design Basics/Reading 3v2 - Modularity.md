@@ -39,8 +39,10 @@ The # define keyword lets us define a macro to abstract some number to it's mean
 
 ## Modular Design
 
-As mentioned in section 1, modular design is KEY to decreasing complexity! Here you will see how we would generally make our program more modular. Later you will even see how this will simplify some of the more complicated techniques like concurrent programming.
+As mentioned in section 3v1, modular design is KEY to decreasing complexity! Here you will see how we would generally make our program more modular. Later you will even see how this will simplify some of the more complicated techniques like concurrent programming.
 
 ### Functional Programming 
 
-TODO on abstraction
+Functional programming is the concept of abstracting sub-routines (sub-tasks) as a singular function call. For example, if I wanted to find the average of a list of numbers (which is more commonly used in firmware than you would think), I would need to loop through each number in the list and then divide by the size of the list. To do this each time we want an average, will bloat our code. Instead, we can create an average function that takes in a list and returns a single number as the output. In this way, we can abstract away how averages are calculated and allow it to be simply called.
+
+In general, we want to keep our code simple, so making more complicated things functions are ideal. It also makes your code more readable and logical, as you can easily read that you are getting an average, instead of needing to focus on how the average was computed.
