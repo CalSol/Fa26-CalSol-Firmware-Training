@@ -9,7 +9,8 @@ Important notes about I2C:
 - **Half-duplex:** Can only communicate one direction at a time
 - **Speed:** Faster than UART but slower than SPI
 
-## Master <--> Slave / Controller <--> Peripheral Communication
+### Master <--> Slave / Controller <--> Peripheral Communication
+
 <img width="800" height="392" alt="image" src="https://github.com/user-attachments/assets/cf68fc32-088a-4398-8754-1c13d49d5b06" />
 
 * I2C uses 2 lines: Serial Data Line (SDA) and Serial Clock Line (SCL) to communicate between the microcontroller (master) and peripherals (slaves)
@@ -31,7 +32,9 @@ The microcontroller calls out the peripheral it wants to talk to, tells it if it
 Implementation: most microcontrollers will have a built in library for I2C, which can be used with any I2C compatible device.
 
 
-## What if the microcontroller wants to talk to multiple devices at the same time?
+
+###  What if the microcontroller wants to talk to multiple devices at the same time?
+
 Because all devices are on a shared *bus* on the same data line, only one peripheral device can communicate with the MCU at a time. However, this data is sent at a very fast rate (100 kBits/sec, around 100 kHz), so the MCU can speak to all these devices sequentially. 
 
 
