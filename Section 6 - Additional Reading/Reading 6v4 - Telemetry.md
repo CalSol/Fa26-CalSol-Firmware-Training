@@ -65,10 +65,10 @@ Most messages tell us exactly one value, but a few contain multiple values per m
 For example: 
 
 Rideon current only has 1 value per message. 
-![Riedon](./telem_images/rideon_current.png)
+![Riedon](../images/SECTION6/telem_images/rideon_current.png)
 
 Every bank of the BMS has 4 values per messge. 
-![BMS](./telem_images/bms_voltages.png)
+![BMS](../images/SECTION6/telem_images/bms_voltages.png)
 
 
 ## Configuration Files
@@ -193,6 +193,6 @@ WHERE conditions
 GROUP BY timeInterval
 ```
 
-![Grafana Query](./telem_images/grafana.png)
+![Grafana Query](../images/SECTION6/telem_images/grafana.png)
 
 As always, GROUP BY and AGG_FUNC are optional. The default value of `GROUP BY time($__interval)` actually calculates a dynamic interval based on the timeframe selection and the max data points per series. Sometimes, we might actually want to group by a defined interval like `1s` instead.  
