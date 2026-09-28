@@ -5,6 +5,7 @@ UART is a block of circuitry that implements serial communication through its Un
   - **Universal:** usable on <i>any</i> transmitting/receiving device.
   - **Asynchronous:** does not follow any clock/time, simply sends receives when it does.
   - **Receiver/Transmitter**: This protocol is for devices that transmit and receive data.
+  - **One-to-One** communication (unlike other protocols, can only communicate between 2 devices)
 - Serial communication is the method of communication between devices where bits are sent along some wire/line or even remotely (like a TV remove to a TV!).
 - UART exists in most microcontrollers, including our ESP32.
 
@@ -30,7 +31,7 @@ The above configurations must be the same for both devices involved. More config
 
 **<i>More on how to configure this in another section!</i>**
 
-## UART Bits Breakdown
+## UART Bits Breakdown (Optional but useful read)
 
 Each transmitted message in UART follows a structured format to ensure reliable communication between devices. Here’s a breakdown of each component:
 - Start Bit (1 bit):
