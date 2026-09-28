@@ -19,7 +19,7 @@
 ## Synchronous Comm Protocols 
 
 ### I2C (Inter-Integrated Circuit)
-- Go to Reading 5v2 - I2C Overview
+- Go to [Reading 5v2 - I2C Overview](<../Section 5 - Synchronous Comm Protocols/Reading 5v2 - I2C Overview.md>)
 
 ### SPI (Serial Peripheral Interface)
 - Go to [Reading 5v3 - SPI & IsoSPI Overview](<../Section 5 - Synchronous Comm Protocols/Reading 5v3 - SPI & IsoSPI Overview.md>)
