@@ -485,7 +485,7 @@ ports
 <summary>Windows</summary>
 <dl><dd>
 
-For Windows you can see what ports are available using your device manager_
+For Windows you can see what ports are available using your device manager
 
 </dd></dl>
 </details>
