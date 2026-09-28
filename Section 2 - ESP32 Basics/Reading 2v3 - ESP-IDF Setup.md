@@ -339,126 +339,126 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    idf.py -p [port e.g. COM6] monitor
    ```
 
-    <details>
-    <summary>Loacting the port</summary>
-    <dl><dd>
+<details>
+<summary>Locating the port</summary>
+<dl><dd>
 
-           
-    <details>
-    <summary>MacOS</summary>
-    
-    To find the port, run:
-    ```bash
-    ls /dev/tty.* /dev/cu.* 2>/dev/null
-    ```
+       
+<details>
+<summary>MacOS</summary>
 
-   Just like for sourcing the ESP-IDF tool chain (Step 1), we HIGHLY recommend setting up alias/shortcut for sourcing the toolchain. This allows you to source the tool chain with a simple command such as:
-    ```bash
-    ports
-    ```
+To find the port, run:
+```bash
+ls /dev/tty.* /dev/cu.* 2>/dev/null
+```
 
-   <details>
-    <summary>Setting up ports alias shortcut for MacOS (optional but highly recommended)</summary>
+Just like for sourcing the ESP-IDF tool chain (Step 1), we HIGHLY recommend setting up alias/shortcut for sourcing the toolchain. This allows you to source the tool chain with a simple command such as:
+```bash
+ports
+```
 
-    Open your `.zshrc` in vim (a text editor that lives in the terminal):
+<details>
+<summary>Setting up ports alias shortcut for MacOS (optional but highly recommended)</summary>
+
+Open your `.zshrc` in vim (a text editor that lives in the terminal):
+
+```bash
+vim ~/.zshrc
+```
  
-    ```bash
-    vim ~/.zshrc
-    ```
-     
-    Vim has two modes — **normal mode** (for navigating) and **insert mode** (for typing). It opens in normal mode. To get to the bottom of the file and start editing:
-    
-    - Before trying to edit in Vim, do not try pressing anything with your mouse!!! It won't work!
-     
-    1. Press `Shift+G` to jump to the last line
-    2. Press `o` to open a new line below and enter insert mode
-    3. Type the following line:
-    ```bash
-    alias ports='ls /dev/tty.* /dev/cu.* 2>/dev/null'
-    ```
-     
-    4. Press `Esc` to go back to normal mode
-    5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
-    If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
-     
-    Run this command to apply the changes to your current session without having to log out:
-     
-    ```bash
-    source ~/.zshrc
-    ```
-     
-    Now you have a alias/shortcut to source esp-idf by running:
-    ```bash
-    ports
-    ```
-   
-    </details>
+Vim has two modes — **normal mode** (for navigating) and **insert mode** (for typing). It opens in normal mode. To get to the bottom of the file and start editing:
 
-    </details>
-    
-    <details>
-    <summary>Windows</summary>
-        
-    For Windows you can see what ports are available using your device manager_
-
-   </details>
-
-    
-    <details>
-    <summary>Linux</summary>
-    
-    To find the port, run:
-    ```bash
-    ls /dev/ttyUSB* /dev/ttyACM* 2>/dev/null
-    ```
-    
-    Just like for sourcing the ESP-IDF tool chain (Step 1), we HIGHLY recommend setting up alias/shortcut for sourcing the toolchain. This allows you to source the tool chain with a simple command such as:
-    ```bash
-    ports
-    ```
-
-    <details>
-    <summary>Setting up ports alias shortcut for Linux (optional but highly recommended)</summary>
-
-    Open your `.bashrc` in vim (a text editor that lives in the terminal):
+- Before trying to edit in Vim, do not try pressing anything with your mouse!!! It won't work!
  
-    ```bash
-    vim ~/.bashrc
-    ```
-     
-    Vim has two modes — **normal mode** (for navigating) and **insert mode** (for typing). It opens in normal mode. To get to the bottom of the file and start editing:
-    
-    - Before trying to edit in Vim, do not try pressing anything with your mouse!!! It won't work!
-     
-    1. Press `Shift+G` to jump to the last line
-    2. Press `o` to open a new line below and enter insert mode
-    3. Type the following line:
-    ```bash
-    alias ports='ls /dev/ttyUSB* /dev/ttyACM* 2>/dev/null'
-    ```
-     
-    4. Press `Esc` to go back to normal mode
-    5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
-    If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
-     
-    Run this command to apply the changes to your current session without having to log out:
-     
-    ```bash
-    source ~/.bashrc
-    ```
-     
-    Now you have a alias/shortcut to source esp-idf by running:
-    ```bash
-    ports
-    ```
+1. Press `Shift+G` to jump to the last line
+2. Press `o` to open a new line below and enter insert mode
+3. Type the following line:
+```bash
+alias ports='ls /dev/tty.* /dev/cu.* 2>/dev/null'
+```
+ 
+4. Press `Esc` to go back to normal mode
+5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
+If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
+ 
+Run this command to apply the changes to your current session without having to log out:
+ 
+```bash
+source ~/.zshrc
+```
+ 
+Now you have a alias/shortcut to source esp-idf by running:
+```bash
+ports
+```
 
-    </details>
-   
-    </details>
+</details>
 
+</details>
+
+<details>
+<summary>Windows</summary>
     
-    </dd></dl>
-    </details>
+For Windows you can see what ports are available using your device manager_
+
+</details>
+
+
+<details>
+<summary>Linux</summary>
+
+To find the port, run:
+```bash
+ls /dev/ttyUSB* /dev/ttyACM* 2>/dev/null
+```
+
+Just like for sourcing the ESP-IDF tool chain (Step 1), we HIGHLY recommend setting up alias/shortcut for sourcing the toolchain. This allows you to source the tool chain with a simple command such as:
+```bash
+ports
+```
+
+<details>
+<summary>Setting up ports alias shortcut for Linux (optional but highly recommended)</summary>
+
+Open your `.bashrc` in vim (a text editor that lives in the terminal):
+
+```bash
+vim ~/.bashrc
+```
+ 
+Vim has two modes — **normal mode** (for navigating) and **insert mode** (for typing). It opens in normal mode. To get to the bottom of the file and start editing:
+
+- Before trying to edit in Vim, do not try pressing anything with your mouse!!! It won't work!
+ 
+1. Press `Shift+G` to jump to the last line
+2. Press `o` to open a new line below and enter insert mode
+3. Type the following line:
+```bash
+alias ports='ls /dev/ttyUSB* /dev/ttyACM* 2>/dev/null'
+```
+ 
+4. Press `Esc` to go back to normal mode
+5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
+If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
+ 
+Run this command to apply the changes to your current session without having to log out:
+ 
+```bash
+source ~/.bashrc
+```
+ 
+Now you have a alias/shortcut to source esp-idf by running:
+```bash
+ports
+```
+
+</details>
+
+</details>
+
+
+</dd></dl>
+</details>
 
 You can alternatively do all three at the same time by running:
 
@@ -481,6 +481,7 @@ You can use the GUI buttons provided by the VSCode exntension!
 These commands will have matching buttons at the bottom of your screen that you press to execute:
 
 <img width="180" height="111" alt="image" src="https://github.com/user-attachments/assets/5f18b35e-0109-40b3-9bf1-774e8b1bb322" />
+
 
 ## General Tips:
 - Whenever edits to the file/code are made, rebuild before flashing. 
