@@ -84,73 +84,14 @@ Ask a team admin — they can reset it for you with:
 ```bash
 sudo passwd yourname
 ```
----
 
-# Sourcing the ESP-IDF Toolchain
+## Part 3 — Installing the ESP-IDF Toolchain
 
 First install the ESP-IDF Toolchain via the following commands (you only have to do this once!)
 ```bash
 cd /opt/esp-idf
 ./install.sh esp32
 ```
- 
-Before you can use `idf.py` or any ESP-IDF tools in any new terminal session, you need to **source** the toolchain. But what does sourcing actually mean?
- 
-When you run a normal script like `bash script.sh`, it runs in a **child process** — a temporary shell that inherits your environment, does its work, and then disappears. Any changes it makes (like adding something to your `PATH`) vanish when it exits, because they only existed in that child process.
- 
-**Sourcing** runs a script directly in your current shell instead:
- 
-```bash
-. /opt/esp-idf/export.sh
-# the dot is shorthand for "source" — these are identical:
-source /opt/esp-idf/export.sh
-```
- 
-Because it runs in your current shell, any environment variables it sets — like `$IDF_PATH` and the path to `xtensa-esp32s3-elf-gcc` — stick around for the rest of your session. That's why `idf.py` works after sourcing but not before: your shell simply doesn't know where to find it until `export.sh` adds it to your `$PATH`.
- 
-You can see what it adds by running:
- 
-```bash
-echo $IDF_PATH         # should print /opt/esp-idf
-which idf.py           # should print the full path to the idf.py script
-```
- 
-### Setting up your .bashrc
- 
-Sourcing manually every session gets old quickly. The fix is to add it to your `~/.bashrc` — a script that runs automatically every time you open a shell.
- 
-Open your `.bashrc` in vim (a text editor that lives in the terminal):
- 
-```bash
-vim ~/.bashrc
-```
- 
-Vim has two modes — **normal mode** (for navigating) and **insert mode** (for typing). It opens in normal mode. To get to the bottom of the file and start editing:
-
-- Before trying to edit in Vim, do not try pressing anything with your mouse!!! It won't work!
- 
-1. Press `Shift+G` to jump to the last line
-2. Press `o` to open a new line below and enter insert mode
-3. Type the two lines:
-```bash
-alias get_idf=". /opt/esp-idf/export.sh"
-. /opt/esp-idf/export.sh
-```
- 
-4. Press `Esc` to go back to normal mode
-5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
-If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
- 
-Apply the changes to your current session without logging out:
- 
-```bash
-source ~/.bashrc
-```
- 
-What those two lines do:
- 
-- `. /opt/esp-idf/export.sh` — sources the toolchain automatically on every login, so `idf.py` is always available
-- `alias get_idf=...` — gives you a manual shortcut to re-source it if needed (e.g. if something resets your environment)
 
 # Flashing Firmware
 
@@ -168,29 +109,129 @@ What those two lines do:
    source /opt/esp-idf/export.sh
    ```
 
-3. Generate the sdkconfig file for target chip (We use S3). You only have to do this once.
+   Note: Sourcing manually every session gets old quickly. We HIGHLY recommend adding it to your `~/.bashrc` — a script that runs automatically every time you open a shell so that every time you ssh into the pi, the ESP-IDF toolchain is automatically sourced.
+
+   <details>
+   <summary>Setting up automatic sourcing (optional but highly recommended)</summary>
+ 
+   Open your `.bashrc` in vim (a text editor that lives in the terminal):
+    
+   ```bash
+   vim ~/.bashrc
+   ```
+    
+   Vim has two modes — **normal mode** (for navigating) and **insert mode** (for typing). It opens in normal mode. To get to the bottom of the file and start editing:
+   
+   - Before trying to edit in Vim, do not try pressing anything with your mouse!!! It won't work!
+    
+   1. Press `Shift+G` to jump to the last line
+   2. Press `o` to open a new line below and enter insert mode
+   3. Type the lines:
+   ```bash
+   # gives you a manual shortcut to re-source it if needed (e.g. if something resets your environment)
+   alias get_idf='source /opt/esp-idf/export.sh'
+   
+   # sources the toolchain automatically on every login, so idf.py is always available
+   source /opt/esp-idf/export.sh
+   ```
+    
+   4. Press `Esc` to go back to normal mode
+   5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
+   If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
+    
+   Run this command to apply the changes to your current session without having to log out:
+    
+   ```bash
+   source ~/.bashrc
+   ```
+    
+   What those two lines do:
+    
+   - `. /opt/esp-idf/export.sh` — sources the toolchain automatically on every login, so `idf.py` is always available
+   - `alias get_idf=...` — gives you a manual shortcut to re-source it if needed (e.g. if something resets your environment)
+
+   </details>
+
+4. Generate the sdkconfig file for target chip (We use S3). You only have to do this once.
   
    ```bash
    idf.py set-target esp32s3
    ```
 
-4. OPTIONAL: edit the sdkconfig file
+5. OPTIONAL: edit the sdkconfig file
 
    ```bash
    idf.py menuconfig
    ```
 
-5. Build your code. This calls CMake and Ninja in right order to compile code, link libraries, and generate binary files (.bin) that can be flashed onto an ESP32 chip). The first build takes a few minutes — it's compiling the entire ESP-IDF stack. Subsequent builds only recompile files you've changed.
+6. Build your code. This calls CMake and Ninja in right order to compile code, link libraries, and generate binary files (.bin) that can be flashed onto an ESP32 chip). The first build takes a few minutes — it's compiling the entire ESP-IDF stack. Subsequent builds only recompile files you've changed.
 
    ```bash
    idf.py build
    ```
 
-5. Locate the port:
+5. Locate the port (this will show you the custom names of the ESPs connected to the test bench):
 
    ```bash
-   ls /dev/ttyACM* /dev/ttyUSB*
+   ls /dev/esp32* 2>/dev/null
    ```
+
+   if the custom names for the ESPs aren't working, try just getting the port numbers:
+   ```bash
+   ls /dev/ttyUSB* /dev/ttyACM* 2>/dev/null
+   ```
+
+   Note: We HIGHLY recommend setting up alias/shortcut for locating the port. This allows you to locate the port (first with the custom name of the ESP, then if that doesn't work with the port number) with a simple command such as:
+
+   ```bash
+   ports
+   ```
+   
+   <details>
+   <summary>Setting up ports alias shortcut for Linux (optional but highly recommended)</summary>
+   
+   Open your `.bashrc` in vim (a text editor that lives in the terminal):
+   
+   ```bash
+   vim ~/.bashrc
+   ```
+   
+   Vim has two modes — **normal mode** (for navigating) and **insert mode** (for typing). It opens in normal mode. To get to the bottom of the file and start editing:
+   
+   - Before trying to edit in Vim, do not try pressing anything with your mouse!!! It won't work!
+   
+   1. Press `Shift+G` to jump to the last line
+   2. Press `o` to open a new line below and enter insert mode
+   3. Type the following lines:
+   
+   ```bash
+   # List connected serial/USB devices — custom esp32 names if udev rules matched, else generic Linux names
+   alias ports='{
+     for p in /dev/esp32* /dev/ttyACM* /dev/ttyUSB*; do
+       [ -e "$p" ] || continue
+       real=$(readlink -f "$p")
+       echo "$real|$p"
+     done
+   } 2>/dev/null | sort -t"|" -k1,1 -u | awk -F"|" "{print \$2}"'
+   ```
+   
+   1. Press `Esc` to go back to normal mode
+   2. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
+   If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
+   
+   Run this command to apply the changes to your current session without having to log out:
+   
+   ```bash
+   source ~/.bashrc
+   ```
+   
+   Now you have a alias/shortcut to locate the port (first with the custom name of the ESP, then if that doesn't work with the port number):
+   
+   ```bash
+   ports
+   ```
+   
+   </details>
 
 5. Flash your code. This uploads your firmware to the chip!
 
