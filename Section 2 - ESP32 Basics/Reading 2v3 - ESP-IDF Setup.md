@@ -192,12 +192,8 @@ Each command (and more) with a checkbox should open a button used for that purpo
 
 <img width="362.5" height="148" alt="image" src="https://github.com/user-attachments/assets/2825aebc-83b1-4705-bf6c-ddc72d4cfdfd" />
 
-<br><br>
-
 Info on the purpose of each file/folder in your project folder [here](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-guides/build-system.html).
 (Great breakdown of components [here](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-guides/build-system.html)).
-
-<br><br>
 
 In project folder, go to ‘main’ file. (As per the C Basics section, the C/C++ extension in VS Code lets you write C/C++ code in this file).
 
@@ -207,10 +203,21 @@ In project folder, go to ‘main’ file. (As per the C Basics section, the C/C+
 There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF code on your computer. It is completely up to personal preference which one you use (and also just which one "magically" works). 
 
 ### Option 1 - CLI
-1. Run your toolchain export (`C:\esp\v6.1-beta1\esp-idf\export.ps1`)
-2. Build your code (`idf.py build`)
-3. Flash your code (`idf.py flash` or `idf.py -p [port e.g. COM6] flash`)
-4. Monitor your code (`idf.py monitor` or `idf.py -p [port e.g. COM6] monitor`)
+1. Source the ESP-IDF toolchain (`C:\esp\v6.1-beta1\esp-idf\export.ps1`)
+2. Generates sdkconfig file for target chip (only have to do this once)
+   ```bash
+   idf.py set-target esp32s3
+   ```
+4. OPTIONAL: edit the sdkconfig file
+   ```bash
+   idf.py menuconfig
+   ```
+5. Build your code (this calls cmake and ninja in right order to compile/build the code)
+   ```bash
+   idf.py build
+   ```
+7. Flash your code (`idf.py flash` or `idf.py -p [port e.g. COM6] flash`)
+8. Monitor your code (`idf.py monitor` or `idf.py -p [port e.g. COM6] monitor`)
 
 _Note: for Windows you can see what ports are available using your device manager_
 
