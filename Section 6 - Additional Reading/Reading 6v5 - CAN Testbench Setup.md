@@ -131,7 +131,7 @@ cd /opt/esp-idf
    Vim has two modes — **normal mode** (for navigating) and **insert mode** (for typing). It opens in normal mode. To get to the bottom of the file and start editing:
    
    - Before trying to edit in Vim, do not try pressing anything with your mouse!!! It won't work!
-    
+
    1. Press `Shift+G` to jump to the last line
    2. Press `o` to open a new line below and enter insert mode
    3. Type the lines:
