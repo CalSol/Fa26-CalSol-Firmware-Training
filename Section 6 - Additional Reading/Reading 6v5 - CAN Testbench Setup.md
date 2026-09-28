@@ -93,6 +93,14 @@ cd /opt/esp-idf
 ./install.sh esp32
 ```
 
+## Quick reference
+
+| Task | Command |
+|---|---|
+| SSH into the Pi | `ssh yourname@<device_name>` |
+| Change your password | `passwd` |
+| Check who's logged in | `who` |
+
 # Flashing Firmware
 
 1. Copy the hello world example from ESP-IDF
@@ -268,13 +276,3 @@ Or you can run any combinations involving two of the three like:
 `idf.py -p [port e.g. /dev/ttyACM0] build monitor`
 
 `idf.py -p [port e.g. /dev/ttyACM0] flash monitor`
-
----
-
-## Quick reference
-
-| Task | Command |
-|---|---|
-| SSH into the Pi | `ssh yourname@<device_name>` |
-| Change your password | `passwd` |
-| Check who's logged in | `who` |
