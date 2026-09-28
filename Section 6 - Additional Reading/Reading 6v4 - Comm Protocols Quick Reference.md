@@ -6,7 +6,7 @@
 - Go to [Reading 4v2 - UART Overview](<../Section 4 - Asynchronous Comm Protocols/Reading 4v2 - UART Overview.md>)
 
 ### CAN (Controller Area Network) 
-- Go to Reading 4v3 - CAN Overview
+- Go to [Reading 4v3 - CAN Overview](<../Section 4 - Asynchronous Comm Protocols/Reading 4v3 - CAN Overview.md>)
 
 ### RS485 (Recommended Standard 485)
 - Differential signal (similar to CAN)
