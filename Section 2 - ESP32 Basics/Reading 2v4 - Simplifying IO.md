@@ -112,9 +112,9 @@ We commonly see interrupts in ICs and communication protocols, but we can really
 
 In a real-world scenario, your ESP32 can sit completely idle (or work on a heavy processing task) and ignore its primary data IO pins.
 
-Instead, we configure a specific IO pin as an "interrupt pin" set to watch for sudden electrical change (e.g. voltage spike from LOW to HIGH). The moment the electrical change happens, the hardware forces the CPU to pause its current task, read the incoming data at the exact frequency expected, and then return to its primary task.
+Now instead of polling, we can configure a specific IO pin as an "interrupt pin" set to watch for sudden electrical change (e.g. voltage spike from LOW to HIGH). The moment the electrical change happens, the hardware forces the CPU to pause its current task, read the incoming data at the exact frequency expected, and then return to its primary task.
 
-Typically you use an Interrupt Service Routine (ISR), which is a function you write in your C code that is automatically called the exact moment the interrupt pin is triggered. We will not be asking you to implement interrupts in this lab, so we will leave the exact implementation for you all to find out. The main idea is that when an interrupt is triggered, it queries that function!
+Typically you use an Interrupt Service Routine (ISR), which is a function you write in your C code that is automatically called the exact moment the interrupt pin is triggered. We will not be asking you to implement interrupts in this lab, so we will leave the exact implementation for you all to find out. The main idea is that when an interrupt is triggered, it causes the CPU to drop what it's doing to query that function!
 
 #### Trade-Offs
 
@@ -124,7 +124,7 @@ We can see that we have just solved our two problems!
 
 2) No Data Loss: we can't miss data if we are notified exactly when the data is coming. Another important fun hardware note is that we must make sure in layout the timing of our interrupts are precise, as otherwise we will poll at the wrong time.
 
-However, there are some new drawbacks. The main one being complexity. For interrupts to work, we need a synchronized and dedicated interrupt IO pin. We also need to know how to time the polling.
+However, there are some new drawbacks. The main one being complexity. For interrupts to work, we need a synchronized and dedicated interrupt IO pin. We also need to know how to time the polling. We are also risking losing computation, as we are dropping everything we are doing when interrupted.
 
 In summary, we should use interrupts when the data we need is very precise and known, while polling deals with more general cases.
 
