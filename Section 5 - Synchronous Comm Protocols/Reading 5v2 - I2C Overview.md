@@ -38,3 +38,8 @@ Implementation: most microcontrollers will have a built in library for I2C, whic
 Because all devices are on a shared *bus* on the same data line, only one peripheral device can communicate with the MCU at a time. However, this data is sent at a very fast rate (100 kBits/sec, around 100 kHz), so the MCU can speak to all these devices sequentially. 
 
 
+### Pull Up Resistors
+
+- I2C needs pull up resistors so that SDA/SCL are not floating (so it can switch from either HIGH or LOW)
+- Larger pull up -> slower but more power efficient
+  - 4.7kΩ is usually fine for CalSol purposes
