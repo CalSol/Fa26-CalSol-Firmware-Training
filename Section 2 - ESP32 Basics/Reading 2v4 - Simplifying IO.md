@@ -64,14 +64,15 @@ IO pins must have their direction configured. This is because in either the inpu
 If you think about it, the IO pin only will know what the voltage is at the exact fraction of a millisecond that you check it since it has no memory...so how can we solve this issue?
 
 ### Polling
+Because an IO pin has no memory, **polling** enables us to continuously monitor its state so we don't miss any signals.
 
-A lot of the talk of hardware above, was to motivate this idea that for our IO pins bits are read serially (one at a time). Here we will discuss a naive way to read these bits.
+Polling simply means writing software that repeatedly asks the IO pin, "Are you HIGH or LOW right now?" over and over again in a loop.
 
 #### Analogy
 
-TODO add picture
+<img height="200" alt="Install Picture" src="./../images/SECTION1/polling.png" />
 
-Imagine I am sitting in Supernode doing my homework while a meeting is happening. To gather input of what other people are working on, I can poll them! In other words, I can go up to them and ask what they are doing every so often. This allows me as lead to get input! This is polling.
+Imagine your PM is sitting in Supernode doing their homework while a meeting is happening. To gather input of what other people are working on, the PM can poll them! In other words, the PM can go up to each member and ask what they are doing every so often. This allows the PM to get input! This is the concept of polling.
 
 #### Common Implementation
 
