@@ -31,7 +31,7 @@ Use these for precise, fast background ticks (like toggling an LED every 10 ms)
   
 Use these for heavy, infinite loops that deal with hardware (IO actions). If a process requires waiting, reading a stream of data, or managing, it belong in a Task
 
-To actually create a task in FreeRTOS a command called `xTaskCreate()`. This tells the OS to take a specific function you wrote and started running in it own parallel infinite loop. For exact syntax and implementation details, check out the provied example foldr!
+To actually create a task in FreeRTOS, use a command called `xTaskCreate()`. This tells the OS to take a specific function you wrote and started running in it own parallel infinite loop. For exact syntax and implementation details, check out the provided example folder!
 
 </details>
 
@@ -47,7 +47,7 @@ How is the system actually doing two things at once?
 
 First, the ESP32 chip has two physical cores (Core 0 and Core). This means it physically has two separate brains that can execute two different lines of code at the exact same microsecond.
 
-But what happens if we create 10 tasks? We can't run 10 things on 2 cores simultaneously. This is where the FreeRTOS Scheduler steps in, which rapidly switches the cores between your divider tasks. It happens so fast that it creates the illusion that all 10 tasks are running at once.
+But what happens if we create 10 tasks? We can't run 10 things on 2 cores simultaneously. This is where the FreeRTOS Scheduler steps in, which rapidly switches the cores between your divider tasks. It happens so fast that it creates the illusion that all 10 tasks are running at once (concurrency!).
 
 There is a problem: if two separate tasks try to read and write to the same global variable at the same exact microsecond, the data can be corrupted and crash the system. Dealing with this danger requires Synchronization, which we will not delve into in this lab.
 
