@@ -1,6 +1,7 @@
-## What is PWM?
+# C Example
 
-**PWM (Pulse Width Modulation)** is a technique used by microcontrollers to control the average power delivered to a device by rapidly switching a digital output **ON** and **OFF**.
+## What is PWM?
+**PWM (Pulse Width Modulation)** is a technique used by microcontrollers to control the average power delivered to a device by rapidly switching a digital output **ON** and **OFF**. You should have used this in the [hardware lab](https://github.com/CalSol/CalSol-Electrical-Onboarding), but we will review it again!
 
 PWM is commonly used for:
 - Controlling LED brightness
@@ -10,7 +11,6 @@ PWM is commonly used for:
 - Power electronics
 
 ## How PWM Works
-
 A normal digital GPIO pin has two possible states:
 
 ```text
@@ -18,7 +18,7 @@ HIGH = ON
 LOW  = OFF
 ```
 PWM switches rapidly between these two states. Below are some of the basic duty cycles:
-![Install Picture](./../images/Arduino-PWM.jpg)
+![Install Picture](./../images/SECTION1/Arduino-PWM.jpg)
 
 As we can see in the image above:
 + **0% duty cycle**, the signal never goes HIGH.
@@ -26,7 +26,7 @@ As we can see in the image above:
 + **50% duty cycle** means that the signal is HIGH for half of the period and LOW for the other half.
 + **75% duty cycle** spends more time HIGH.
 
-## Frequency
+### Frequency
 
 The **frequency** tells us how many PWM cycles occur every second.
 
@@ -53,9 +53,9 @@ Period = 1 / 1000
        = 1000 microseconds
 ```
 
-# C Example
+## C Example
 
-The following program demonstrates the basic idea behind PWM using software.
+The following program demonstrates the basic idea behind PWM using software. You may not understand a lot of the functions used, and we will try our best to break it down. We are hoping to just get you exposed to what C code and firmware might look like.
 
 This example assumes that the microcontroller provides functions similar to:
 
@@ -165,9 +165,9 @@ int main(void)
     return 0;
 }
 ```
-# Breaking Down the Code
+## Breaking Down the Code
 
-## 1. Setting the PWM Frequency
+### 1. Setting the PWM Frequency
 
 The PWM frequency is defined here:
 
@@ -181,7 +181,7 @@ This means the PWM signal operates at:
 1000 Hz = 1 kHz
 ```
 
-## 2. Calculating the PWM Period
+### 2. Calculating the PWM Period
 
 The period is calculated using:
 
@@ -200,7 +200,7 @@ PWM_PERIOD_US = 1,000,000 / 1000
 
 Each complete PWM cycle lasts `1000 us`.
 
-## 3. Calculating HIGH Time
+### 3. Calculating HIGH Time
 
 The amount of time the signal remains HIGH depends on the duty cycle.
 
@@ -217,7 +217,7 @@ HIGH Time = 1000 us × 50 / 100
 HIGH Time = 500 us
 ```
 
-## 4. Calculating LOW Time
+### 4. Calculating LOW Time
 
 The remaining part of the PWM period is LOW.
 
@@ -238,7 +238,7 @@ This pattern repeats continuously.
 
 ---
 
-# Changing the Duty Cycle
+## Changing the Duty Cycle
 
 To generate a **25% duty cycle**:
 
@@ -272,7 +272,7 @@ pwm_write(PWM_PIN, 100);
 
 ---
 
-# Example: Controlling LED Brightness
+## Example: Controlling LED Brightness
 
 PWM can be used to control the apparent brightness of an LED.
 

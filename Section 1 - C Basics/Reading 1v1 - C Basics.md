@@ -1,17 +1,17 @@
-# Reading 1v1 - C Basics
+# C Basics
 
 ## Installing C
 We actually don't need to have C installed on your local system due to ESP-IDF having its own specialized C compiler in the background.
 
 Thus the only setup for C that we have to do is to add the extension on VSCode which you can do by searching up C/C++ in the extensions tab.
 
-![Install Picture](./../images/VSCode_C_extensions.png)
+<img height="200" alt="Install Picture" src="./../images/SECTION1/VSCode_C_extensions.png" />
 
 <div style="padding: 2px 16px; background-color: #705337; border-radius: 6px;">
-<h3>🎯 <b>TASK:</b> Download the C/C++ VSCode extension.</h3> 
+<h3><b>Exercise 🎯:</b> Download the C/C++ VSCode extension.</h3> 
 </div>
 
-# What is C?
+## What is C?
 
 C is a programming language commonly used for **embedded systems** and **microcontrollers**.
 Unlike higher-level programming languages, C allows us to work closely with the hardware.
@@ -27,7 +27,7 @@ For example, C can be used to:
 - Control an ESP32
 Throughout this training, we will use C to write firmware for our microcontrollers.
 
-# Hello World
+## Hello World
 
 A basic C program looks like this:
 
@@ -50,9 +50,9 @@ Hello World!
 
 Let's break down what each part means.
 
----
-
-## `#include`
+### `#include`
+<details>
+<summary> #include </summary>
 
 ```c
 #include <stdio.h>
@@ -74,9 +74,11 @@ printf();
 
 which allows us to print information to the terminal.
 
----
+</details>
 
-## The `main()` Function
+### The `main()` Function
+<details>
+<summary> The main() Function </summary>
 
 ```c
 int main(void)
@@ -102,9 +104,15 @@ int main(void)
 
 The computer executes the program starting from the first statement inside `main()`.
 
-# Variables
+</details>
 
+---
+
+## Variables
 Variables allow us to store information.
+
+<details>
+<summary>Using variables</summary>
 
 For example:
 
@@ -129,12 +137,13 @@ We can later change it:
 ```c
 speed = 75;
 ```
+</details>
 
----
-
-# Basic Data Types
-
+## Data Types
 C requires us to specify what type of information a variable stores.
+
+<details>
+<summary>Basic data types</summary>
 
 Some common types are:
 
@@ -167,10 +176,13 @@ Then we can write:
 ```c
 bool motor_running = true;
 ```
+</details>
 
-# Printing Variables
-
+## Printing Variables
 We can use `printf()` to print variables.
+
+<details>
+<summary>How to print variables</summary>
 
 For an integer:
 
@@ -211,11 +223,14 @@ int temperature = 85;
 
 printf("Temperature: %d\n", temperature);
 ```
+    
+</details>
 
----
-# Arithmetic
-
+## Arithmetic Operators
 C can perform normal mathematical operations.
+
+<details>
+<summary>Using arithmetic operators in C</summary>
 
 ```c
 int a = 10;
@@ -254,12 +269,15 @@ because:
 ```text
 10 / 3 = 3 remainder 1
 ```
+    
+</details>
 
----
 
-# Comparison Operators
-
+## Comparison Operators
 Comparison operators allow us to compare values.
+
+<details>
+<summary>Using comparison operators in C</summary>
 
 | Operator | Meaning |
 |---|---|
@@ -303,10 +321,15 @@ speed = 50;
 ```c
 speed == 50
 ```
+    
+</details>
 
----
+## Conditionals
+Conditionals enable us to control where our code goes based on different states and inputs.
 
-# If Statements
+#### `if` statements
+<details>
+<summary>if</summary>
 
 An `if` statement allows the program to make decisions.
 
@@ -320,10 +343,12 @@ if (temperature > 90)
 ```
 
 The code inside the `{ }` only runs if the condition is true.
+    
+</details>
 
----
-
-## `if` and `else`
+#### `if`/`else`
+<details>
+<summary> if/else</summary>
 
 We can also provide another action if the condition is false.
 
@@ -339,10 +364,12 @@ else
     printf("Temperature is normal.\n");
 }
 ```
+    
+</details>
 
----
-
-## `else if`
+#### `else if`
+<details>
+<summary>else if</summary>
 
 We can check multiple conditions:
 
@@ -362,12 +389,14 @@ else
     printf("Temperature is normal.\n");
 }
 ```
+    
+</details>
 
----
+## Logical Operators
+Logical operators let us check multiple conditionals at once.
 
-# Logical Operators
-
-Sometimes we want to check multiple conditions at once.
+<details>
+<summary>Logical Operators</summary>
 
 The most common logical operators are:
 
@@ -391,10 +420,10 @@ Both conditions must be true because we used:
 ```c
 &&
 ```
+    
+</details>
 
----
-
-# Loops
+## Loops
 
 Loops allow us to repeat code.
 
@@ -403,9 +432,9 @@ Two important loops in C are:
 - `for`
 - `while`
 
----
-
-## `for` Loop
+#### `for` Loop
+<details>
+<summary>for loop</summary>
 
 A `for` loop repeats code a specific number of times.
 
@@ -439,10 +468,12 @@ is equivalent to:
 ```c
 i = i + 1;
 ```
+    
+</details>
 
----
-
-## `while` Loop
+#### `while` Loop
+<details>
+<summary>while loop</summary>
 
 A `while` loop continues running while a condition is true.
 
@@ -466,10 +497,13 @@ Output:
 3
 4
 ```
+    
+</details>
 
----
 
-# Infinite Loops
+#### Infinite Loops
+<details>
+<summary>Infinite Loops</summary>
 
 Embedded systems commonly use infinite loops.
 
@@ -500,12 +534,15 @@ while (1)
 ```
 
 The microcontroller continuously performs its tasks until power is removed or the system is reset.
+    
+</details>
 
----
-
-# Functions
+## Functions
 
 Functions allow us to organize and reuse code.
+
+<details>
+<summary>Functions</summary>
 
 Instead of writing the same code repeatedly, we can put it inside a function.
 
@@ -536,9 +573,12 @@ Hello!
 Hello!
 ```
 
----
+</details>
 
-# Function Parameters
+#### Function Parameters
+
+<details>
+<summary>Function Parameters</summary>
 
 Functions can also receive information.
 
@@ -560,10 +600,12 @@ Output:
 ```text
 Speed: 50
 ```
+    
+</details>
 
----
-
-# Functions That Return Values
+#### Functions That Return Values
+<details>
+<summary>Functions That Return Values</summary>
 
 Functions can also calculate and return a value.
 
@@ -587,12 +629,15 @@ Output:
 ```text
 15
 ```
+    
+</details>
 
----
-
-# Arrays
+## Arrays
 
 Arrays allow us to store multiple values of the same type.
+
+<details>
+<summary>Arrays</summary>
 
 For example:
 
@@ -636,10 +681,15 @@ Output:
 ```text
 75
 ```
+    
+</details>
 
-# Comments
+## Comments
 
 Comments allow us to leave notes inside our code.
+
+<details>
+<summary>How to use comments</summary>
 
 A single-line comment uses:
 
@@ -664,7 +714,9 @@ A multi-line comment uses:
 
 Comments are ignored by the compiler.
 
-# Example Program
+</details>
+
+## Example Program
 
 Let's combine some of the concepts we just learned.
 

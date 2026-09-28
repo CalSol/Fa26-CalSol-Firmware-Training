@@ -1,6 +1,6 @@
 # Simplifying IO
 
-IO stands for input/output. The input/output discussed in this section will be the physical connection between hardware and firmware. Earlier, you saw how IO pins on the ESP32 work. Here we will learn smarter schemes of how to use them.
+IO stands for **input/output**. The input/output discussed in this reading will be the physical connection between hardware and firmware. Earlier in this section, you learned how IO pins on the ESP32 work on an abstracted level. Now, we will learn smarter schemes of how to use them.
 
 To motivate the use of our following techniques, let me pose a few non-trivial questions:
 - How is data actually read?
