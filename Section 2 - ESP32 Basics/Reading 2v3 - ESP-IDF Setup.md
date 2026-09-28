@@ -319,7 +319,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
     get_idf
     ```
     
-</details>
+   </details>
 
    </details>
    
