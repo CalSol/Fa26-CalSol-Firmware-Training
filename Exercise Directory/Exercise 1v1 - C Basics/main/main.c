@@ -1,6 +1,6 @@
-// Exercise 1v1 - C Basics  (companion to "Reading 1v1 - C Basics.md")
+// Exercise 1v1 - C Basics  (Check out "Reading 1v1 - C Basics.md")
 //
-// Complete each TODO in order, running the program after each task.
+// Complete each TODO in order
 // How to run: see "Exercise Directory/Exercise Instructions.md" (board: idf.py flash monitor, no board: idf.py qemu).
 // On the ESP32, the program starts at app_main() instead of main().
 
@@ -19,9 +19,9 @@ void print_temperature(int temperature)
 
 
 // Bonus 5: print one message.
-//   > 100  ->  "WARNING: Temperature is too high!"
-//   > 80   ->  "Temperature is warm."
-//   else   ->  "Temperature is normal."
+//  if > 100:  "WARNING: Temperature is too high!"
+//  if > 80:  "Temperature is warm."
+//  else  "Temperature is normal."
 void check_temperature(int temperature)
 {
     // TODO (Bonus 5): use if / else if / else (order matters!)

@@ -45,7 +45,7 @@ For more detail and screenshots, see `Section 2 - ESP32 Basics/Reading 2v3 - ESP
 
 In this section you'll use the terminal to make a folder for CalSol work and download (clone) this repository into it.
 
-> 📖 New to the command line? Read [Command Line Basics](../Section%200%20-%20Introduction%20to%20Firmware/Reading%200v2%20-%20Command%20Line%20Basics.md) first. It explains `pwd`, `ls`, `cd`, `mkdir`, and file paths. This will also be a great exercise to prepare you for your lower-division CS classes (CS 61A/B/C)!
+> New to the command line? Read [Command Line Basics](../Section%200%20-%20Introduction%20to%20Firmware/Reading%200v2%20-%20Command%20Line%20Basics.md) first. It explains `pwd`, `ls`, `cd`, `mkdir`, and file paths. This will also be a great exercise to prepare you for your lower-division CS classes (CS 61A/B/C)!
 
 For Git and GitHub, see [Setting up GitHub](../Section%200%20-%20Introduction%20to%20Firmware/Reading%200v3%20-%20Setting%20up%20GitHub.md).
 
@@ -205,7 +205,7 @@ To **quit QEMU**, press `Ctrl+A`, let go, then press `X`.
 > - The line `W (...) rtcinit: o_code calibration fail` is a harmless emulator warning. Ignore it.
 > - After editing `main.c`, just run `idf.py qemu` again. It rebuilds automatically.
 
-> ⚠️ QEMU works for exercises that only print output, like **Exercise 1v1 - C Basics**. Exercises that use real hardware (GPIO, CAN, UART, I2C, SPI) need a real board.
+> QEMU works for exercises that only print output, like **Exercise 1v1 - C Basics**. Exercises that use real hardware (GPIO, CAN, UART, I2C, SPI) need a real board.
 
 ## Option B: On a real ESP32-S3
 
@@ -218,7 +218,7 @@ To **quit QEMU**, press `Ctrl+A`, let go, then press `X`.
 ### Step 2: Flash and monitor
 "Flashing" uploads your program to the board, and "monitoring" shows what it prints.
 
-**Using VS Code buttons:** select your COM port in the status bar, then click the 🔥 flame icon (**Build, Flash and Monitor**).
+**Using VS Code buttons:** select your COM port in the status bar, then click the flame icon (**Build, Flash and Monitor**).
 
 **Using the terminal** (replace `COM5` with your port):
 
