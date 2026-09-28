@@ -200,7 +200,7 @@ In project folder, go to ‘main’ file. (As per the C Basics section, the C/C+
 </details>
 
 ## Flashing Code:
-There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF code on your computer. It is completely up to personal preference which one you use (and also just which one "magically" works). 
+There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF code on your computer. It is completely up to personal preference which one you use (and also just which one "magically" works). But *PLEASE* try to familiarize yourself with both options!!!
 
 ### Option 1 - CLI
 1. Source the ESP-IDF toolchain
