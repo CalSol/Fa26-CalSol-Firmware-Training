@@ -215,10 +215,19 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    source $HOME/.espressif/tools/activate_idf_v5.5.2.sh
    ```
 
-   NOTE: We HIGHLY recommend setting up alias/shortcut for sourcing the toolchain. Look at the bottom of this section for how to do this. This allows you to source the tool chain with a simple command such as:
+   NOTE: We HIGHLY recommend setting up alias/shortcut for sourcing the toolchain. This allows you to source the tool chain with a simple command such as:
    ```bash
    get_idf
    ```
+   <details>
+       <summary>Setting up alias for MacOS</summary>
+   </details>
+   <details>
+       <summary>Setting up alias for Windows</summary>
+   </details>
+   <details>
+       <summary>Setting up alias for Linux</summary>
+   </details>
    
 3. Generates sdkconfig file for target chip (only have to do this once)
    ```bash
