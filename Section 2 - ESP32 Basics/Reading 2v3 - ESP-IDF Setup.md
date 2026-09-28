@@ -149,7 +149,7 @@ Project Attributes Breakdown:
 
 1) Project Name
 2) Project Folder location of choice in your file manager 
-3) Target Device
+3) Target Device (We use the esp32s3)
 4) Distinction between having built-in hardware for debugging (USB or JTAG) vs. needing to connect external hardware
 5) Choosing the port on your computer that your ESP32 connects to (detect will automatically choose the port that's connected for you.)
 6) Add locations of component folders (components explained later!)
@@ -216,8 +216,22 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    ```bash
    idf.py build
    ```
-7. Flash your code (`idf.py flash` or `idf.py -p [port e.g. COM6] flash`)
-8. Monitor your code (`idf.py monitor` or `idf.py -p [port e.g. COM6] monitor`)
+7. Flash your code
+   ```bash
+   idf.py flash
+   ```
+   OR specify the port using
+   ```bash
+   idf.py -p [port e.g. COM6] flash
+   ```
+9. Monitor your code
+   ```bash
+   idf.py monitor
+   ```
+   OR specify the port using
+   ```bash
+   idf.py -p [port e.g. COM6] monitor
+   ```
 
 _Note: for Windows you can see what ports are available using your device manager_
 
