@@ -215,6 +215,11 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    source $HOME/.espressif/tools/activate_idf_v5.5.2.sh
    ```
 
+   On Linux, this would be something like:
+   ```bash
+   source /opt/esp-idf/export.sh
+   ```
+
    NOTE: We HIGHLY recommend setting up alias/shortcut for sourcing the toolchain. This allows you to source the tool chain with a simple command such as:
    ```bash
    get_idf
@@ -224,8 +229,40 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    <dl><dd>
    
    <details>
-       <summary>Setting up alias shortcut for MacOS</summary>
-       Coming soon!
+   <summary>Setting up alias shortcut for MacOS</summary>
+
+   Open your `.zshrc` in vim (a text editor that lives in the terminal):
+ 
+    ```bash
+    vim ~/.zshrc
+    ```
+     
+    Vim has two modes — **normal mode** (for navigating) and **insert mode** (for typing). It opens in normal mode. To get to the bottom of the file and start editing:
+    
+    - Before trying to edit in Vim, do not try pressing anything with your mouse!!! It won't work!
+     
+    1. Press `Shift+G` to jump to the last line
+    2. Press `o` to open a new line below and enter insert mode
+    3. Type the following line:
+    ```bash
+    alias get_idf='source $HOME/.espressif/tools/activate_idf_v5.5.2.sh'
+    ```
+     
+    4. Press `Esc` to go back to normal mode
+    5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
+    If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
+     
+    Run this command to apply the changes to your current session without having to log out:
+     
+    ```bash
+    source ~/.zshrc
+    ```
+     
+    Now you have a alias/shortcut to source esp-idf by running:
+    ```bash
+    get_idf
+    ```
+    
    </details>
    
    <details>
@@ -234,8 +271,40 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    </details>
    
    <details>
-       <summary>Setting up alias shortcut for Linux</summary>
-       Coming soon!
+    <summary>Setting up alias shortcut for Linux</summary>
+
+    Open your `.bashrc` in vim (a text editor that lives in the terminal):
+ 
+    ```bash
+    vim ~/.bashrc
+    ```
+     
+    Vim has two modes — **normal mode** (for navigating) and **insert mode** (for typing). It opens in normal mode. To get to the bottom of the file and start editing:
+    
+    - Before trying to edit in Vim, do not try pressing anything with your mouse!!! It won't work!
+     
+    1. Press `Shift+G` to jump to the last line
+    2. Press `o` to open a new line below and enter insert mode
+    3. Type the following line:
+    ```bash
+    alias get_idf='source /opt/esp-idf/export.sh'
+    ```
+     
+    4. Press `Esc` to go back to normal mode
+    5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
+    If you make a mistake and want to bail out without saving, press `Esc` then type `:q!` and hit `Enter`.
+     
+    Run this command to apply the changes to your current session without having to log out:
+     
+    ```bash
+    source ~/.bashrc
+    ```
+     
+    Now you have a alias/shortcut to source esp-idf by running:
+    ```bash
+    get_idf
+    ```
+    
    </details>
    
    </dd></dl>
