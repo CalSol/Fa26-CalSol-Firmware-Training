@@ -239,7 +239,7 @@ You can alternatively do all three at the same time by running `idf.py build fla
 
 ### Option 2 - GUI
 
-When you're ready to test your code by flashing it to the ESP32 connected to your computer, first build, flash, and then you can monitor its output.
+You can use the GUI buttons provided by the VSCode exntension! 
 
 These commands will have matching buttons at the bottom of your screen that you press to execute:
 
