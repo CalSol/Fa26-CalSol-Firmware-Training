@@ -1,3 +1,32 @@
+# Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Telemetry Architecture](#telemetry-architecture)
+- [Telemetry Software Stack](#telemetry-software-stack)
+  - [Telemetry Messages](#telemetry-messages)
+  - [Configuration Files](#configuration-files)
+  - [Telemetry Code](#telemetry-code)
+    - [Ingestors](#ingestors)
+    - [Loggers](#loggers)
+    - [Procesors](#procesors)
+  - [Grafana](#grafana)
+- [A Note on Coding Standards](#a-note-on-coding-standards)
+  - [Hard Conventions](#hard-conventions)
+    - [Use type hints everywhere](#use-type-hints-everywhere)
+    - [Private fields](#private-fields)
+    - [Use pull requests](#use-pull-requests)
+    - [Use uv for package management](#use-uv-for-package-management)
+    - [No platform specific code](#no-platform-specific-code)
+      - [Some specific things worth mentioning:](#some-specific-things-worth-mentioning)
+    - [Secret keys, sensitive data, and names](#secret-keys-sensitive-data-and-names)
+    - [Follow PEP 8 + Some of our own coding conventions](#follow-pep-8--some-of-our-own-coding-conventions)
+  - [Soft Conventions](#soft-conventions)
+      - [Commit early, commit often](#commit-early-commit-often)
+      - [Avoid global mutable variables](#avoid-global-mutable-variables)
+      - [Dead files](#dead-files)
+      - [Error handling for internal and external input](#error-handling-for-internal-and-external-input)
+
+
+
 # Telemetry Architecture 
 
 The basic idea behind the telemetry board on the car is that it broadcasts all the CAN messages from the car on a 900MHz frequency band. Then, that is picked up by our antenna, which is translated with our code. 
@@ -35,7 +64,7 @@ Finally, the InfluxDB bucket is connected as a Grafana Datasource, where data ca
 
 
 
-# Telemetry Code Stack
+# Telemetry Software Stack
 Unlike all of this lab, Telemetry Software is written in **Python**. However, we (Strategy) still emphasize the need for all the lessons learned in Section 3 of this guide. This section will give you a short overview of how the lessons you learned before connect!
 
 
@@ -179,7 +208,29 @@ Examples and possible future processors include:
 - A processor that converts GPS data into the correct units.  
 - A possible future processor that monitors GPS data and notes when we get near checkpoints
 
-## A Note on Coding Standards
+
+
+## Grafana
+
+Grafana visualization are the main strategical and safety outputs of the telemetry stack during race. Our main dashboard as of 27 September 2026 is [here](https://grafana.calsol.dev/goto/cfzkhfuyrgef4b?orgId=default). 
+
+The *Data Source* variable at the top the screen allows us to see what bucket / session we logged our data in. 
+
+Below is a sample query. **The data source has to be changed to ${data source} in order for the variable mentioned above to work** . We also have the SQL-like query format of 
+
+```SQL
+SELECT AGG_FUNC(message_value)
+FROM message_name
+WHERE conditions
+GROUP BY timeInterval
+```
+
+![Grafana Query](../images/SECTION6/telem_images/grafana.png)
+
+As always, GROUP BY and AGG_FUNC are optional. The default value of `GROUP BY time($__interval)` actually calculates a dynamic interval based on the timeframe selection and the max data points per series. Sometimes, we might actually want to group by a defined interval like `1s` instead.  
+
+
+# A Note on Coding Standards
 This following portion was written by Niels Voss.
 <details open>
 <summary>Click to Expand</summary>
@@ -263,7 +314,7 @@ Prefer double quotes over single quotes. This is not a hard rule, and if a strin
 
 
 
-### Soft Conventions
+## Soft Conventions
 #### Commit early, commit often
 
 Data that has been committed is usually recoverable, even if it has been rebased over. Data that has not been committed is very fragile. Whenever you think you have accomplished something, commit your code. If you don’t think it is ready yet, you don’t have to push it right away, or you can push it to a new branch. It is much easier to squash commits together than it is to pull commits apart. Code that hasn’t been committed should be treated like it doesn’t exist for the purposes of tracking which tasks have been completed.
@@ -293,23 +344,3 @@ If your data comes from other parts of the code (e.g. a variable in our applicat
 Basically, if we caused the error, we should crash the program and fix our code; if the external world caused the error, we should handle the error gracefully.
 
 </details>
-
-
-## Grafana
-
-Grafana visualization are the main strategical and safety outputs of the telemetry stack during race. Our main dashboard as of 27 September 2026 is [here](https://grafana.calsol.dev/goto/cfzkhfuyrgef4b?orgId=default). 
-
-The *Data Source* variable at the top the screen allows us to see what bucket / session we logged our data in. 
-
-Below is a sample query. **The data source has to be changed to ${data source} in order for the variable mentioned above to work** . We also have the SQL-like query format of 
-
-```SQL
-SELECT AGG_FUNC(message_value)
-FROM message_name
-WHERE conditions
-GROUP BY timeInterval
-```
-
-![Grafana Query](../images/SECTION6/telem_images/grafana.png)
-
-As always, GROUP BY and AGG_FUNC are optional. The default value of `GROUP BY time($__interval)` actually calculates a dynamic interval based on the timeframe selection and the max data points per series. Sometimes, we might actually want to group by a defined interval like `1s` instead.  
