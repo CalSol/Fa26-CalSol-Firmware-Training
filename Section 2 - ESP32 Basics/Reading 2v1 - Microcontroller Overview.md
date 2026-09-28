@@ -3,9 +3,15 @@
 A microcontroller (MCU) is a chip that acts as a "brain" to control hardware it's directly connected to.
 - Like a mini computer, but less powerful because it doesn't need to do such intense tasks.
 
+When we write firmware, we upload the logic to the MCU, which will handle all of the code during operation.
+
+
 
 ### How?
-<img width="450" height="511" alt="microcontroller-mcu fit_lim size_1050x" src="https://github.com/user-attachments/assets/98eae797-5a10-41df-bc72-2f76ec79bdcd" />
+<div>
+  <img alt="mcu diagram" src="./../images/SECTION2/mcu_diagram.png" />
+  <img width="264" height="300" alt="microcontroller-mcu fit_lim size_1050x" src="https://github.com/user-attachments/assets/98eae797-5a10-41df-bc72-2f76ec79bdcd" />
+</div>
 
 
 **The 3 things that make a MCU (or any computer!):**
@@ -13,10 +19,7 @@ A microcontroller (MCU) is a chip that acts as a "brain" to control hardware it'
 - Memory: Where code is frequently stored and erased to give the microcontroller logic to carry out actions.
 - Processor: A CPU (Central Processing Unit) has the processing power to execute tasks efficiently.
 
-
-
 How it uses these components: it interacts with the circuit it's apart of to control it.
-
 
 ### What is the ESP32-S3 Dev Board?
 
