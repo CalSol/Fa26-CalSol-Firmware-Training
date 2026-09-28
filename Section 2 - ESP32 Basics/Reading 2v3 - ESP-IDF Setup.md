@@ -19,9 +19,9 @@ Open the manager and begin setup.
 
 Follow the prompts to select your target ESP boards (ESP32-S3), choose the ESP-IDF version (v6.1), and confirm the installation path. The wizard automatically downloads and configures all necessary build tools, including Python environments, CMake, Ninja, and the required cross-compilers.
 
-- If in the future you need to update the target ESP board, run `idf.py set target esp32s3`
+- If in the future you need to update the target ESP board, run `idf.py set-target esp32s3`
 - To config any settings, run `idf.py menuconfig`
-- We use JTAG upload
+- We use USB upload
 
 ### Step 3: Load the Environment Variables
 
