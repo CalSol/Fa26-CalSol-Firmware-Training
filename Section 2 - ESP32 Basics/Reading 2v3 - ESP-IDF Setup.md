@@ -203,8 +203,16 @@ In project folder, go to ‘main’ file. (As per the C Basics section, the C/C+
 There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF code on your computer. It is completely up to personal preference which one you use (and also just which one "magically" works). 
 
 ### Option 1 - CLI
-1. Source the ESP-IDF toolchain (`C:\esp\v6.1-beta1\esp-idf\export.ps1`)
-2. Generates sdkconfig file for target chip (only have to do this once)
+1. Source the ESP-IDF toolchain
+   On Windows, this would be something like:
+   ```bash
+   C:\esp\v6.1-beta1\esp-idf\export.ps1
+   ```
+   On Mac, this would be something like:
+   ```bash
+   source $HOME/.espressif/tools/activate_idf_v5.5.2.sh
+   ```
+3. Generates sdkconfig file for target chip (only have to do this once)
    ```bash
    idf.py set-target esp32s3
    ```
@@ -244,8 +252,6 @@ You can use the GUI buttons provided by the VSCode exntension!
 These commands will have matching buttons at the bottom of your screen that you press to execute:
 
 <img width="180" height="111" alt="image" src="https://github.com/user-attachments/assets/5f18b35e-0109-40b3-9bf1-774e8b1bb322" />
-
-<br><br>
 
 ## General Tips:
 - Whenever edits to the file/code are made, rebuild before flashing. 
