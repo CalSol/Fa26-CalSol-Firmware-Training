@@ -322,7 +322,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    ```bash
    idf.py build
    ```
-7. Flash your code
+6. Flash your code
    ```bash
    idf.py flash
    ```
@@ -330,7 +330,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    ```bash
    idf.py -p [port e.g. COM6] flash
    ```
-9. Monitor your code
+7. Monitor your code
    ```bash
    idf.py monitor
    ```
