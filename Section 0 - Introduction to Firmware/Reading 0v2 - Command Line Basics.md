@@ -16,7 +16,7 @@ $
 `oski` = username <br>
 `stolerpi` = machine's host name <br>
 `~` = location in your file system (in this case the home folder) <br>
-`$` = a prompt character letting you know that it's ready for a command (`%` is also a popular option)
+`$` = a prompt character letting you know that it's ready for a command depending on your shell (`$` is the default in bash, `%` is the default in zsh)
 
 ## Navigating Folders
 Okay we've opened the terminal, so what? We need to be able to move around and access specific folders. In a Unix-base CLI, you can navigate folders using these commands:
