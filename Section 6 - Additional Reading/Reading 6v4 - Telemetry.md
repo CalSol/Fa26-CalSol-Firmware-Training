@@ -134,7 +134,7 @@ We can also define custom types in `can_struct.json5`, such as our `u16_arr` or 
         { "name" : "val_4", "type" : "u16" },
     ],
 ```
-
+</details>
 
 ## Telemetry Code 
 
