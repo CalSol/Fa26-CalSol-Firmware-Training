@@ -121,6 +121,7 @@ cd /opt/esp-idf
 
    <details>
    <summary>Setting up automatic sourcing (optional but highly recommended)</summary>
+   <dl><dd>
  
    Open your `.bashrc` in vim (a text editor that lives in the terminal):
     
@@ -159,6 +160,7 @@ cd /opt/esp-idf
    - `. /opt/esp-idf/export.sh` — sources the toolchain automatically on every login, so `idf.py` is always available
    - `alias get_idf=...` — gives you a manual shortcut to re-source it if needed (e.g. if something resets your environment)
 
+   </dd></dl>
    </details>
 
 4. Generate the sdkconfig file for target chip (We use S3). You only have to do this once.
@@ -198,6 +200,7 @@ cd /opt/esp-idf
    
    <details>
    <summary>Setting up ports alias shortcut for Linux (optional but highly recommended)</summary>
+   <dl><dd>
    
    Open your `.bashrc` in vim (a text editor that lives in the terminal):
    
@@ -240,6 +243,7 @@ cd /opt/esp-idf
    ports
    ```
    
+   </dd></dl>
    </details>
 
 5. Flash your code. This uploads your firmware to the chip!
