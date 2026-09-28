@@ -1,6 +1,6 @@
 # Planning and FSMs
 
-The Main Control Loop is the logic base of your firmware. In this section, I will go less into how the firmware of the control loop is implemented, but more how the system itself works. This section will teach you how to plan out your main control loop to be simple!
+The Main Control Loop is the logic base of your firmware. In this section, I will go less into how the firmware of the control loop is implemented, but more how to plan out the logic of the system itself. In other words, this section will teach you how to plan out your main control loop to be simple!
 
 ## Naive - Flow Chart
 
