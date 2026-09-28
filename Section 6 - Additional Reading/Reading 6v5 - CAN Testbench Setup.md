@@ -152,65 +152,81 @@ What those two lines do:
 - `. /opt/esp-idf/export.sh` — sources the toolchain automatically on every login, so `idf.py` is always available
 - `alias get_idf=...` — gives you a manual shortcut to re-source it if needed (e.g. if something resets your environment)
 
-# Building, Flashing, and Monitoring Your First Project
+# Flashing Firmware
 
-## Step 1 — Copy the hello world example from ESP-IDF
+1. Copy the hello world example from ESP-IDF
 
-```bash
-# <!> First, navigate into your projects directory! Let's see if you remember how to do this!
-cp -r /opt/esp-idf/examples/get-started/hello_world .
-cd hello_world
-```
+   ```bash
+   # <!> First, navigate into your projects directory! Let's see if you remember how to do this!
+   cp -r /opt/esp-idf/examples/get-started/hello_world .
+   cd hello_world
+   ```
 
-## Step 2 — Set the target chip (We use S3)
+2. Source the ESP-IDF toolchain
 
-```bash
-idf.py set-target esp32s3
-```
+   ```bash
+   source /opt/esp-idf/export.sh
+   ```
 
-## Step 3 — Build
+3. Generate the sdkconfig file for target chip (We use S3). You only have to do this once.
+  
+   ```bash
+   idf.py set-target esp32s3
+   ```
 
-Build means to compile code, link libraries, and generate binary files (.bin) that can be flashed onto an ESP32 chip. 
+4. OPTIONAL: edit the sdkconfig file
 
-```bash
-idf.py build
-```
+   ```bash
+   idf.py menuconfig
+   ```
 
-First build takes a few minutes — it's compiling the entire ESP-IDF stack. Subsequent builds only recompile files you've changed.
+5. Build your code. This calls CMake and Ninja in right order to compile code, link libraries, and generate binary files (.bin) that can be flashed onto an ESP32 chip). The first build takes a few minutes — it's compiling the entire ESP-IDF stack. Subsequent builds only recompile files you've changed.
 
-## Step 4 — Find your device
+   ```bash
+   idf.py build
+   ```
 
-Plug in your ESP32-S3 and run:
+5. Locate the port:
 
-```bash
-ls /dev/ttyACM* /dev/ttyUSB*
-```
+   ```bash
+   ls /dev/ttyACM* /dev/ttyUSB*
+   ```
 
-You'll see something like `/dev/ttyACM0`. If multiple devices show up, unplug and replug your board and run it again to see which one appears — that's yours.
+5. Flash your code. This uploads your firmware to the chip!
 
-## Step 5 — Flash and monitor
+   ```bash
+   idf.py -p [port e.g. /dev/ttyACM0] flash
+   ```
 
-```bash
-idf.py -p /dev/ttyACM0 flash monitor
-```
+6. Monitor your code
 
-Replace `/dev/ttyACM0` with whatever port you found in Step 4. This flashes the firmware and immediately opens the serial monitor so you can see the chip's output.
+   ```bash
+   idf.py -p [port e.g. /dev/ttyACM0] monitor
+   ```
 
-You should see the bootloader output followed by:
+   You should see the bootloader output followed by:
 
-```
-Hello world!
-This is esp32s3 chip with 2 CPU core(s), WiFi/BLE...
-Restarting in 10 seconds...
-```
+   ```
+   Hello world!
+   This is esp32s3 chip with 2 CPU core(s), WiFi/BLE...
+   Restarting in 10 seconds...
+   ```
+   
+   The countdown and restart are expected. The Hello World example is designed to loop.
 
-The countdown and restart are expected. The Hello World example is designed to loop.
+   **IMPORTANT:** Press `Ctrl+]` to exit the monitor. If that doesn't work, try `Ctrl+T` then `Ctrl+]`. Do not use `Ctrl+C` — that sends an interrupt to the chip, not to the monitor.*
 
-## Exiting the monitor
+You can alternatively do all three at the same time by running:
 
-Press `Ctrl+]` to exit. If that doesn't work, try `Ctrl+T` then `Ctrl+]`.
+`idf.py -p [port e.g. /dev/ttyACM0] build flash monitor`
 
-Do not use `Ctrl+C` — that sends an interrupt to the chip, not to the monitor.
+Or you can run any combinations involving two of the three like:
+
+`idf.py -p [port e.g. /dev/ttyACM0] build flash`
+
+`idf.py -p [port e.g. /dev/ttyACM0] build monitor`
+
+`idf.py -p [port e.g. /dev/ttyACM0] flash monitor`
 
 ---
 
