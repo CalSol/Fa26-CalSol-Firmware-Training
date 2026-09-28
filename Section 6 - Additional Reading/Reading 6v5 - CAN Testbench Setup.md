@@ -132,6 +132,7 @@ cd /opt/esp-idf
    
    - Before trying to edit in Vim, do not try pressing anything with your mouse!!! It won't work!
 
+
    1. Press `Shift+G` to jump to the last line
    2. Press `o` to open a new line below and enter insert mode
    3. Type the lines:
