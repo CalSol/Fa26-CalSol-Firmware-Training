@@ -326,7 +326,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    ```bash
    idf.py flash
    ```
-   OR specify the port using (check location port section bellow)
+   OR specify the port using (check Locating the Port section bellow)
    ```bash
    idf.py -p [port e.g. COM6] flash
    ```
@@ -334,7 +334,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    ```bash
    idf.py monitor
    ```
-   OR specify the port using (check location port section bellow)
+   OR specify the port using (check Locating the Port section bellow)
    ```bash
    idf.py -p [port e.g. COM6] monitor
    ```
