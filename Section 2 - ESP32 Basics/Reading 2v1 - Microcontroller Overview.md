@@ -5,14 +5,11 @@ A microcontroller (MCU) is a chip that acts as a "brain" to control hardware it'
 
 When we write firmware, we upload the logic to the MCU, which will handle all of the code during operation.
 
-
-
 ### How?
 <div>
-  <img alt="mcu diagram" src="./../images/SECTION2/mcu_diagram.png" />
   <img width="264" height="300" alt="microcontroller-mcu fit_lim size_1050x" src="https://github.com/user-attachments/assets/98eae797-5a10-41df-bc72-2f76ec79bdcd" />
+  <img height="300" alt="mcu diagram" src="./../images/SECTION2/mcu_diagram.png" />
 </div>
-
 
 **The 3 things that make a MCU (or any computer!):**
 - Input/Outputs: Peripherals and GPIO pins (General Purpose Input/Output Pins) can read **input** signals as from wires it's connect to, and also **output** signals to other devices through those same wires.
