@@ -8,7 +8,7 @@ Important notes about I2C:
 - **One-to-Many communication:** One MCU (formally called a "Master") can communinicate to multiple ICs (formally called "Slaves") 
 - **Half-duplex:** Can only communicate one direction at a time
 - **Speed:** Faster than UART but slower than SPI
-- *Requires Pull Up Resistors (more info later)**
+- *Requires Pull Up Resistors (more info later)*
 
 ### Master <--> Slave / Controller <--> Peripheral Communication
 
