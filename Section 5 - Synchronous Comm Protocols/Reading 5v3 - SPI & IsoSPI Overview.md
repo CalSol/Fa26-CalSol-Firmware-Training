@@ -32,6 +32,16 @@ Similarly to I2C, SPI uses the Master/Slave naming convention.
 # IsoSPI (Isolated SPI) Overview
 A variation of the SPI communication protocol that is more suitable for longer-distance communication (e.g. between boards), due to being differential and its resistance electromagnetic interference and ground loops. 
 
+Important notes about isoSPI:
+- **Isolated SPI:** Analog Devices' (Linear Tech) transformer-isolated variant of SPI, commonly used in battery management ICs (e.g., LTC681x)
+- **2 Wire per link:** a twisted pair carrying differential pulses through an isolation transformer
+- **Daisy-chainable:** devices are chained in series, so only the first device connects back to the controller (via a bridge such as the LTC6820)
+- **Half-duplex:** one direction at a time on the pair
+- **Galvanic isolation:** handles the large voltage differences between stacked battery modules
+- **Speed:** 100 kbps to 1 Mbps. *Much slower than SPI, similar to CAN.*
+- **Signaling:** Differential (pulse-coded through a transformer)
+- **Noise resistance:** Excellent. Differential plus transformer isolation rejects common-mode noise, and cable runs of up to ~100 m are supported.
+
 What are differential signals?
   - Using two wires instead of one to send signals (communicate) by having one send positive signal values and the other send the negative equivalent. The signal received will be the difference (through subtraction) between these high and low signals. This is so outside noise (which will distort the signal) affects both wires and cancels itself out with this method.
   - This makes it very useful for long-distance communication since it is much more resistant to noise!
