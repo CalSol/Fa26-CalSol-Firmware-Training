@@ -4,7 +4,7 @@ SPI is anoter protocol to implement serial communication, a method of communicat
 
 Important notes about SPI:
 - **Synchronous:** controller generates the clock
-- **4 Wire:** **SCLK** (clock), **MOSI** (controller out), **MISO** (controller in), **CS/SS** (chip select, one per peripheral)
+- **4+ Wires:** **SCLK** (clock), **MOSI** (controller out), **MISO** (controller in), **CS/SS** (chip select, one per peripheral)
 - **One controller, many peripherals:** each extra peripheral needs another CS line
 - **Full-duplex:** data goes out on MOSI and in on MISO simultaneously
 - **No addressing or error checking:** simple and fast, but the protocol does not detect errors
