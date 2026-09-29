@@ -91,3 +91,17 @@ Wires:
         - SDATA (Recieve Only)
         - SDIN and SDOUT
         - DACDAT and ASCDAT
+
+## Quick comparison
+
+| Protocol | Wires | Clock | Duplex | Signaling | Typical Speed | Noise Resistance |
+|---|---|---|---|---|---|---|
+| UART | 2 | Async | Full | Single-ended | 9.6k-115.2k baud (up to ~Mbaud) | Moderate |
+| CAN | 2 | Async | Half | Differential | up to 1 Mbps (FD: 5-8) | Excellent |
+| I2C | 2 | Sync | Half | Single-ended | 100k-3.4M | Fair/Poor |
+| SPI | 4+ | Sync | Full | Single-ended | 1-50+ MHz | Poor |
+| isoSPI | 2 | Async (pulses) | Half | Differential | 100k-1M | Excellent |
+| RS485 | 2 or 4 | Async | Half (2-wire) / Full (4-wire) | Differential | up to 10 Mbps | Excellent |
+| USB 2.0 | 2 data (+power) | Async (recovered) | Half | Differential | 1.5M / 12M / 480M | Very good |
+| JTAG | 4-5 | Sync | Full (shift) | Single-ended | 1-50 MHz | Poor/Fair |
+| I2S | 3-4 | Sync | Simplex per line | Single-ended | ~1-12 MHz (audio dependent) | Fair/Poor |
