@@ -3,7 +3,7 @@
 
 UART is one protocol to implement serial communication, a method of communication between devices where bits are sent along some wire/line or even remotely (like a TV remove to a TV!).
 
-## Important notes about UART:
+Important notes about UART:
 - **Universal:** usable on <i>any</i> transmitting/receiving device
 - **Asynchronous:** does not follow any shared clock, simply sends/receives when it has data (but both sides must agree on baud rate)
 - **2 Wire:** **Transmit (TX)** and **Receive (RX)** (plus a common GND). TX of one device connects to RX of the other
