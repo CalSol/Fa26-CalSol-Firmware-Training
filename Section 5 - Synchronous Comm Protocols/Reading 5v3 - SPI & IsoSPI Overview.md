@@ -3,11 +3,15 @@
 SPI is anoter protocol to implement serial communication, a method of communication between devices where bits are sent along some wire/line or even remotely (like a TV remove to a TV!).
 
 Important notes about SPI:
-- **Synchronous:** Follows a clock (SCLC)
-- **4 Wire Minimum:** SPI has 4 wires minimum (more info later)
-- **One-to-Many communication:** One MCU (formally called a "Master") can communinicate to multiple ICs (formally called "Slaves") 
-- **Full-duplex:** Can send and receive at the same time
-- **Speed:** Faster than UART and I2C but more prone to noise
+- **Synchronous:** controller generates the clock
+- **4 Wire:** **SCLK** (clock), **MOSI** (controller out), **MISO** (controller in), **CS/SS** (chip select, one per peripheral)
+- **One controller, many peripherals:** each extra peripheral needs another CS line
+- **Full-duplex:** data goes out on MOSI and in on MISO simultaneously
+- **No addressing or error checking:** simple and fast, but the protocol does not detect errors
+- **Speed:** Typically 1-50 MHz, up to 100+ MHz on some parts. *One of the fastest simple serial buses: roughly 10-100x faster than I2C/UART.*
+- **Signaling:** Single-ended
+- **Noise resistance:** Poor. It runs faster than UART/I2C with sharp edges over single-ended lines, so it is more prone to noise, crosstalk, and ringing. Keep traces short and add series resistors or ground shielding if needed.
+
 
 <img width="1144" height="1172" alt="image" src="https://github.com/user-attachments/assets/ab6845a6-1f14-405d-889a-b21bb7f73e7f" />
 Similarly to I2C, SPI uses the Master/Slave naming convention.
