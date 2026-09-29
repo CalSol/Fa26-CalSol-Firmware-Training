@@ -3,11 +3,14 @@
 I2C is anoter protocol to implement serial communication, a method of communication between devices where bits are sent along some wire/line or even remotely (like a TV remove to a TV!).
 
 Important notes about I2C:
-- **Synchronous:** Follows a clock (SCL)
-- **2 Wire:** I2C has 2 wires, **Serial Clock Line (SCL)** and **Serial Data Line (SDA)** (more info later)
-- **One-to-Many communication:** One MCU (formally called a "Master") can communinicate to multiple ICs (formally called "Slaves") 
-- **Half-duplex:** Can only communicate one direction at a time
-- **Speed:** Faster than UART but slower than SPI
+- **Synchronous:** uses a shared clock line
+- **2 Wire:** **SDA** (data) and **SCL** (clock), plus GND (more info later)
+- **Multi-device:** one bus supports many peripherals, each with a 7-bit (or 10-bit) address; supports multiple controllers
+- **Half-duplex:** SDA is bidirectional, so only one direction at a time
+- **Open-drain:** needs **pull-up resistors** on SDA and SCL (typically 2.2k-10k)
+- **Speed:** 100 kHz (standard), 400 kHz (fast), 1 MHz (fast-plus), 3.4 MHz (high-speed). *Similar to UART, slower than SPI.*
+- **Signaling:** Single-ended
+- **Noise resistance:** Fair to poor. Slower than SPI, but it is open-drain with weak pull-ups and a bus capacitance limit (~400 pF), so it is meant for short, on-board distances.
 - *Requires Pull Up Resistors (more info later)*
 
 ### Master <--> Slave / Controller <--> Peripheral Communication
