@@ -10,7 +10,7 @@ Important notes about UART:
 - **One-to-One communication:** UART only communicates between 2 devices
 - **Full-duplex:** TX and RX are separate lines, so both devices can talk at the same time
 - **Speed:** Usually 9600 baud (bits per second), commonly up to 115200 baud. *Slow-to-moderate compared to SPI/USB; similar to I2C standard mode.*
-- **Signaling:** Single-ended (logic-level voltage relative to GND)
+- **Signaling:** Single-ended
 - **Noise resistance:** Moderate. It is slow, which helps, but it is single-ended with no shielding or error correction (only an optional parity bit)
 
 
