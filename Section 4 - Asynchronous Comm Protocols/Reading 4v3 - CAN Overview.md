@@ -4,6 +4,18 @@ CAN is anoter protocol to implement serial communication, a method of communicat
 - Intuitively, CAN is a network (place where devices connect and share data) that lets the (electrical) controllers all around the car communicate with each other.
 - Formally, the **CAN Bus** is the system that enables **communication between ECU's** (basically each circuit board in the car meant to control a specific part, i.e. pedals, lights).
 
+## Important notes about CAN:
+- **Asynchronous:** no dedicated clock line; nodes resync to bit edges in the data
+- **2 Wire:** **CAN_H** and **CAN_L** twisted pair
+- **Multi-master bus:** any node can transmit; many nodes share the same two wires
+- **Message-based:** messages carry an ID (not a device address); the lowest ID wins arbitration, so higher-priority messages are never lost
+- **Half-duplex:** one node transmits at a time
+- **Built-in reliability:** CRC, ACK, and automatic retransmission on error
+- **Termination:** 120 Ω resistors at both ends of the bus
+- **Speed:** Up to 1 Mbps (classic CAN), up to ~5-8 Mbps (CAN FD). *Faster than UART/I2C standard mode, much slower than SPI/USB. Speed trades off against bus length (1 Mbps ≈ 40 m, 125 kbps ≈ 500 m).*
+- **Signaling:** Differential (CAN_H vs CAN_L)
+- **Noise resistance:** Excellent. Differential signaling rejects common-mode noise, which is why it is the standard in cars and other electrically noisy environments.
+
 <img width="369" height="129" alt="image" src="https://github.com/user-attachments/assets/b96ba3cb-d4e3-4f53-aa17-6672f896a4c0" />
 
 
