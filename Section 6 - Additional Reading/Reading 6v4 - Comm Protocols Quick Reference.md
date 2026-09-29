@@ -32,6 +32,20 @@ Important notes about USB (D+/D-):
 - **Signaling:** Differential (D+ vs D-), with 90 Ω impedance-matched routing
 - **Noise resistance:** Very good. Differential signaling, controlled impedance, and error detection (CRC, retries). Cable length is limited to ~5 m per segment.
 
+### Ethernet
+Important notes about Ethernet:
+- **Asynchronous (self-clocked):** no separate clock line; the receiver recovers the clock from the encoded data (Manchester on 10BASE-T, MLT-3 on 100BASE-TX, PAM-5 on 1000BASE-T)
+- **Twisted-pair cable:** 2 pairs (4 wires) for 10/100 Mbps, 4 pairs (8 wires) for 1 Gbps. Uses an RJ45 connector
+- **Point-to-point links:** each cable connects 2 devices; **switches** connect many devices into a network
+- **Full-duplex:** modern links transmit and receive simultaneously (older hub-based networks were half-duplex with collisions)
+- **Addressing and framing:** every device has a unique 48-bit **MAC address**, and frames include a CRC32 to detect errors
+- **Needs a MAC + PHY:** the MCU's MAC talks to an Ethernet PHY chip over **MII/RMII**, and the PHY connects to the cable through **magnetics** (transformers). Some parts, like the WIZnet W5500, put it all behind SPI. *The ESP32 has a built-in MAC but needs an external PHY (e.g., LAN8720).*
+- **Galvanic isolation:** the magnetics isolate each side of the link, which helps with ground loops and safety
+- **Speed:** 10 Mbps (10BASE-T), 100 Mbps (100BASE-TX), 1 Gbps (1000BASE-T), and 2.5/5/10 Gbps on newer standards. *Much faster than UART/I2C/CAN/RS485. Comparable to USB full-speed to high-speed, and to SPI at typical MCU rates.*
+- **Range:** up to 100 m per segment on Cat5e/Cat6
+- **Signaling:** Differential (each pair carries opposite voltages)
+- **Noise resistance:** Excellent. Differential twisted pairs, transformer isolation, and CRC error detection make it reliable in noisy environments, and higher-layer protocols (like TCP) can retransmit lost data.
+
 ## Synchronous Comm Protocols 
 
 ### I2C (Inter-Integrated Circuit)
@@ -45,7 +59,7 @@ Important notes about USB (D+/D-):
 
 ### JTAG (Joint Test Action Group) 
 Important notes about JTAG:
-- Used to program to or read from MCU's
+- Used to program to or read from MCU's (has wiring that is similar to SPI, but check MCU datasheet)
 - **Synchronous:** clocked by the debug probe
 - **4 Wire (+1 optional):** **TCK** (clock), **TMS** (mode select), **TDI** (data in), **TDO** (data out), plus optional **TRST** (reset)
 - **Purpose:** debugging, flash programming, and boundary scan (not a general data bus)
