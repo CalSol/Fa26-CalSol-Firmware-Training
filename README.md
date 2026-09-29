@@ -45,6 +45,6 @@ Below is the timeline for the FW lab. Extenuating circumstances notwithstanding 
 Kadon L, Matthew L, Huan N, Emma C, Howard Y, Simon N, Tashvi M, Ahmed A
 
 ### Credit
-The lab and project structure is inspired by many courses at UC Berkeley including CS61A/B/C
+The lab and project structure is inspired by many courses at UC Berkeley including CS61A/B/C and 162 💀
 
 
