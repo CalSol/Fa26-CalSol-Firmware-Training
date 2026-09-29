@@ -3,10 +3,10 @@
 ## Asynchronous Comm Protocols 
 
 ### UART (Universal Asynchronous Receiver Transmitter)
-- Go to [Reading 4v2 - UART Overview](<../Section 4 - Asynchronous Comm Protocols/Reading 4v2 - UART Overview.md>)
+Go to [Reading 4v2 - UART Overview](<../Section 4 - Asynchronous Comm Protocols/Reading 4v2 - UART Overview.md>) for more info
 
 ### CAN (Controller Area Network) 
-- Go to [Reading 4v3 - CAN Overview](<../Section 4 - Asynchronous Comm Protocols/Reading 4v3 - CAN Overview.md>)
+Go to [Reading 4v3 - CAN Overview](<../Section 4 - Asynchronous Comm Protocols/Reading 4v3 - CAN Overview.md>) for more info
 
 ### RS485 (Recommended Standard 485)
 Important notes about RS485:
@@ -49,13 +49,13 @@ Important notes about Ethernet:
 ## Synchronous Comm Protocols 
 
 ### I2C (Inter-Integrated Circuit)
-- Go to [Reading 5v2 - I2C Overview](<../Section 5 - Synchronous Comm Protocols/Reading 5v2 - I2C Overview.md>)
+Go to [Reading 5v2 - I2C Overview](<../Section 5 - Synchronous Comm Protocols/Reading 5v2 - I2C Overview.md>) for more info
 
 ### SPI (Serial Peripheral Interface)
-- Go to [Reading 5v3 - SPI & IsoSPI Overview](<../Section 5 - Synchronous Comm Protocols/Reading 5v3 - SPI & IsoSPI Overview.md>)
+Go to [Reading 5v3 - SPI & IsoSPI Overview](<../Section 5 - Synchronous Comm Protocols/Reading 5v3 - SPI & IsoSPI Overview.md>) for more info
 
 ### IsoSPI (Isolated SPI)
-- Go to [Reading 5v3 - SPI & IsoSPI Overview](<../Section 5 - Synchronous Comm Protocols/Reading 5v3 - SPI & IsoSPI Overview.md>)
+Go to [Reading 5v3 - SPI & IsoSPI Overview](<../Section 5 - Synchronous Comm Protocols/Reading 5v3 - SPI & IsoSPI Overview.md>) for more info
 
 ### JTAG (Joint Test Action Group) 
 Important notes about JTAG:
