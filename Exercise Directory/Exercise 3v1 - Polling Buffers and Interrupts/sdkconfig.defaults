@@ -1,0 +1,6 @@
+# Board used in training
+CONFIG_IDF_TARGET="esp32s3"
+
+# Hide most boot messages so your printf() output is easy to find
+CONFIG_BOOTLOADER_LOG_LEVEL_WARN=y
+CONFIG_LOG_DEFAULT_LEVEL_WARN=y

@@ -1,12 +1,12 @@
 # Planning and FSMs
 
-The Main Control Loop is the logic base of your firmware. In this section, I will go less into how the firmware of the control loop is implemented, but more how the system itself works. This section will teach you how to plan out your main control loop to be simple!
+The Main Control Loop is the logic base of your firmware. In this section, I will go less into how the firmware of the control loop is implemented, but more how to plan out the logic of the system itself. In other words, this section will teach you how to plan out your main control loop to be simple!
 
 ## Naive - Flow Chart
 
 Let's say I want to make an elevator. I can draw a flow chart out like this:
 
-TODO IMAGE OF ELEVATOR BLOCK DIAGRAM
+<img width="600" alt="Elevator Flow Chart" src="./../images/SECTION3/elevator.png" />
 
 ### What is a block?
 

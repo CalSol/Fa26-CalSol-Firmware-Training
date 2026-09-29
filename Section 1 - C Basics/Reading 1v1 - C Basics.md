@@ -7,9 +7,10 @@ Thus the only setup for C that we have to do is to add the extension on VSCode w
 
 <img height="200" alt="Install Picture" src="./../images/SECTION1/VSCode_C_extensions.png" />
 
-<div style="padding: 2px 16px; background-color: #705337; border-radius: 6px;">
-<h3><b>Exercise 🎯:</b> Download the C/C++ VSCode extension.</h3> 
-</div>
+### Exercise 🎯: Download the C/C++ VSCode extension.
+1. Open up VS Code
+2. Go to the Extensions Tab on the left side bar (on Windows: ctrl + shift + x)
+3. Search for the C/C++ extension and click install
 
 ## What is C?
 

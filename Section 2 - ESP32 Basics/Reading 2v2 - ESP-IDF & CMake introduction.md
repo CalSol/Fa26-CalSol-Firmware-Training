@@ -81,7 +81,13 @@ This is called a **cross-compiler** — it runs on one architecture (ARM on the 
  
 ### The sdkconfig file
  
-Running `idf.py set-target esp32s3` generates a `sdkconfig` file that controls hundreds of compile-time options — things like how much stack space FreeRTOS tasks get, whether WiFi is enabled, clock speeds, and so on. You can edit these with:
+Running the following command generates a `sdkconfig` file specific to the target chip that controls hundreds of compile-time options — things like how much stack space FreeRTOS tasks get, whether WiFi is enabled, clock speeds, and so on. 
+
+```bash
+idf.py set-target esp32s3
+```
+
+You can edit the generated `sdkconfig` file with the following command:
  
 ```bash
 idf.py menuconfig

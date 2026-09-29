@@ -57,6 +57,8 @@ Period = 1 / 1000
 
 The following program demonstrates the basic idea behind PWM using software. You may not understand a lot of the functions used, and we will try our best to break it down. We are hoping to just get you exposed to what C code and firmware might look like.
 
+**Note: normally we would not use a PWM in a main loop as it would waste CPU time (you'll learn more about IO and efficiency in the next section) but this is just to demonstrate what code looks like.**
+
 This example assumes that the microcontroller provides functions similar to:
 
 ```c

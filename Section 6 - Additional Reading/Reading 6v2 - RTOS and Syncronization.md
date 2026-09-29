@@ -1,6 +1,6 @@
 # RTOS and Syncronization
 
-WARNING: this is a more conceptually difficult concept to understand. Understanding this is important, but generally a lower priority as the project can be mostly completed without it. If you need help understanding, please come up to us at a meeting and ask. 
+WARNING: this is a more conceptually difficult concept to understand. Understanding this is important, but generally a lower priority as the project can be completed without it. If you need help understanding, please come up to us at a meeting and ask. 
 
 An RTOS is a Real Time Operating System. We use an RTOS to allow for parallel and concurrent programming. This allows for us to write considerably more powerful programs, but comes at the cost of complexity. In this section, we will show you how an RTOS works, the problems that arise, and how to fix them.
 
@@ -23,18 +23,6 @@ Threads you can think of as different tasks the CPU is switching between. From m
 The ESP32 is a powerful piece of hardware due to it being **multi-core**. A core is effectively (for our purposes) a CPU that can run threads. 
 
 Going back to our example, a second core is effectively me having a friend to help me out. Now I can take the multiple threads and assign them to a specific core to work with. Our ESP32 now can handle parallelism!
-
-## RTOS (Real Time Operating System)
-
-ESP-IDF offers us an RTOS (or a Real Time Operating System). The RTOS allows us to create threads for individual tasks as well as harness the second core of the ESP32!
-
-### How to Use
-
-TODO
-
-### Examples
-
-TODO
 
 ## Hazards
 
@@ -96,6 +84,4 @@ As mentioned before, it is in shared memory we need to beware for hazards. Here 
 
 The idea of the reader and writer flag in the deadlock example is implemented with something called a **lock**. A lock you can imagine is an object a thread can hold to get sole access to an area of code. Those who try to access the area without the lock need to wait for the thread with the lock to relinquish it.
 
-Syntax below:
-
-TODO
+We also have other implementations of locks using semaphores and monitors. If you have any interest in this stuff, feel free to look it up, but this is way out of scope of this learning.

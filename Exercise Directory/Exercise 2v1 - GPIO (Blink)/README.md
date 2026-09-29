@@ -24,7 +24,7 @@ In the final project, the Hazards LED is on **GPIO 42** and should blink once pe
 
 `pdMS_TO_TICKS()` is needed because `vTaskDelay()` counts in FreeRTOS "ticks", not milliseconds. It converts for you. (You'll learn more about FreeRTOS in Section 3.)
 
-## Why does set_led() print?
+## Note on set_led()
 
 QEMU emulates the ESP32's processor, but not its pins: `gpio_set_level()` runs without errors, but there's no LED to light up. So `set_led()` does two things:
 
