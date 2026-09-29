@@ -1,6 +1,6 @@
 # Firmware-Training
-## FW Lab Instructions and Project Spec Found [here](https://docs.google.com/document/d/1VsC9TB3XrUjA6-NhKEqb3eP2UCfmX6sozX10Jz-2TJU/edit?tab=t.0)
-## FW Lab Intro Video [here](https://www.youtube.com/watch?v=6nEsGNbqA7Y) and Slides [here](https://docs.google.com/presentation/d/1TtwXVRgyFwhcn7VBoMVS7o5cfcCOnex86UW4pSXnmO4/edit?usp=sharing)
+### FW Lab Instructions and Project Spec Found [here](https://docs.google.com/document/d/1VsC9TB3XrUjA6-NhKEqb3eP2UCfmX6sozX10Jz-2TJU/edit?tab=t.0)
+### FW Lab Intro Video [here](https://www.youtube.com/watch?v=6nEsGNbqA7Y) and Slides [here](https://docs.google.com/presentation/d/1TtwXVRgyFwhcn7VBoMVS7o5cfcCOnex86UW4pSXnmO4/edit?usp=sharing)
 
 ## Welcome to CalSol Firmware Training!
 This lab is meant to teach you how to think about firmware while giving enough practice to get you started writing it.
@@ -42,7 +42,7 @@ Below is the timeline for the FW lab. Extenuating circumstances notwithstanding 
 - Submit your report by 10/12 8:00PM
 
 ### Contributors:
-Kadon L, Matthew L, Huan N, Emma C, Tashvi M, Ahmed A
+Kadon L, Matthew L, Huan N, Emma C, Howard Y, Simon N, Tashvi M, Ahmed A
 
 ### Credit
 The lab and project structure is inspired by many courses at UC Berkeley including CS61A/B/C
