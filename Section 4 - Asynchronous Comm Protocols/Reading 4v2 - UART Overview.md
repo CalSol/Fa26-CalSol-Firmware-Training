@@ -5,12 +5,13 @@ UART is one protocol to implement serial communication, a method of communicatio
 
 ## Important notes about UART:
 - **Universal:** usable on <i>any</i> transmitting/receiving device
-- **Asynchronous:** no shared clock line; both sides must agree on a baud rate ahead of time
-- **2 Wire:** **Transmit (TX)** and **Receive (RX)**, plus a common GND (TX of one device connects to RX of the other)
-- **One-to-One communication:** only communicates between 2 devices
-- **Full-duplex:** can send and receive at the same time (separate TX and RX wires)
-- **Speed:** usually 9600 baud (bits per second), commonly up to 115200 baud. Slow compared to SPI/USB
-- **Noise resistance:** Moderate. Single-ended, but slow with no clock line to glitch
+- **Asynchronous:** does not follow any shared clock, simply sends/receives when it has data (both sides must agree on baud rate beforehand)
+- **2 Wire:** **Transmit (TX)** and **Receive (RX)** (plus a common GND). TX of one device connects to RX of the other
+- **One-to-One communication:** UART only communicates between 2 devices
+- **Full-duplex:** TX and RX are separate lines, so both devices can talk at the same time
+- **Speed:** Usually 9600 baud (bits per second), commonly up to 115200 baud. *Slow-to-moderate compared to SPI/USB; similar to I2C standard mode.*
+- **Signaling:** Single-ended (logic-level voltage relative to GND)
+- **Noise resistance:** Moderate. It is slow, which helps, but it is single-ended with no shielding or error correction (only an optional parity bit)
 
 
 ### Serial communication happens via two wires.
