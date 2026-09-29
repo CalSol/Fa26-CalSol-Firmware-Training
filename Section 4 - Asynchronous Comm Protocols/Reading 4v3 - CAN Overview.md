@@ -4,7 +4,7 @@ CAN is anoter protocol to implement serial communication, a method of communicat
 - Intuitively, CAN is a network (place where devices connect and share data) that lets the (electrical) controllers all around the car communicate with each other.
 - Formally, the **CAN Bus** is the system that enables **communication between ECU's** (basically each circuit board in the car meant to control a specific part, i.e. pedals, lights).
 
-## Important notes about CAN:
+Important notes about CAN:
 - **Asynchronous:** no dedicated clock line; nodes resync to bit edges in the data
 - **2 Wire:** **CAN_H** and **CAN_L** twisted pair
 - **Multi-master bus:** any node can transmit; many nodes share the same two wires
