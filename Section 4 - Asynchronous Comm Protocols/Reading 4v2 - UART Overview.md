@@ -5,7 +5,7 @@ UART is one protocol to implement serial communication, a method of communicatio
 
 ## Important notes about UART:
 - **Universal:** usable on <i>any</i> transmitting/receiving device
-- **Asynchronous:** does not follow any shared clock, simply sends/receives when it has data (both sides must agree on baud rate beforehand)
+- **Asynchronous:** does not follow any shared clock, simply sends/receives when it has data (but both sides must agree on baud rate)
 - **2 Wire:** **Transmit (TX)** and **Receive (RX)** (plus a common GND). TX of one device connects to RX of the other
 - **One-to-One communication:** UART only communicates between 2 devices
 - **Full-duplex:** TX and RX are separate lines, so both devices can talk at the same time
