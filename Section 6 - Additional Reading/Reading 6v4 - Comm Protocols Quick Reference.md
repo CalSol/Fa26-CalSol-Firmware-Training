@@ -20,7 +20,7 @@ Important notes about RS485:
 - **Signaling:** Differential (A vs B)
 - **Noise resistance:** Excellent. It is built for long cables in industrial environments.
 
-### USB D+/D- 
+### USB 2.0
 Important notes about USB (D+/D-):
 - Typically used for flashing firmware (From USB to MCU)
 - **Asynchronous data lines:** the receiver recovers the clock from the data itself (NRZI encoding with bit stuffing)
@@ -98,10 +98,11 @@ Wires:
 |---|---|---|---|---|---|---|
 | UART | 2 | Async | Full | Single-ended | 9.6k-115.2k baud (up to ~Mbaud) | Moderate |
 | CAN | 2 | Async | Half | Differential | up to 1 Mbps (FD: 5-8) | Excellent |
+| RS485 | 2 or 4 | Async | Half (2-wire) / Full (4-wire) | Differential | up to 10 Mbps | Excellent |
+| USB 2.0 | 2 data (+power) | Async (recovered) | Half | Differential | 1.5M / 12M / 480M | Very good |
+| Ethernet | 4 or 8 (2 or 4 pairs) | Async (self-clocked) | Full | Differential | 10M / 100M / 1G+ | Excellent |
 | I2C | 2 | Sync | Half | Single-ended | 100k-3.4M | Fair/Poor |
 | SPI | 4+ | Sync | Full | Single-ended | 1-50+ MHz | Poor |
 | isoSPI | 2 | Async (pulses) | Half | Differential | 100k-1M | Excellent |
-| RS485 | 2 or 4 | Async | Half (2-wire) / Full (4-wire) | Differential | up to 10 Mbps | Excellent |
-| USB 2.0 | 2 data (+power) | Async (recovered) | Half | Differential | 1.5M / 12M / 480M | Very good |
 | JTAG | 4-5 | Sync | Full (shift) | Single-ended | 1-50 MHz | Poor/Fair |
 | I2S | 3-4 | Sync | Simplex per line | Single-ended | ~1-12 MHz (audio dependent) | Fair/Poor |
