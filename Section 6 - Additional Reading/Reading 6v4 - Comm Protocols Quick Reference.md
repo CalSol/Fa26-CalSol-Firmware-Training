@@ -46,7 +46,7 @@ Important notes about RS485:
 
 
 ### USB 2.0
-Important notes about USB (D+/D-):
+Important notes about USB 2.0:
 - Typically used for flashing firmware (From USB to MCU)
 - **Asynchronous data lines:** the receiver recovers the clock from the data itself (NRZI encoding with bit stuffing)
 - **4 Wire (USB 2.0):** **D+**, **D-**, **VBUS** (5 V power), and **GND**
