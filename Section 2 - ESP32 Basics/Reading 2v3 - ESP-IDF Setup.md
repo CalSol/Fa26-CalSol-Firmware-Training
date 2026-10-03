@@ -185,7 +185,7 @@ In project folder, go to ‘main’ file. (As per the C Basics section, the C/C+
 
 </details>
 
-## Flashing Firmware
+## 3. Flashing Firmware
 
 There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF code on your computer. It is completely up to personal preference which one you use (and also just which one "magically" works). But _PLEASE_ try to familiarize yourself with both options!!!
 
