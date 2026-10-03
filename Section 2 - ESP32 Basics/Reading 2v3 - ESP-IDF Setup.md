@@ -263,7 +263,6 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    <details>
    <summary>Setting up alias shortcut for Windows</summary>
 
-    _Note: This is untested for windows (not sure if it works, please let us know!)_
 
    These steps use **PowerShell**. Your PowerShell profile (a file that runs every time you open PowerShell) is the Windows equivalent of `.zshrc` / `.bashrc`.
 
@@ -273,7 +272,45 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
     New-Item -Path $PROFILE -ItemType File -Force
     ```
 
-    Open your PowerShell profile in vim (a text editor that lives in the terminal):
+
+
+    Next, we want to open this PowerShell profile in vim.
+
+    However, vim (a text editor) must be manually installed on Windows to make it live in our terminal.
+
+    Install Vim here: https://www.vim.org/download.php
+
+    *While Installing* Remember your Install Location (as seen below!):
+
+    <img width="581" height="478" alt="Vim Location!!" src="https://github.com/user-attachments/assets/fc59df6e-4af7-4695-aa15-0cae85189cb5" />
+
+    Keep the Default Install Options.
+
+    After Install, add Vim to your system's Environment PATH variable:
+       - Open Powershell
+       - Look at your Install Location.
+       - If your installation folder inside C:\Program Files\Vim is vimXX (could be vim90, vim92, etc), run the following command in Powershell (replace vimXX with what you see).
+
+
+    ```powershell
+    [System.Environment]::SetEnvironmentVariable(
+    "Path",
+    [System.Environment]::GetEnvironmentVariable("Path", "User") + ";C:\Program Files\Vim\vimXX",
+    "User")
+    ```
+
+
+    Verify this was successful by opening a new Powershell terminal tab, and run:
+
+
+    ```powershell
+    vim –version
+    ```
+
+    If there’s an output containing your vim version (the XX in vimXX), it worked.
+
+
+    Now, open your PowerShell profile in vim:
 
     ```powershell
     vim $PROFILE
@@ -288,8 +325,10 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
     3. Type the following line:
 
     ```powershell
-    function get_idf { & 'C:\esp\v6.1-beta1\esp-idf\export.ps1' }
+    function get_idf { & 'C:\esp\vXX\esp-idf\export.ps1' }
     ```
+
+    _Replace 'XX' with your esp version (could be v6.1, v6.0, etc.). Check what it is by navigating to C: > esp > vXX in your files explorer._
 
     4. Press `Esc` to go back to normal mode
     5. Type `:wq` and hit `Enter` to save and quit (`w` = write, `q` = quit)
@@ -357,25 +396,25 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    </dd></dl>
    </details>
 
-2. Generate the sdkconfig file for target chip (We use S3). You only have to do this once.
+3. Generate the sdkconfig file for target chip (We use S3). You only have to do this once.
 
    ```bash
    idf.py set-target esp32s3
    ```
 
-3. OPTIONAL: edit the sdkconfig file
+4. OPTIONAL: edit the sdkconfig file
 
    ```bash
    idf.py menuconfig
    ```
 
-4. Build your code. This calls CMake and Ninja in right order to compile code, link libraries, and generate binary files (.bin) that can be flashed onto an ESP32 chip). The first build takes a few minutes — it's compiling the entire ESP-IDF stack. Subsequent builds only recompile files you've changed.
+5. Build your code. This calls CMake and Ninja in right order to compile code, link libraries, and generate binary files (.bin) that can be flashed onto an ESP32 chip). The first build takes a few minutes — it's compiling the entire ESP-IDF stack. Subsequent builds only recompile files you've changed.
 
    ```bash
    idf.py build
    ```
 
-5. Flash your code. This uploads your firmware to the chip!
+6. Flash your code. This uploads your firmware to the chip!
 
    ```bash
    idf.py flash
@@ -387,7 +426,7 @@ There are two ways (CLI or GUI) that you can build, flash, and monitor ESP-IDF c
    idf.py -p [port e.g. COM6] flash
    ```
 
-6. Monitor your code
+7. Monitor your code
 
    ```bash
    idf.py monitor
