@@ -2,6 +2,7 @@
 
 A microcontroller (MCU) is a chip that acts as a "brain" to control hardware it's directly connected to.
 - Like a mini computer, but less powerful because it doesn't need to do such intense tasks.
+- Arduino's, STM32's, and **ESP32's** are some popular MCU's you will hear about!
 
 When we write firmware, we upload the logic to the MCU, which will handle all of the code during operation.
 
@@ -20,7 +21,7 @@ When we write firmware, we upload the logic to the MCU, which will handle all of
 
 ## What is the ESP32-S3 Dev Board?
 
-A development board is a PCB with a microcontroller (MCU) on it! Our team uses a custom [ESP32-S3](https://documentation.espressif.com/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf) development board to write firmware to control parts/circuit boards in the car. This enables us to have standardized CAN transceivers, an I2C power monitor, and other debugging capabilities. The ESP32 itself has 2 cores and ability for RTOS (you'll learn more about all these things in later sections! The code you flash to it will use its features to control the peripherals it's connected to.
+A development board is a PCB with a microcontroller (MCU) on it! Our team uses a custom [ESP32-S3-WROOM-1-N8](https://documentation.espressif.com/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf) Development Board to write firmware to control parts/circuit boards in the car. It is equipped on most of the boards in our car! It enables us to have standardized CAN transceivers for CAN communication across boards, an I2C power monitor to measure the power draw of each board, and other debugging capabilities. The ESP32 itself has 2 cores and ability for RTOS (you'll learn more about all these things in later sections! The code you flash to it will use its features to control the peripherals it's connected to.
 
 <img height="275" alt="ESP32" src="https://github.com/user-attachments/assets/1df285eb-7f13-4d20-bc89-485e335144b2" />
 
