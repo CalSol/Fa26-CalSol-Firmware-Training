@@ -4,55 +4,55 @@ These instructions get the CalSol `new-telemetry` backend (InfluxDB + Grafana + 
 
 **IMPORTANT: Never edit `main.py`.** The Pi has no screen, so one of the ingestors (`pynput`, used by the keyboard ingestor) crashes looking for a display. We fix this by running the backend through `xvfb-run` (a fake display) instead of changing any code. Always launch with `xvfb-run -a uv run main.py`, and never use `./run.sh` on the Pi (it opens a Terminal window with `osascript`, which is Mac-only).
 
+
 ## Part 1 — Get the code onto the Pi
 
-The Pi needs its own SSH key registered with GitHub so it can clone and pull the repo.
+The Pi is shared, so **don't put your personal GitHub key on it.** Use agent forwarding to borrow the key from your laptop instead.
 
-### Step 1 — SSH into the Pi
+### Step 1 — Make sure your laptop's key works
 
-```bash
-ssh yourname@<device_name>
-```
-
-### Step 2 — Create an SSH key on the Pi
+On **your laptop** (not the Pi):
 
 ```bash
-ssh-keygen -t ed25519 -C "stolerpi"
+ssh -T git@github.com
+ssh-add -l
 ```
 
-Press `Enter` to accept the default file path, then `Enter` twice to skip the passphrase (or set one if you want). Then print the public key:
+You should see `Hi <your-github-username>!` and at least one key listed. If `ssh-add -l` says "no identities", run `ssh-add` (or `ssh-add ~/.ssh/id_ed25519`).
+
+### Step 2 — SSH into the Pi with agent forwarding
 
 ```bash
-cat ~/.ssh/id_ed25519.pub
+ssh -A yourname@<device_name>
 ```
 
-Copy the **whole line** (it starts with `ssh-ed25519` and ends with `stolerpi`).
-
-### Step 3 — Add the key to GitHub
-
-1. Go to GitHub → **Settings → SSH and GPG keys → New SSH key**
-2. Title: `stolerpi`, Key type: **Authentication Key**
-3. Paste the line and save
-4. Since the repo is in the CalSol org, click **Configure SSO → Authorize** next to the new key if you see it
-
-> **Shared Pi?** If several teammates use this Pi, don't put your personal key on it. Instead add the public key as a read-only **deploy key** under the repo's Settings → Deploy keys.
-
-### Step 4 — Check that GitHub accepts you
+### Step 3 — Check that GitHub accepts you
 
 ```bash
 ssh -T git@github.com
 ```
 
-The first time, type `yes` if it asks about the host fingerprint. You should see `Hi <your-github-username>! You've successfully authenticated...`. If you see `Permission denied (publickey)`, the key wasn't added to GitHub yet (or SSO isn't authorized). Re-check Step 3, or run `ssh -vT git@github.com` to see which keys are being offered.
+You should see `Hi <your-github-username>! You've successfully authenticated...`. If you see `Permission denied (publickey)`, you probably forgot `-A`, or your laptop's agent has no key loaded (Step 1).
 
-### Step 5 — Clone the repo
+### Step 4 — Clone the repo
 
 ```bash
 cd ~
 git clone git@github.com:CalSol/new-telemetry.git
 ```
 
-(If you can't use SSH, `git clone https://github.com/CalSol/new-telemetry.git` also works. It will ask for your GitHub username and a personal access token if the repo is private.)
+### Fallback: read-only deploy key (no forwarding)
+
+Use this if you need `git pull` to work without a forwarded key, such as in a cron job or `telem`-style script run when you're not connected from your laptop.
+
+```bash
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -C "stolerpi-yourname"
+cat ~/.ssh/id_ed25519.pub
+```
+
+Add it at the repo's **Settings → Deploy keys** with **Allow write access unchecked**. A deploy key only works for that one repo and can't push, so it's low-risk on a shared machine. GitHub won't let the same key be a deploy key on two repos, so each person needs their own.
+
+(HTTPS with a personal access token also works but stores the token on the Pi, which has the same shared-machine concern.)
 
 
 ## Part 2 — Install uv
