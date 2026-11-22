@@ -17,7 +17,7 @@ Important notes about CAN:
 - **Speed:** Up to 1 Mbps (classic CAN), up to ~5-8 Mbps (CAN FD). *Faster than UART/I2C standard mode, much slower than SPI/USB. Speed trades off against bus length (1 Mbps ≈ 40 m, 125 kbps ≈ 500 m).*
 - **Signaling:** Differential (CAN_H vs CAN_L)
 - **Noise resistance:** Excellent. Differential signaling rejects common-mode noise, which is why it is the standard in cars and other electrically noisy environments.
-- - **Helpful Video:** https://www.youtube.com/watch?v=WikQ5n1QXQs
+- **Helpful Video:** https://www.youtube.com/watch?v=WikQ5n1QXQs
 
 
 
